@@ -1,0 +1,49 @@
+<app-toolbar (onlineUsers)="online($event)"></app-toolbar>
+<div class="container" style="margin-top:30px;">
+    <div class="row">
+        <div class="col s12 m5 l3">
+            <!-- <app-side></app-side> -->
+            <!-- <h1> this is app side component</h1> -->
+        </div>
+        <div class="col s12 m6 l9">
+            <div class="row">
+                <h2 class="text"> Adding people</h2>
+                <div class="col s10 addpeopleForm">
+                    <div class="row">
+                        <form class="col s12" [formGroup]="addpeopleForm" novalidate (ngSubmit)="addUser()">
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <input id="user_name" type="text" formControlName="username" />
+                                    <label for="user_name">Username</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['username'].valid && addpeopleForm.controls['username'].touched">Username
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <input id="email" type="email" formControlName="email" />
+                                    <label for="email">Email</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['email'].valid && addpeopleForm.controls['email'].touched">Email
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <input id="pass-word" type="password" formControlName="password" />
+                                    <label for="pass-word">Password</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['password'].valid && addpeopleForm.controls['password'].touched">Password
+                                        is required</span>
+                                </div>
+                            </div>
+                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addpeopleForm.valid">SIGN
+                                UP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
