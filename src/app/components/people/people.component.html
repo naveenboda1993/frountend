@@ -31,6 +31,8 @@
 
 							<button class="btn" *ngIf="!CheckInArray(userArr, user._id)"
 								(click)="FollowUser(user)">Follow</button>
+							<button class="btn" 
+								(click)="DeleteUser(user)">Remove</button>
 							<button class="btn  disabled following"
 								*ngIf="CheckInArray(userArr, user._id)">Following</button>
 							<a class="secondary-content" [routerLink]="['/chat', user.username]">

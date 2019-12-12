@@ -28,7 +28,11 @@ export class UsersService {
 			userFollowed
 		});
 	}
-
+	DeleteUser(userDeleted): Observable<any> {
+		return this.http.post(`${BASEURL}/deleteuser`, {
+			userDeleted
+		});
+	}
 	UnFollowUser(userFollowed): Observable<any> {
 		return this.http.post(`${BASEURL}/unfollow-user`, {
 			userFollowed

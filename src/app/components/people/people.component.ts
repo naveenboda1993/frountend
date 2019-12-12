@@ -50,6 +50,13 @@ export class PeopleComponent implements OnInit {
 			this.socket.emit('refresh', {});
 		});
 	}
+	
+	DeleteUser(user) {
+		this.userService.DeleteUser(user.email).subscribe(data => {
+			this.socket.emit('refresh', {});
+		});
+	}
+
 	ViewUser(user) {
 		this.router.navigate([user.username]);
 		if (this.loggedInUser.username !== user.username) {
