@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/services/users.service';
 import io from 'socket.io-client';
 import { CaretEvent, EmojiEvent } from 'ng2-emoji-picker';
 import _ from 'lodash';
+import { Constants } from 'src/app/constants';
 
 @Component({
 	selector: 'app-message',
@@ -40,7 +41,7 @@ export class MessageComponent implements OnInit, AfterViewInit {
 		private route: ActivatedRoute,
 		private usersService: UsersService
 	) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

@@ -3,8 +3,10 @@ import { FileUploader } from 'ng2-file-upload';
 import { UsersService } from 'src/app/services/users.service';
 import { TokenService } from 'src/app/services/token.service';
 import io from 'socket.io-client';
+import { Constants } from "src/app/constants";
 
-const URL = 'http://localhost:3000/api/chat/upload-image';
+const BASEURL = Constants.HOME_URL;
+const URL = Constants.IMG_URL;
 
 @Component({
 	selector: 'app-images',
@@ -22,7 +24,7 @@ export class ImagesComponent implements OnInit {
 	socket: any;
 
 	constructor(private usersService: UsersService, private tokenService: TokenService) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

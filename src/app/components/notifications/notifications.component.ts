@@ -3,6 +3,7 @@ import { TokenService } from 'src/app/services/token.service';
 import { UsersService } from 'src/app/services/users.service';
 import io from 'socket.io-client';
 import * as moment from 'moment';
+import { Constants } from 'src/app/constants';
 
 @Component({
 	selector: 'app-notifications',
@@ -15,7 +16,7 @@ export class NotificationsComponent implements OnInit {
 	notifications = [];
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

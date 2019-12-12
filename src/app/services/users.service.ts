@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Constants } from '../constants';
 
-const BASEURL = 'http://localhost:3000/api/chat';
+const BASEURL = Constants.BACKEND_URL;
 
 @Injectable({
 	providedIn: 'root'

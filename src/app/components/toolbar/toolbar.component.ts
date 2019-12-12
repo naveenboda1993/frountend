@@ -8,6 +8,7 @@ import io from 'socket.io-client';
 import _ from 'lodash';
 import { MessageService } from 'src/app/services/message.service';
 import { EventEmitter } from '@angular/core';
+import { Constants } from 'src/app/constants';
 
 @Component({
 	selector: 'app-toolbar',
@@ -32,7 +33,7 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
 		private usersService: UsersService,
 		private msgService: MessageService
 	) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

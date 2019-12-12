@@ -5,6 +5,7 @@ import io from 'socket.io-client';
 import _ from 'lodash';
 import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
+import { Constants } from 'src/app/constants';
 
 @Component({
 	selector: 'app-top-streams',
@@ -17,7 +18,7 @@ export class TopStreamsComponent implements OnInit {
 	user: any;
 
 	constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

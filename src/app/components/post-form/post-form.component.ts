@@ -3,8 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
 import io from 'socket.io-client';
 import { FileUploader } from 'ng2-file-upload';
+import { Constants } from 'src/app/constants';
 
-const URL = 'http://localhost:3000/api/chat/upload-image';
+const URL = Constants.IMG_URL;
 
 @Component({
 	selector: 'app-post-form',
@@ -23,7 +24,7 @@ export class PostFormComponent implements OnInit {
 	selectedFile: any;
 
 	constructor(private fb: FormBuilder, private postService: PostService) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

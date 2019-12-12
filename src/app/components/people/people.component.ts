@@ -5,6 +5,7 @@ import { TokenService } from 'src/app/services/token.service';
 import io from 'socket.io-client';
 import { Router } from '@angular/router';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { Constants } from 'src/app/constants';
 
 @Component({
 	selector: 'app-people',
@@ -19,7 +20,7 @@ export class PeopleComponent implements OnInit {
 	onlineusers = [];
 
 	constructor(private userService: UsersService, private tokenService: TokenService, private router: Router) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {

@@ -2,6 +2,7 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import { TokenService } from 'src/app/services/token.service';
 import { UsersService } from 'src/app/services/users.service';
 import io from 'socket.io-client';
+import { Constants } from 'src/app/constants';
 @Component({
 	selector: 'app-following',
 	templateUrl: './following.component.html',
@@ -13,7 +14,7 @@ export class FollowingComponent implements OnInit {
 	socket: any;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
-		this.socket = io('http://localhost:3000');
+		this.socket = io(Constants.HOME_URL);
 	}
 
 	ngOnInit() {
