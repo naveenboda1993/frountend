@@ -26,7 +26,10 @@ export class AddpeopleComponent implements OnInit {
     this.addpeopleForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      phonenumber: ['',Validators.required],
+      // role: ['', Validators.required]
+
     });
   }
   addUser() {
@@ -34,7 +37,7 @@ export class AddpeopleComponent implements OnInit {
     this.showSpinner = true;
     this.authService.addUser(this.addpeopleForm.value).subscribe(
       data => {
-        this.tokenService.SetToken(data.token);
+        // this.tokenService.SetToken(data.token);
         this.addpeopleForm.reset();
         setTimeout(() => {
           this.router.navigate(['people']);

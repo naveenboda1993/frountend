@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Constants } from "src/app/constants";
 
-const BASEURL = Constants.HOME_URL;
+const BASEURL = Constants.BACKEND_URL;
 @Injectable({
 	providedIn: 'root'
 })
@@ -18,5 +18,8 @@ export class AuthService {
 	}
 	loginUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/login`, body);
+	}
+	deleteUser(body): Observable<any> {
+		return this.http.post(`${BASEURL}/deleteuser`, body);
 	}
 }

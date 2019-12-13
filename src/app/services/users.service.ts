@@ -28,11 +28,19 @@ export class UsersService {
 			userFollowed
 		});
 	}
-	DeleteUser(userDeleted): Observable<any> {
+	DeleteUser(email): Observable<any> {
 		return this.http.post(`${BASEURL}/deleteuser`, {
-			userDeleted
+			email
 		});
+		
 	}
+	addUser(username): Observable<any> {
+		return this.http.post(`${BASEURL}/saveuser`, {
+			username
+		});
+		
+	}
+
 	UnFollowUser(userFollowed): Observable<any> {
 		return this.http.post(`${BASEURL}/unfollow-user`, {
 			userFollowed

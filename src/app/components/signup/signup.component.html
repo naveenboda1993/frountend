@@ -30,6 +30,15 @@
 					</div>
 				</div>
 				<div class="row">
+						<div class="input-field col s12">
+							<input id="phonenumber" type="text" formControlName="phonenumber" />
+							<label for="phonenumber">Phone Number</label>
+							<span class="error" *ngIf="!signupForm.controls['phonenumber'].valid && signupForm.controls['phonenumber'].touched"
+								>Phone Number is required</span
+							>
+						</div>
+					</div>
+				<div class="row">
 					<div class="input-field col s12">
 						<input id="pass-word" type="password" formControlName="password" />
 						<label for="pass-word">Password</label>
