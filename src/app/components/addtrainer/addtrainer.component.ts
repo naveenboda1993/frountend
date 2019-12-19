@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-addpeople',
-  templateUrl: './addpeople.component.html',
-  styleUrls: ['./addpeople.component.css']
+  selector: 'app-addtrainer',
+  templateUrl: './addtrainer.component.html',
+  styleUrls: ['./addtrainer.component.css']
 })
-export class AddpeopleComponent implements OnInit {
+export class AddtrainerComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
-  addpeopleForm: FormGroup;
+  addtrainerForm: FormGroup;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -23,29 +23,27 @@ export class AddpeopleComponent implements OnInit {
     this.init();
   }
   init() {
-    this.addpeopleForm = this.fb.group({
+    this.addtrainerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
       phonenumber: ['',Validators.required],
-      // role: ['', Validators.required]
-
     });
   }
-  gymowner() {
+  trainer() {
     // console.log(this.signupForm.value);
     this.showSpinner = true;
-    this.authService.gymowner(this.addpeopleForm.value).subscribe(
+    this.authService.trainer(this.addtrainerForm.value).subscribe(
       data => {
         // this.tokenService.SetToken(data.token);
-        this.addpeopleForm.reset();
+        this.addtrainerForm.reset();
         setTimeout(() => {
           this.router.navigate(['people']);
         }, 2000);
       },
       err => {
         this.showSpinner = false;
-        console.log(err);
+        // console.log(err);
         if (err.error.msg) {
           this.errorMessage = err.error.msg[0].message; //validation error, value at index 0,array
         }

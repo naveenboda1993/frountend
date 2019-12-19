@@ -1,8 +1,8 @@
 #panel {
-	background-color: #ffffff00;
+	background-color: #ffffff;
 	padding: 0px;
 }
-#loginbtn {
+#signupbtn {
 	float: right;
 
 	margin-right: 10px;
@@ -10,8 +10,8 @@
 	font-weight: 500;
 }
 #title {
-	background-color: #64b4f600;
-	color: black;
+	background-color: #64b5f6;
+	color: white;
 	padding: 8px;
 	margin-top: 0px;
 	font-weight: 700;

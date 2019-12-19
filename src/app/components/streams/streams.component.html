@@ -5,10 +5,10 @@
 			<app-side></app-side>
 		</div>
 
-		<div class="col s12 m8 l9">
-			<div class="row">
-				<div class="col s12 m12 l10">
-					<ul class="tabs">
+		<div class="col s12 m8 l9" > 
+			<div class="row" *ngIf="CheckUser(userrole)" >
+				<div class="col s12 m12 l10" >
+					<ul class="tabs" >
 						<li class="tab col s6" (click)="ChangeTabs('streams')">
 							<a class="active" href="#streams">Streams</a>
 						</li>

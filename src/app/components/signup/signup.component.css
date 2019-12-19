@@ -1,5 +1,5 @@
 #panel {
-	background-color: #ffffff;
+	background-color: #ffffff00;
 	padding: 0px;
 }
 #signupbtn {
@@ -10,7 +10,7 @@
 	font-weight: 500;
 }
 #title {
-	background-color: #64b5f6;
+	background-color: #64b4f600;
 	color: white;
 	padding: 8px;
 	margin-top: 0px;

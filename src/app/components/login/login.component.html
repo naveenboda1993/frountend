@@ -11,8 +11,8 @@
 			<form class="col s12" [formGroup]="loginForm" novalidate (ngSubmit)="loginUser()">
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="user-name" type="text" formControlName="username" />
-						<label for="user-name">Username</label>
+						<input id="user-name" type="text" formControlName="username"  style="color: red;"/>
+						<label for="user-name" style="color: black;">	Username</label>
 						<span class="error" *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched"
 							>Username is required</span
 						>
@@ -20,8 +20,8 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password" type="password" formControlName="password" />
-						<label for="password">Password</label>
+						<input id="password" type="password" formControlName="password"  style="color: red;"/>
+						<label for="password" style="color: black;">Password</label>
 						<span class="error" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"
 							>Password is required</span
 						>
