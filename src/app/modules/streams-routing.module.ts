@@ -12,6 +12,7 @@ import { ImagesComponent } from '../components/images/images.component';
 import { ViewUserComponent } from '../components/view-user/view-user.component';
 import { ChangePasswordComponent } from '../components/change-password/change-password.component';
 import { AddpeopleComponent } from '../components/addpeople/addpeople.component';
+import { AddtrainerComponent } from '../components/addtrainer/addtrainer.component';
 
 const routes: Routes = [
 	{
@@ -42,6 +43,11 @@ const routes: Routes = [
 	{
 		path: 'addpeople',
 		component: AddpeopleComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'addtrainer',
+		component: AddtrainerComponent,
 		canActivate: [AuthGuard]
 	},
 

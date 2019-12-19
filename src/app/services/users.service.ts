@@ -12,6 +12,10 @@ const BASEURL = Constants.BACKEND_URL;
 export class UsersService {
 	constructor(private http: HttpClient) {}
 
+	GetUserRole(): Observable<any> {
+		return this.http.get(`${BASEURL}/userrole`);
+	}
+
 	GetAllUsers(): Observable<any> {
 		return this.http.get(`${BASEURL}/users`);
 	}

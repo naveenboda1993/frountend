@@ -8,13 +8,18 @@ const BASEURL = Constants.BACKEND_URL;
 	providedIn: 'root'
 })
 export class AuthService {
+  
+  
 	constructor(private http: HttpClient) {}
 
 	registerUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/register`, body);
 	}
-	addUser(body): Observable<any> {
-		return this.http.post(`${BASEURL}/saveusers`, body);
+	gymowner(body): Observable<any> {
+		return this.http.post(`${BASEURL}/gymowner`, body);
+	}
+	trainer(body): Observable<any> {
+		return this.http.post(`${BASEURL}/trainer`, body);
 	}
 	loginUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/login`, body);
