@@ -1,23 +1,16 @@
 <app-toolbar (onlineUsers)="online($event)"></app-toolbar>
-<div class="container" style="margin-top:30px">
-	<div class="row">
-		<div class="col s12 m4 l3">
-			<app-side></app-side>
-		</div>
-		<button class="btn" style="float: right; margin: 2px;" [routerLinkActive]="['active']"
+<div class="container" style="margin-top:30px;">
+    <div class="row">
+        <div class="col s12 m5 l3">
+            <app-side></app-side>
+        </div>
+        <button class="btn" style="float: right; margin: 2px;" [routerLinkActive]="['active']"
 			[routerLinkActiveOptions]="{ exact: true }">
 			<a [routerLink]="['/addpeople']">
 				<span style="color: beige;"> Add Gym Owner</span>
 			</a>
-		</button>
-		<button class="btn" style="float: right; margin: 2px; " [routerLinkActive]="['active']"
-		   [routerLinkActiveOptions]="{ exact: true }">
-		  <a [routerLink]="['/addtrainer']">
-			<span style="color: beige;"> Add Trainer</span>
-		  </a>
-	    </button>
-
-		<div class="col s12 m8 l9">
+        </button>
+        <div class="col s12 m8 l9">
 			<div class="row">
 				<div class="col s12 m6 l4 cardDiv" *ngFor="let user of users">
 					<div class="card">
@@ -49,5 +42,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
 </div>
+

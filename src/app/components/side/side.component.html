@@ -37,6 +37,20 @@
 		</a>
 	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+		<a [routerLink]="['/gymowner']">
+			<div>
+				GymOwner<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+		<a [routerLink]="['/trainer']">
+			<div>
+				Trainers<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
 		<a [routerLink]="['/people', 'following']">
 			<div>
 				Following<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>

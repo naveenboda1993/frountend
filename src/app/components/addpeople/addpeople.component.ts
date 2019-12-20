@@ -40,7 +40,7 @@ export class AddpeopleComponent implements OnInit {
         // this.tokenService.SetToken(data.token);
         this.addpeopleForm.reset();
         setTimeout(() => {
-          this.router.navigate(['people']);
+          this.router.navigate(['gymowner']);
         }, 2000);
       },
       err => {

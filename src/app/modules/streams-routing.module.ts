@@ -13,6 +13,9 @@ import { ViewUserComponent } from '../components/view-user/view-user.component';
 import { ChangePasswordComponent } from '../components/change-password/change-password.component';
 import { AddpeopleComponent } from '../components/addpeople/addpeople.component';
 import { AddtrainerComponent } from '../components/addtrainer/addtrainer.component';
+import { GymownerComponent } from '../components/gymowner/gymowner.component';
+import { TrainerComponent } from '../components/trainer/trainer.component';
+
 
 const routes: Routes = [
 	{
@@ -28,6 +31,16 @@ const routes: Routes = [
 	{
 		path: 'people',
 		component: PeopleComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'gymowner',
+		component: GymownerComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'trainer',
+		component: TrainerComponent,
 		canActivate: [AuthGuard]
 	},
 	{
