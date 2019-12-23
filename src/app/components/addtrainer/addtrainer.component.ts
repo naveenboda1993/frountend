@@ -13,7 +13,7 @@ export class AddtrainerComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
   addtrainerForm: FormGroup;
-  constructor(
+    constructor(
     private authService: AuthService,
     private fb: FormBuilder,
     private router: Router,
@@ -21,6 +21,7 @@ export class AddtrainerComponent implements OnInit {
 
   ngOnInit() {
     this.init();
+    
   }
   init() {
     this.addtrainerForm = this.fb.group({
@@ -28,6 +29,9 @@ export class AddtrainerComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
       phonenumber: ['',Validators.required],
+      age: ['',Validators.required],
+      address: ['',Validators.required],
+      language: ['',Validators.required],
     });
   }
   trainer() {
@@ -38,8 +42,9 @@ export class AddtrainerComponent implements OnInit {
         // this.tokenService.SetToken(data.token);
         this.addtrainerForm.reset();
         setTimeout(() => {
-          this.router.navigate(['people']);
+          this.router.navigate(['trainer']);
         }, 2000);
+        
       },
       err => {
         this.showSpinner = false;

@@ -8,11 +8,11 @@
         <div class="col s12 m6 l9">
             <div class="row">
                 <h3 class="text"> Add Gym Owner</h3>
-                <div class="col s10 addpeopleForm">
+                <div class="col s10  addpeopleForm">
                     <div class="row">
                         <form class="col s12" [formGroup]="addpeopleForm" novalidate (ngSubmit)="gymowner()">
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="user_name" type="text" formControlName="username" />
                                     <label for="user_name">Username</label>
                                     <span class="error"
@@ -20,8 +20,8 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="email" type="email" formControlName="email" />
                                     <label for="email">Email</label>
                                     <span class="error"
@@ -29,18 +29,44 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="age" type="text" formControlName="age" />
+                                    <label for="age">Age</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['age'].valid && addpeopleForm.controls['age'].touched">age
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="Phone_number" type="text" formControlName="phonenumber" />
                                     <label for="phone_number">PhoneNumber</label>
                                     <span class="error"
                                         *ngIf="!addpeopleForm.controls['phonenumber'].valid && addpeopleForm.controls['phonenumber'].touched">Phone number
                                         is required</span>
                                 </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s8">
+                            </div>   
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="address" type="text" formControlName="address" />
+                                    <label for="address">Address</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['address'].valid && addpeopleForm.controls['address'].touched">Address
+                                        is required</span>
+                                </div>
+                            </div>    
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="language" type="text" formControlName="language" />
+                                    <label for="language">languages are known</label>
+                                    <span class="error"
+                                        *ngIf="!addpeopleForm.controls['language'].valid && addpeopleForm.controls['language'].touched">languages
+                                        are required</span>
+                                </div>
+                            </div>                        
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="pass-word" type="password" formControlName="password" />
                                     <label for="pass-word">Password</label>
                                     <span class="error"
@@ -49,6 +75,9 @@
                                 </div>
                             </div>
                             <button class="btn waves-effects" id="signupbtn" [disabled]="!addpeopleForm.valid">ADD PEOPLE</button>
+                            <div class="progress" *ngIf="showSpinner">
+                                <div class="indeterminate"></div>
+                            </div>
                         </form>
                     </div>
                 </div>  

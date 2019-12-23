@@ -11,8 +11,8 @@
                 <div class="col s10 addtrainerForm">
                     <div class="row">
                         <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="trainer()">
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="user_name" type="text" formControlName="username" />
                                     <label for="user_name">Username</label>
                                     <span class="error"
@@ -20,17 +20,25 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="email" type="email" formControlName="email" />
                                     <label for="email">Email</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['email'].valid && addtrainerForm.controls['email'].touched">Email
                                         is required</span>
                                 </div>
+                            </div><div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="age" type="text" formControlName="age" />
+                                    <label for="age">Age</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['age'].valid && addtrainerForm.controls['age'].touched">Age
+                                        is required</span>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="Phone_number" type="text" formControlName="phonenumber" />
                                     <label for="phone_number">PhoneNumber</label>
                                     <span class="error"
@@ -38,8 +46,26 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="address" type="text" formControlName="address" />
+                                    <label for="address">Address</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['address'].valid && addtrainerForm.controls['address'].touched">Address
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="language" type="text" formControlName="language" />
+                                    <label for="language">languages are known</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['language'].valid && addtrainerForm.controls['language'].touched">Language
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
                                     <input id="pass-word" type="password" formControlName="password" />
                                     <label for="pass-word">Password</label>
                                     <span class="error"

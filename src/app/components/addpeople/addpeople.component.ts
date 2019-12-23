@@ -28,6 +28,12 @@ export class AddpeopleComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
       phonenumber: ['',Validators.required],
+      age: ['',Validators.required],
+      address: ['',Validators.required],
+      language: ['',Validators.required],
+
+
+
       // role: ['', Validators.required]
 
     });

@@ -17,6 +17,7 @@ export class TrainerComponent implements OnInit {
 	socket: any;
 	onlineusers = [];
   users: any;
+  showSpinner = false;
   
   constructor( private userService: UsersService, private tokenService: TokenService, private router: Router ) {
     this.socket = io(Constants.HOME_URL);
@@ -29,9 +30,11 @@ export class TrainerComponent implements OnInit {
       });
   }
     GetUsers() {
-    this.userService.GetTrainer().subscribe(data => {
+      this.showSpinner = true;
+      this.userService.GetTrainer().subscribe(data => {
       _.remove(data.result, { username: this.loggedInUser.username });
       this.users = data.result;
+      this.showSpinner = false;
     });
     }
     GetUserRole() {

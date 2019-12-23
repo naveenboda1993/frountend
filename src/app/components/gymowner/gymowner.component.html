@@ -1,9 +1,12 @@
 <app-toolbar (onlineUsers)="online($event)"></app-toolbar>
 <div class="container" style="margin-top:30px;">
     <div class="row">
+		<div class="progress" *ngIf="showSpinner">
+			<div class="indeterminate"></div>
+		</div>
         <div class="col s12 m5 l3">
             <app-side></app-side>
-        </div>
+		</div>		
         <button class="btn" style="float: right; margin: 2px;" [routerLinkActive]="['active']"
 			[routerLinkActiveOptions]="{ exact: true }">
 			<a [routerLink]="['/addpeople']">
