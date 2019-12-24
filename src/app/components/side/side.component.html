@@ -43,6 +43,13 @@
 			</div>
 		</a>
 	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+		<a [routerLink]="['/gymprofie']">
+			<div>
+				Gym Profile<a href="#!" class="secondary-content"><i class="material-icons">fitness_center</i></a>
+			</div>
+		</a>
+	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymowner">
 		<a [routerLink]="['/gymowner']">
 			<div>
