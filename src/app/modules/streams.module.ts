@@ -30,6 +30,7 @@ import { AddpeopleComponent } from '../components/addpeople/addpeople.component'
 import { AddtrainerComponent } from '../components/addtrainer/addtrainer.component';
 import { GymownerComponent } from '../components/gymowner/gymowner.component';
 import { TrainerComponent } from '../components/trainer/trainer.component';
+import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
 
 // import { CommentsComponent } from '../componets/comments/comments.component';
 
@@ -55,6 +56,7 @@ import { TrainerComponent } from '../components/trainer/trainer.component';
 		AddtrainerComponent,
 		GymownerComponent,
 		TrainerComponent,
+		WorkingHoursComponent
 		
 
 	],

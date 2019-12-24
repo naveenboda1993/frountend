@@ -19,7 +19,7 @@ export class GymownerComponent implements OnInit {
 	onlineusers = [];
 	users: any;
 	showSpinner = false;
-
+	
 	
   constructor( private userService: UsersService, private tokenService: TokenService, private router: Router) {
 	this.socket = io(Constants.HOME_URL);
@@ -41,7 +41,7 @@ export class GymownerComponent implements OnInit {
 		this.showSpinner = false;
 
 	});
-}
+    }
     GetUserRole() {
 		this.userService.GetUserRole().subscribe(data => {
 			this.users = data.result.user;

@@ -29,23 +29,23 @@ export class StreamsComponent implements OnInit {
 	}
 
 	CheckUser(role){
-		console.log(role);
+		// console.log(role);
 	}
 	GetUserRole() {
-		this.userService.GetUserRole().subscribe(
-			data => {
-				console.log(data);
+		// this.userService.GetUserRole().subscribe(
+		// 	data => {
+		// 		console.log(data);
 
 
 				
-				this.userrole = data.role;
-			},
-			err => {
-				if (err.error.token == null) {
-					this.router.navigate(['']);
-				}
-			}
-		);
+		// 		this.userrole = data.role;
+		// 	},
+		// 	err => {
+		// 		if (err.error.token == null) {
+		// 			this.router.navigate(['']);
+		// 		}
+		// 	}
+		// );
 	}
 	ChangeTabs(value) {
 		if (value == 'streams') {
