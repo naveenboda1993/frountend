@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from 'src/app/constants';
+import { UsersService } from 'src/app/services/users.service';
+import { TokenService } from 'src/app/services/token.service';
+import { Router } from '@angular/router';
+import io from 'socket.io-client';
+import _ from 'lodash';
+
+
 
 @Component({
   selector: 'app-gymprofile',
@@ -6,10 +14,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gymprofile.component.css']
 })
 export class GymprofileComponent implements OnInit {
+	gyms = [];
+	loggedInGyms: any;
+	socket: any;
+	onlinegyms = [];
+	showSpinner = false;
+  gymArr: any;
+	constructor(private userService: UsersService, private tokenService: TokenService, private router: Router) {
+		this.socket = io(Constants.HOME_URL);
+	}
 
-  constructor() { }
+	ngOnInit() {
+		this.loggedInGyms = this.tokenService.GetPayload();
+		this.GetGyms();
+		this.GetGym();
+		this.socket.on('refreshPage', () => {
+			this.GetGyms();
+			this.GetGym();
+		});
+	}
+	GetGyms() {
+		this.showSpinner = true;
+		this.userService.GetAllGyms().subscribe(data => {
+			_.remove(data.result, { username: this.loggedInGyms.gymname });
+			this.gyms = data.result;
+			this.showSpinner = false;
+		});
+	}
 
-  ngOnInit() {
-  }
+	GetGym() {
+		this.userService.GetGymById(this.loggedInGyms._id).subscribe(data => {
+			this.gymArr = data.result.following;
+		});
+	}
+	
+	// DeleteUser(user) {
+	// 	this.userService.DeleteUser(user.email).subscribe(data => {
+	// 		this.socket.emit('refresh', {});
+	// 	});
+	// }
 
+	ViewGym(gym) {
+		this.router.navigate([gym.gymname]);
+		if (this.loggedInGyms.gymname !== gym.gymname) {
+			// console.log(user.username);
+			this.userService.ProfileNotifications(gym._id).subscribe(
+				data => {
+					this.socket.emit('refresh', {});
+				},
+				err => console.log(err)
+			);
+		}
+	}
+
+	online(event) {
+		this.onlinegyms = event;
+	}
 }

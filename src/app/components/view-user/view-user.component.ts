@@ -19,7 +19,7 @@ export class ViewUserComponent implements OnInit, AfterViewInit {
 	followers = [];
 	user: any;
 	name: any;
-
+	
 	constructor(private route: ActivatedRoute, private usersService: UsersService) {}
 
 	ngOnInit() {
@@ -42,6 +42,7 @@ export class ViewUserComponent implements OnInit, AfterViewInit {
 	GetUserData(name) {
 		this.usersService.GetUserByName(name).subscribe(
 			data => {
+
 				console.log(data.result);
 				this.user = data.result;
 				this.posts = data.result.posts.reverse();
