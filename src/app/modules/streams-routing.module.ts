@@ -17,6 +17,7 @@ import { GymownerComponent } from '../components/gymowner/gymowner.component';
 import { TrainerComponent } from '../components/trainer/trainer.component';
 import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
 import { GymprofileComponent } from '../components/roles/gymowner/gymprofile/gymprofile.component';
+import { EditTimingsComponent } from '../components/edit-timings/edit-timings.component';
 
 
 const routes: Routes = [
@@ -75,7 +76,16 @@ const routes: Routes = [
 		component: AddtrainerComponent,
 		canActivate: [AuthGuard]
 	},
-
+	// {
+	// 	path: 'edittimings',
+	// 	component: EditTimingsComponent,
+	// 	canActivate: [AuthGuard]
+	// },
+	{
+		path: 'edittimings/:name/:value',
+		component: EditTimingsComponent,
+		canActivate: [AuthGuard]
+	},
 	{
 		path: 'notifications',
 		component: NotificationsComponent,
@@ -101,6 +111,7 @@ const routes: Routes = [
 		component: ChangePasswordComponent,
 		canActivate: [AuthGuard]
 	},
+	
 	{
 		path: '**',
 		redirectTo: 'streams'
