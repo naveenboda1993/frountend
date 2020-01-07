@@ -57,6 +57,13 @@
 			</div>
 		</a>
 	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+		<a [routerLink]="['/trainerview']">
+			<div>
+				trainer View<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymowner">
 		<a [routerLink]="['/gymowner']">
 			<div>

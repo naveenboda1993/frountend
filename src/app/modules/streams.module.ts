@@ -33,6 +33,7 @@ import { TrainerComponent } from '../components/trainer/trainer.component';
 import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
 import { GymprofileComponent } from '../components/roles/gymowner/gymprofile/gymprofile.component';
 import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
+import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
 
 // import { CommentsComponent } from '../componets/comments/comments.component';
 
@@ -60,7 +61,8 @@ import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view
 		TrainerComponent,
 		WorkingHoursComponent,
 		GymprofileComponent,
-		GymViewComponent
+		GymViewComponent,
+		TrainerViewComponent
 		
 
 	],
