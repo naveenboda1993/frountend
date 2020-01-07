@@ -17,6 +17,9 @@ export class PostService {
 	getAllPosts(): Observable<any> {
 		return this.http.get(`${BASEURL}/posts`);
 	}
+	getAllGyms(): Observable<any> {
+		return this.http.get(`${BASEURL}/getallgyms`);
+	}
 	addLike(body): Observable<any> {
 		return this.http.post(`${BASEURL}/post/add-like`, body);
 	}

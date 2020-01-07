@@ -47,7 +47,7 @@ export class SideComponent implements OnInit {
 				this.userrole = data.role;
 				switch (data.role) {
 					case "gymowner":
-						this.isPhotos=false;
+						this.isPhotos=true;
 						this.isFollowers=false;
 						this.isStreams=false;
 						this.isPeople=false;

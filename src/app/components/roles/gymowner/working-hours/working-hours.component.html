@@ -1,34 +1,157 @@
 <app-toolbar (onlineUsers)="online($event)"></app-toolbar>
 <div class="container" style="margin-top:30px;">
-    <div class="row col s6" >
-        <div class="col s12 m5 l3">
-            <app-side></app-side>
-        </div>
-        <div class="col s12 m11 l8" style="margin-top: 70px;">
-          <select class="browser-default custom-select">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        <table mdbTable>
-            <thead>
-              <tr>
-                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr mdbTableCol *ngFor="let el of elements">
-                <th scope="row">{{el.id}}</th>
-                <td>{{el.first}}</td>
-                <td>{{el.last}}</td>
-                <td>{{el.handle}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-       </div>
-   
+  <div class="row col s6">
+    <div class="col s12 m5 l3">
+      <app-side></app-side>
+    </div>
+    <!-- <div class="col s12 m11 l8" style="margin-top: 70px;">
+      <select class="browser-default custom-select">
+        <option *ngFor="let gym of gyms">{{gym.gymname}}</option>
+
+      </select>
+      <table mdbTable>
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr mdbTableCol>
+            <td>Sunday</td>
+            <td></td>
+            <td></td>
+            <td>
+              <button type="button" mdbBtn color="primary" class="relative waves-light" 
+                mdbWavesEffect>Launch demo modal</button>
+
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" 
+  mdbWavesEffect>Launch demo modal</button>
+    </div> -->
+      <table class="table" style="width: 75%;">
+        <tbody>
+          <tr>
+            <th style="width: 20px;"> # </th>
+            <th>Day</th>
+            <th> Timeings </th>
+            <th> Allow Booking  </th>
+            <th> Action </th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td> Monday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings/monday/{{}}']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td> Tuesday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td> Wednesday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td> Thursday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td> Friday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td> Saturday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td> Sunday </td>
+            <td> 4:30 AM  to 10:30 PM </td>
+            <td>
+              <label class="switch">
+                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
+                    <span class="slider round">
+                    </span>
+              </label>
+            </td>
+            <td>
+              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+  </div>
+
 </div>
 
 

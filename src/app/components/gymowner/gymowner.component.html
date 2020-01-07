@@ -15,11 +15,11 @@
         </button>
         <div class="col s12 m8 l9">
 			<div class="row">
-				<div class="col s12 m6 l4 cardDiv" *ngFor="let user of users">
+				<div class="col s12 m6 l6 cardDiv" *ngFor="let user of users">
 					<div class="card">
 						<a (click)="ViewUser(user)">
 							<div class="card-image imgDiv">
-								<img class="imgCircle responsive-img"
+								<img class="responsive-img"
 									src="http://res.cloudinary.com/chatapplication/image/upload/v{{ user.picVersion }}/{{ user.picId }}" />
 							</div>
 						</a>
@@ -31,15 +31,15 @@
 							</h3>
 							<p *ngIf="user.city">{{ user.city }},{{ user.country }}</p>
 							<p *ngIf="user.role">{{ user.role }}</p>
-							<button class="btn" style="margin: 2.5px;" *ngIf="!CheckInArray(userArr, user._id)"
-								(click)="FollowUser(user)">Follow</button>
+							<!-- <button class="btn" style="margin: 2.5px;" *ngIf="!CheckInArray(userArr, user._id)"
+								(click)="FollowUser(user)">Follow</button> -->
 							<button class="btn" 
 								(click)="DeleteUser(user)">Remove</button>
 							<button class="btn  disabled following" 
 								*ngIf="CheckInArray(userArr, user._id)">Following</button>
-							<a class="secondary-content"  style="margin-right: -10px; padding-top: 10px;" [routerLink]="['/chat', user.username]">
+							<!-- <a class="secondary-content"  style="margin-right: -10px; padding-top: 10px;" [routerLink]="['/chat', user.username]">
 								<i class="material-icons" >chat</i>
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>

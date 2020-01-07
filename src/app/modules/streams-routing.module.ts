@@ -18,6 +18,7 @@ import { TrainerComponent } from '../components/trainer/trainer.component';
 import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
 import { GymprofileComponent } from '../components/roles/gymowner/gymprofile/gymprofile.component';
 import { EditTimingsComponent } from '../components/edit-timings/edit-timings.component';
+import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,11 @@ const routes: Routes = [
 	{
 		path: 'gymprofile',
 		component: GymprofileComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'gymview',
+		component: GymViewComponent,
 		canActivate: [AuthGuard]
 	},
 	{
