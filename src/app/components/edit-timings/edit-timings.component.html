@@ -1,32 +1,49 @@
-<app-toolbar (onlineUsers)="online($event)" ></app-toolbar>
+<app-toolbar  ></app-toolbar>
 <div class="row col s6">
 <div class="col s8 l12">
     <h4 class="title"> Edit Booking Timings </h4>
     <div class="row">
         <div class="input-field s9">
-            <label> slot duration </label>
-            <input type="text" class="form" name="slot_duration" value="" min="1">
+            <label> Slot duration </label>
+            <input type="text" class="form" name="slot_duration" value="" min="1" [(ngModel)]="selectDateValue.duration">
             <span class=" ml-3">  minutes</span>
         </div>
         <div class="input-field s9">
             <label> Allow multipul bookings </label>
             <br>
             <br>
-            <select class="browser-default custom-select">
+            <select class="browser-default custom-select" [(ngModel)]="selectDateValue.multiplebookings">
                 <option selected value="Yes">Yes</option>
                 <option value="No">NO</option>
             </select>
         </div>
         <div class="iput-field s9">
             <label> Maximum number of Bookings </label>
-            <input type="number" class="form" value="" name="maximum number of booking">
+            <input type="number" class="form" value="" name="maximum number of booking" [(ngModel)]="selectDateValue.numberofbookings">
         </div>
+       <div>
+           <!-- timings -->
+			<div class="iput-field s9" >
+				<label> Starting Time </label>
+				<input type="text" class="form" [(ngModel)]="startingtime" name="startingtime">
+				<label> Ending Time </label>
+				<input type="text" class="form" [(ngModel)]="endingtime" name="endingtime">
+			</div>
+			<button (click)="addTimeing()"> Add </button>
+			<div class="iput-field s9" *ngFor="let timing of timings">
+				<label> Starting Time : {{timing.starting}} </label>
+				<label> Ending Time : {{timing.ending}} </label>
+				<button (click)="removeTimeing(timing)"> Remove </button>
+			</div>
+       </div>
+
+
         <div class="input-field s9">
             <label> Status </label >
                 <br>
                 <br>
-                <select class="browser-default custom-select">
-                    <option selected value="Enable">Enable</option>
+                <select class="browser-default custom-select" [(ngModel)]="selectDateValue.status">
+                    <option  value="Enable">Enable</option>
                     <option value="Disable">Disable</option>
                 </select>
                 

@@ -1,14 +1,11 @@
-<app-toolbar (onlineUsers)="online($event)"></app-toolbar>
+<app-toolbar ></app-toolbar>
 <div class="container" style="margin-top:30px;">
   <div class="row col s6">
     <div class="col s12 m5 l3">
       <app-side></app-side>
     </div>
     <!-- <div class="col s12 m11 l8" style="margin-top: 70px;">
-      <select class="browser-default custom-select">
-        <option *ngFor="let gym of gyms">{{gym.gymname}}</option>
-
-      </select>
+      
       <table mdbTable>
         <thead>
           <tr>
@@ -33,126 +30,133 @@
       <button type="button" mdbBtn color="primary" class="relative waves-light" 
   mdbWavesEffect>Launch demo modal</button>
     </div> -->
-      <table class="table" style="width: 75%;">
-        <tbody>
-          <tr>
-            <th style="width: 20px;"> # </th>
-            <th>Day</th>
-            <th> Timeings </th>
-            <th> Allow Booking  </th>
-            <th> Action </th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td> Monday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings/monday/']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td> Tuesday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td> Wednesday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td> Thursday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td> Friday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td> Saturday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td> Sunday </td>
-            <td> 4:30 AM  to 10:30 PM </td>
-            <td>
-              <label class="switch">
-                 <input type="checkbox" class="time-status" data-row-id="1" checked="">
-                    <span class="slider round">
-                    </span>
-              </label>
-            </td>
-            <td>
-              <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
-            </td>
-          </tr>
+    <div class="col s12 m11 l8" style="margin-top: 70px;">
+      <select class="browser-default custom-select" [(ngModel)]="selectedValue" (change)='onOptionsSelected(selectedValue)'>
+        <option *ngFor="let gym of gyms" value="{{gym._id}}">{{gym.gymname}}</option>
+      </select>
+    </div>
+    <table class="table" style="width: 75%;">
+      <tbody>
+        <tr>
+          <th style="width: 20px;"> # </th>
+          <th>Day</th>
+          <th> Timeings </th>
+          <th> Allow Booking </th>
+          <th> Action </th>
+        </tr>
+        <!-- <tr>
+          <td>1</td>
+          <td> Monday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings/monday/'+selectedValue]" data-row-id="1"
+              class="btn btn-primary btn-rounded btn-sm edit-row"><i class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr> -->
+        <tr *ngFor="let timeing of selectGym?.workinghours">
+          <td></td>
+          <td class="caps"> {{timeing.day}} </td>
+          <td *ngFor="let slot of timeing.slots"> {{slot.starting}} to {{slot.starting}} </td>
+          <td>
+            <label class="green text-primary" *ngIf="timeing.status=='Enable'">Enabled</label>
+            <label class="red text-primary" *ngIf="timeing.status=='Disable'">Disable</label>
+            
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings/monday/'+selectGym._id]" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>3</td>
+          <td> Wednesday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td> Thursday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td> Friday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td> Saturday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td> Sunday </td>
+          <td> 4:30 AM to 10:30 PM </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" class="time-status" data-row-id="1" checked="">
+              <span class="slider round">
+              </span>
+            </label>
+          </td>
+          <td>
+            <a [routerLink]="['/edittimings']" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+                class="icon-pencil"></i> Edit</a>
+          </td>
+        </tr> -->
 
-        </tbody>
-      </table>
+      </tbody>
+    </table>
   </div>
 
 </div>
-
-
-
