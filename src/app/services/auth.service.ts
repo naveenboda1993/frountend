@@ -18,6 +18,9 @@ export class AuthService {
 	gymowner(body): Observable<any> {
 		return this.http.post(`${BASEURL}/gymowner`, body);
 	}
+	gymadd(body): Observable<any> {
+		return this.http.post(`${BASEURL}/creategymprofile`, body);
+	}
 	trainer(body): Observable<any> {
 		return this.http.post(`${BASEURL}/trainer`, body);
 	}

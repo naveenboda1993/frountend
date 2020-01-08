@@ -27,16 +27,13 @@ export class GymprofileComponent implements OnInit {
 	ngOnInit() {
 		this.loggedInGyms = this.tokenService.GetPayload();
 		this.GetGyms();
-		this.GetGym();
 		this.socket.on('refreshPage', () => {
 			this.GetGyms();
-			this.GetGym();
 		});
 	}
 	GetGyms() {
 		this.showSpinner = true;
-		this.userService.GetAllGyms().subscribe(data => {
-			_.remove(data.result, { username: this.loggedInGyms.gymname });
+		this.userService.GetOwnerGyms().subscribe(data => {
 			this.gyms = data.result;
 			this.showSpinner = false;
 		});

@@ -43,10 +43,11 @@
                                     <input id="Phone_number" type="text" formControlName="phonenumber" />
                                     <label for="phone_number">PhoneNumber</label>
                                     <span class="error"
-                                        *ngIf="!addpeopleForm.controls['phonenumber'].valid && addpeopleForm.controls['phonenumber'].touched">Phone number
+                                        *ngIf="!addpeopleForm.controls['phonenumber'].valid && addpeopleForm.controls['phonenumber'].touched">Phone
+                                        number
                                         is required</span>
                                 </div>
-                            </div>   
+                            </div>
                             <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="address" type="text" formControlName="address" />
@@ -55,7 +56,7 @@
                                         *ngIf="!addpeopleForm.controls['address'].valid && addpeopleForm.controls['address'].touched">Address
                                         is required</span>
                                 </div>
-                            </div>    
+                            </div>
                             <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="language" type="text" formControlName="language" />
@@ -64,7 +65,7 @@
                                         *ngIf="!addpeopleForm.controls['language'].valid && addpeopleForm.controls['language'].touched">languages
                                         are required</span>
                                 </div>
-                            </div>                        
+                            </div>
                             <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="pass-word" type="password" formControlName="password" />
@@ -74,13 +75,14 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addpeopleForm.valid">ADD PEOPLE</button>
+                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addpeopleForm.valid">ADD
+                                PEOPLE</button>
                             <div class="progress" *ngIf="showSpinner">
                                 <div class="indeterminate"></div>
                             </div>
                         </form>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
