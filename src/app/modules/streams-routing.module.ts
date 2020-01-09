@@ -59,9 +59,9 @@ const routes: Routes = [
 		path: 'gymadd',
 		component:GymAddComponent,
 		canActivate: [AuthGuard]
-	},
+	},	
 	{
-		path: 'gymview',
+		path: 'gymview/:id',
 		component: GymViewComponent,
 		canActivate: [AuthGuard]
 	},

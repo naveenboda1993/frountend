@@ -15,10 +15,10 @@
 		<div class="col s12 m8 l9">
 			<div class="row">
 				<div class="col s12 m6 l4 cardDiv" style="width: 50%;" *ngFor="let gym of gyms">
-					<div class="card">
-						<a (click)="ViewGym (gym)">
+					<div class="card" >
+						<a (click)="ViewGym(gym)">
 							<div class="card-image imgDiv">
-								<img class="imgCircle responsive-img"
+								<img class=" responsive-img"
 									src="http://res.cloudinary.com/chatapplication/image/upload/v{{ gym.picVersion }}/{{ gym.picId }}" />
 							</div>
 						</a>

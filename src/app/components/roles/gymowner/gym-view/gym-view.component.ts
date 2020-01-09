@@ -6,11 +6,11 @@ import * as M from 'materialize-css';
 
 
 @Component({
-  selector: 'app-gym-view',
-  templateUrl: './gym-view.component.html',
-  styleUrls: ['./gym-view.component.css']
+	selector: 'app-gym-view',
+	templateUrl: './gym-view.component.html',
+	styleUrls: ['./gym-view.component.css']
 })
-export class GymViewComponent implements OnInit  {
+export class GymViewComponent implements OnInit {
 	// tabElement: any;
 	// postsTab = false;
 	// followingTab = false;
@@ -20,20 +20,28 @@ export class GymViewComponent implements OnInit  {
 	followers = [];
 	user: any;
 	name: any;
-	
-	constructor(private route: ActivatedRoute, private usersService: UsersService) {}
+	gymid: any;
+	gym: { workinghours: any };
+	constructor(private route: ActivatedRoute, private usersService: UsersService) { }
 
 	ngOnInit() {
 		// this.postsTab = true;
-
+		this.route.params.subscribe(params => {
+			console.log(params.id);
+			this.gymid = params.id;
+		});
 		const tabs = document.querySelectorAll('.tabs');
 		M.Tabs.init(tabs, {});
 		// this.tabElement = document.querySelector('.nav-content');
 
-		this.route.params.subscribe(params => {
-			this.name = params.name;
-			this.GetUserData(this.name);
-		});
+		this.usersService.GetGymById(this.gymid).subscribe(
+			data => {
+
+				console.log(data.result);
+				this.gym = data.result[0];
+			},
+			err => console.log(err)
+		);
 	}
 
 	ngAfterViewInit() {

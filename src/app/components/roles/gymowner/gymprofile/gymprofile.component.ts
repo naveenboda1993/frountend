@@ -52,16 +52,7 @@ export class GymprofileComponent implements OnInit {
 	}
 
 	ViewGym(gym) {
-		this.router.navigate([gym.gymname]);
-		if (this.loggedInGyms.gymname !== gym.gymname) {
-			// console.log(user.username);
-			this.userService.ProfileNotifications(gym._id).subscribe(
-				data => {
-					this.socket.emit('refresh', {});
-				},
-				err => console.log(err)
-			);
-		}
+		this.router.navigate(['gymview/'+gym._id]);		
 	}
 
 	online(event) {

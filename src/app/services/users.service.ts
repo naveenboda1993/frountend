@@ -25,7 +25,7 @@ export class UsersService {
 	}
 	// Getting one gym
 	GetGymById(id): Observable<any> {
-		return this.http.get(`${BASEURL}/gymprofile/${id}`);
+		return this.http.get(`${BASEURL}/getgymprofile/${id}`);
 	}
 	GetGymOwner(): Observable<any> {
 		return this.http.get(`${BASEURL}/getgymowner`);

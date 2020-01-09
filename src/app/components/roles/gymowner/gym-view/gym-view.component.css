@@ -128,3 +128,6 @@ div {
     height: 350px;
     overflow: hidden;
 }
+.caps{
+    text-transform: capitalize;
+}
