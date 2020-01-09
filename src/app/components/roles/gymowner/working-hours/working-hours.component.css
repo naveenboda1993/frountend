@@ -69,3 +69,6 @@ input[type="radio"], input[type="checkbox"] {
     box-sizing: border-box;
     padding: 0;
 }
+.caps{
+    text-transform: capitalize;
+}

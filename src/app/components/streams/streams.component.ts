@@ -17,18 +17,18 @@ export class StreamsComponent implements OnInit {
 	topStreamsTab = false;
 	tabs: boolean;
 	streams: boolean;
-	constructor(private userService: UsersService,private tokenService: TokenService, private router: Router) {}
+	
+	constructor(private userService: UsersService, private tokenService: TokenService, private router: Router) { }
 
 	ngOnInit() {
 		this.streamsTab = true;
 		this.token = this.tokenService.GetPayload();
 		const tabs = document.querySelector('.tabs');
-		M.Tabs.init(tabs, {});	
-		this.GetUserRole();
-	
+		M.Tabs.init(tabs, {});
+		this.GetUserRole();		
 	}
 
-	CheckUser(role){
+	CheckUser(role) {
 		// console.log(role);
 	}
 	GetUserRole() {
@@ -37,7 +37,7 @@ export class StreamsComponent implements OnInit {
 		// 		console.log(data);
 
 
-				
+
 		// 		this.userrole = data.role;
 		// 	},
 		// 	err => {
@@ -59,7 +59,7 @@ export class StreamsComponent implements OnInit {
 		// NgIf == 'addpeople' {
 		// 	this.streams == false;			
 		// }
-		
+
 		// if (value == 'addpeolpe') {
 		// 	this.streamsTab = false;
 		// 	this.topStreamsTab = false;

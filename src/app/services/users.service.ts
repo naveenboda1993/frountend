@@ -43,6 +43,11 @@ export class UsersService {
 		return this.http.get(`${BASEURL}/username/${username}`);
 	}
 
+	GetGymWorking(gym): Observable<any> {
+		return this.http.post(`${BASEURL}/updategymworkinghours`, {
+			gym
+		});
+	}
 	FollowUser(userFollowed): Observable<any> {
 		return this.http.post(`${BASEURL}/follow-user`, {
 			userFollowed

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-working-hours',
@@ -6,18 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./working-hours.component.css']
 })
 export class WorkingHoursComponent implements OnInit {
-  elements: any = [
-    {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
-    {id: 2, first: 'Jacob', last: 'Thornton', handle: '@fat'},
-    {id: 3, first: 'Larry', last: 'the Bird', handle: '@twitter'},
-  ];
 
-  headElements = ['ID', 'First', 'Last', 'Handle'];
-  constructor() { 
-   
+  showSpinner = false;
+  selectedValue: any;
+  gyms: any;
+  selectGym: any;
+  constructor(private userService: UsersService) {
+
   }
 
   ngOnInit() {
+    this.GetGyms();
   }
-
+  //workinghours
+  GetGyms() {
+    this.showSpinner = true;
+    this.userService.GetOwnerGyms().subscribe(data => {
+      console.log(data);
+      this.gyms = data.result;
+      this.selectedValue = this.gyms[0]._id;
+      this.selectGym = this.gyms[0];
+      this.showSpinner = false;
+    });
+  }
+  //onOptionsSelected
+  onOptionsSelected(gymid) {
+    this.selectGym = this.gyms.filter(function (obj) {
+      if (obj._id == gymid) {
+        return obj;
+      };
+    });
+  }
 }
