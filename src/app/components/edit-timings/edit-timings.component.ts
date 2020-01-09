@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
-
+import { Constants } from 'src/app/constants';
+import io from 'socket.io-client';
 @Component({
   selector: 'app-edit-timings',
   templateUrl: './edit-timings.component.html',
@@ -15,15 +16,16 @@ export class EditTimingsComponent implements OnInit {
   timings: Array<{ id: number, starting: string, ending: string }>;
   selectGymid: any;
   selectDay: any;
-  gyms: any;  
-  selectGym: {workinghours:any}; 
-  selectDateValue: {duration:any,numberofbookings:any,slots?:any,multiplebookings?:any,status?:any};
-  constructor(private route: ActivatedRoute, private userService: UsersService) {
-
+  gyms: any;
+  selectGym: { workinghours: any };
+  selectDateValue: { duration: any, numberofbookings: any, slots?: any, multiplebookings?: any, status?: any };
+  socket: any;
+  constructor(private route: ActivatedRoute, private userService: UsersService,private router: Router) {
+    this.socket = io(Constants.HOME_URL);
   }
 
   ngOnInit() {
-    this.selectDateValue={duration:'',numberofbookings:''};
+    this.selectDateValue = { duration: '', numberofbookings: '' };
     this.route.params.subscribe(params => {
       console.log(params.name);
       console.log(params.value);
@@ -49,8 +51,8 @@ export class EditTimingsComponent implements OnInit {
     this.showSpinner = true;
     this.userService.GetOwnerGyms().subscribe(data => {
       console.log(data);
-      var gymid=this.selectGymid;
-      var selectDay=this.selectDay;
+      var gymid = this.selectGymid;
+      var selectDay = this.selectDay;
       this.gyms = data.result;
       this.selectGym = this.gyms.filter(function (obj) {
         if (obj._id === gymid) {
@@ -64,6 +66,21 @@ export class EditTimingsComponent implements OnInit {
       })[0];
       this.timings = this.selectDateValue.slots;
       this.showSpinner = false;
+    });
+  }
+
+  saveBookingTimings() {
+    //  this.selectGym selectDateValue.duration selectDateValue.multiplebookings selectDateValue.numberofbookings timings selectDateValue.status
+    var data = {
+      'selectgym': this.selectGym,
+      'selectdatevalue': this.selectDateValue,
+      'timings': this.timings
+    }
+    console.log(data);
+    this.userService.GetGymWorking(data).subscribe(data1 => {
+      console.log(data1);
+      this.router.navigate(['workinghours']);
+      // router.navigate(['workinghours']);
     });
   }
 

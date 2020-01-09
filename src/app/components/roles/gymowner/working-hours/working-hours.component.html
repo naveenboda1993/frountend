@@ -63,14 +63,14 @@
         <tr *ngFor="let timeing of selectGym?.workinghours">
           <td></td>
           <td class="caps"> {{timeing.day}} </td>
-          <td *ngFor="let slot of timeing.slots"> {{slot.starting}} to {{slot.starting}} </td>
+          <td > <p *ngFor="let slot of timeing.slots">{{slot.starting}} to {{slot.ending}}</p>  </td>
           <td>
             <label class="green text-primary" *ngIf="timeing.status=='Enable'">Enabled</label>
             <label class="red text-primary" *ngIf="timeing.status=='Disable'">Disable</label>
             
           </td>
           <td>
-            <a [routerLink]="['/edittimings/monday/'+selectGym._id]" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
+            <a [routerLink]="['/edittimings/'+timeing.day+'/'+selectGym._id]" data-row-id="1" class="btn btn-primary btn-rounded btn-sm edit-row"><i
                 class="icon-pencil"></i> Edit</a>
           </td>
         </tr>
