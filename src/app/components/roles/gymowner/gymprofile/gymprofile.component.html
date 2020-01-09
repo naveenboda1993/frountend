@@ -14,7 +14,7 @@
 
 		<div class="col s12 m8 l9">
 			<div class="row">
-				<div class="col s12 m6 l4 cardDiv" *ngFor="let gym of gyms">
+				<div class="col s12 m6 l4 cardDiv" style="width: 50%;" *ngFor="let gym of gyms">
 					<div class="card">
 						<a (click)="ViewGym (gym)">
 							<div class="card-image imgDiv">
@@ -22,7 +22,7 @@
 									src="http://res.cloudinary.com/chatapplication/image/upload/v{{ gym.picVersion }}/{{ gym.picId }}" />
 							</div>
 						</a>
-						<div class="col s12 m6 l4">
+						<div class="col s12 m6 l4" style="width: 100%;">
 							<div class="row">
 								<div class="card">
 									<div class="card-action" style="padding: 0px 20px; line-height: 0.5;">
@@ -30,12 +30,15 @@
 											{{ gym.gymname }}
 											<!-- <i class="fa fa-circle" *ngIf="CheckIfOnline(gym.gymname)"></i> -->
 										</h3>
+										<!-- <p *ngIf="gym.gymtag"> {{gym.gymtag}}</p> -->
+										<button class="btn" 
+											(click)="DeleteGym(gym)">Remove</button>
+
 										<!-- <p *ngIf="user.city">{{ user.city }},{{ user.country }}</p> -->
 										<!-- <p *ngIf="user.role">{{ user.role }}</p> -->
 										<!-- <button class="btn" style="margin: 2.5px;" *ngIf="!CheckInArray(userArr, user._id)"
 											(click)="FollowUser(user)">Follow</button>
-										<button class="btn" 
-											(click)="DeleteUser(user)">Remove</button>
+										
 										<button class="btn  disabled following" 
 											*ngIf="CheckInArray(userArr, user._id)">Following</button> -->
 										<!-- <a class="secondary-content"  style="margin-right: -10px; padding-top: 10px;" [routerLink]="['/chat', user.username]">

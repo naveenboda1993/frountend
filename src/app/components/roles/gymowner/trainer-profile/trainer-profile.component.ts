@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from 'src/app/services/token.service';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
-  selector: 'app-addtrainer',
-  templateUrl: './addtrainer.component.html',
-  styleUrls: ['./addtrainer.component.css']
+  selector: 'app-trainer-profile',
+  templateUrl: './trainer-profile.component.html',
+  styleUrls: ['./trainer-profile.component.css']
 })
-export class AddtrainerComponent implements OnInit {
+export class TrainerProfileComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
   addtrainerForm: FormGroup;
@@ -64,3 +64,4 @@ export class AddtrainerComponent implements OnInit {
     ); // we are passing an object so we are subscribing, register user takes an object
   }
 }
+

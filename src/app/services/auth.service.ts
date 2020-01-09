@@ -8,9 +8,9 @@ const BASEURL = Constants.BACKEND_URL;
 	providedIn: 'root'
 })
 export class AuthService {
-  
-  
-	constructor(private http: HttpClient) {}
+
+
+	constructor(private http: HttpClient) { }
 
 	registerUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/register`, body);

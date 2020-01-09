@@ -25,6 +25,11 @@ export class SideComponent implements OnInit {
 	isGymowner:Boolean=true;
 	isTrainers: boolean=true;
 	isFollowing: boolean=true;
+	isWorkshours: boolean=true;
+	isGymview: boolean=true;
+	isTrainerview: boolean=true;
+	isGymprofile: boolean=true;
+	isTrainerprofile:boolean=true;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
 		this.socket = io(Constants.HOME_URL);
@@ -51,15 +56,28 @@ export class SideComponent implements OnInit {
 						this.isFollowers=false;
 						this.isStreams=false;
 						this.isPeople=false;
-						this.isGymowner=false;
+						this.isGymowner=true;
 						this.isTrainers=false;
 						this.isFollowing=false;
+						this.isGymprofile=true;
+						this.isGymview=true;
+						this.isTrainerview=false;
+						this.isTrainerprofile=false;
 
 						break;
-					// case "admin":
-					// 	this.isPhotos=false;
-					// 	this.isFollowers=false;
-					// 	break;
+					case "trainer":
+						this.isPhotos=true;
+						this.isFollowers=false;
+						this.isStreams=false;
+						this.isPeople=false;
+						this.isGymowner=false;
+						this.isTrainers=true;
+						this.isFollowing=false;
+						this.isGymprofile=false;
+						this.isGymview=false;
+						this.isTrainerview=true;
+						this.isTrainerprofile=true;
+						break;
 				
 					default:
 						break;

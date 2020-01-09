@@ -45,11 +45,11 @@ export class GymprofileComponent implements OnInit {
 		});
 	}
 	
-	// DeleteUser(user) {
-	// 	this.userService.DeleteUser(user.email).subscribe(data => {
-	// 		this.socket.emit('refresh', {});
-	// 	});
-	// }
+	DeleteGym(gym) {
+		this.userService.DeleteGym(gym.email).subscribe(data => {
+			this.socket.emit('refresh', {});
+		});
+	}
 
 	ViewGym(gym) {
 		this.router.navigate([gym.gymname]);

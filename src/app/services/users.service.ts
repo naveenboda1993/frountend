@@ -51,8 +51,12 @@ export class UsersService {
 	DeleteUser(email): Observable<any> {
 		return this.http.post(`${BASEURL}/deleteuser`, {
 			email
-		});
-		
+		});		
+	}
+	DeleteGym(email): Observable<any> {
+		return this.http.post(`${BASEURL}/deletegym`, {
+			email
+		});		
 	}
 	addUser(username): Observable<any> {
 		return this.http.post(`${BASEURL}/saveuser`, {
