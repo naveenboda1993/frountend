@@ -15,21 +15,21 @@ export class SideComponent implements OnInit {
 	socket: any;
 	user: any;
 	userData: any;
-	role='gumowner';
+	role = 'gumowner';
 	streams: any;
 	userrole: any;
-	isPhotos:boolean=true;
-	isFollowers:boolean=true;
-	isStreams:boolean=true;
-	isPeople:boolean=true;
-	isGymowner:Boolean=true;
-	isTrainers: boolean=true;
-	isFollowing: boolean=true;
-	isWorkshours: boolean=true;
-	isGymview: boolean=true;
-	isTrainerview: boolean=true;
-	isGymprofile: boolean=true;
-	isTrainerprofile:boolean=true;
+	isPhotos: boolean = true;
+	isFollowers: boolean = true;
+	isStreams: boolean = true;
+	isPeople: boolean = true;
+	isGymowner: Boolean = true;
+	isTrainers: boolean = true;
+	isFollowing: boolean = true;
+	isWorkinghours: boolean = true;
+	isGymview: boolean = true;
+	isTrainerview: boolean = true;
+	isGymprofile: boolean = true;
+	isTrainerprofile: boolean = true;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
 		this.socket = io(Constants.HOME_URL);
@@ -43,58 +43,58 @@ export class SideComponent implements OnInit {
 			this.GetUser();
 			this.GetUserRole();
 		});
-	}	
+	}
 
 	GetUserRole() {
 		this.usersService.GetUserRole().subscribe(
 			data => {
-				console.log(data);			
+				console.log(data);
 				this.userrole = data.role;
 				switch (data.role) {
 					case "gymowner":
-						this.isPhotos=true;
-						this.isFollowers=false;
-						this.isStreams=false;
-						this.isPeople=false;
-						this.isGymowner=true;
-						this.isTrainers=false;
-						this.isFollowing=false;
-						this.isGymprofile=true;
-						this.isGymview=true;
-						this.isTrainerview=false;
-						this.isTrainerprofile=false;
-
+						this.isPhotos = true;
+						this.isFollowers = false;
+						this.isStreams = false;
+						this.isPeople = false;
+						this.isGymowner = true;
+						this.isTrainers = false;
+						this.isFollowing = false;
+						this.isGymprofile = true;
+						this.isGymview = true;
+						this.isTrainerview = false;
+						this.isTrainerprofile = false;
+						this.isWorkinghours = true;
 						break;
 					case "trainer":
-						this.isPhotos=true;
-						this.isFollowers=false;
-						this.isStreams=false;
-						this.isPeople=false;
-						this.isGymowner=false;
-						this.isTrainers=true;
-						this.isFollowing=false;
-						this.isGymprofile=false;
-						this.isGymview=false;
-						this.isTrainerview=true;
-						this.isTrainerprofile=true;
+						this.isPhotos = true;
+						this.isFollowers = false;
+						this.isStreams = false;
+						this.isPeople = false;
+						this.isGymowner = false;
+						this.isTrainers = true;
+						this.isFollowing = false;
+						this.isGymprofile = false;
+						this.isGymview = false;
+						this.isTrainerview = true;
+						this.isTrainerprofile = true;
 						break;
-				
+
 					default:
 						break;
 				}
-			}			
+			}
 		);
 	}
 
 	GetUser() {
 		this.usersService.GetUserById(this.user._id).subscribe(data => {
 			this.userData = data.result;
-			
+
 		});
 		// 	if (this.role=="gymowner") {
 		// 		this.streams=false;
 		// }
-		
 
-}
+
+	}
 }
