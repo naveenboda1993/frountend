@@ -22,32 +22,75 @@
 	</div>
 </div> -->
 <ul class="collection with-header">
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isClientRole">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isSuperadmin">
+		<a [routerLink]="['/streams']">
+			<div>
+				Streams<a href="#!" class="secondary-content"><i class="material-icons">announcement</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isSuperadmin">
+		<a [routerLink]="['/people']">
+			<div>
+				People<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+
+
+
+
+
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"*ngIf="isGymowner">
+		<a [routerLink]="['/gymowner']">
+			<div>
+				GymOwner<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"*ngIf="isTrainers">
+		<a [routerLink]="['/trainer']">
+			<div>
+				Trainers<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"*ngIf="isSuperadmin">
+		<a [routerLink]="['/people', 'following']">
+			<div>
+				Following<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"*ngIf="isSuperadmin">
+		<a [routerLink]="['/people', 'followers']">
+			<div>
+				Followers<a href="#!" class="secondary-content"><i class="material-icons">people_outline</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isClientRole || isSuperadmin">
 		<a [routerLink]="['/gymslist']">
 			<div>
 				Gyms<a href="#!" class="secondary-content"><i class="material-icons">fitness_center</i></a>
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isClientRole">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isClientRole">
 		<a [routerLink]="['/trainerslist']">
 			<div>
 				Trainers<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isClientRole">
-		<a [routerLink]="['/images', user.username]">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isClientRole">
+		<a [routerLink]="['/images', user. username]">
 			<div>
 				Photos<a href="#!" class="secondary-content"><i class="material-icons">photo_library</i></a>
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isClientRole">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isClientRole ">
 		<a [routerLink]="['/notifications']">
 			<div>
 				Notifications<a href="#!" class="secondary-content"><i class="material-icons">alarm</i></a>
@@ -62,16 +105,14 @@
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isGymowners">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymowners || isSuperadmin">
 		<a [routerLink]="['/gymprofile']">
 			<div>
 				Gym Profiles<a href="#!" class="secondary-content"><i class="material-icons">fitness_center</i></a>
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isGymowners">
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymowners || isSuperadmin">
 		<a [routerLink]="['/workinghours']">
 			<div>
 				Working Hours<a href="#!" class="secondary-content"><i class="material-icons">access_time</i></a>
@@ -80,7 +121,7 @@
 	</li>
 
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isGymowners">
+		*ngIf="isGymowners || isSuperadmin">
 		<a [routerLink]="['/gymgallery', user.username]">
 			<div>
 				Gallery<a href="#!" class="secondary-content"><i class="material-icons">photo_library</i></a>
@@ -112,7 +153,7 @@
 		</a>
 	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isTrainer">
+		*ngIf="isTrainer || isSuperadmin">
 		<a [routerLink]="['/trainerprofile']">
 			<div>
 				Trainer Profile<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
@@ -120,7 +161,7 @@
 		</a>
 	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isTrainer">
+		*ngIf="isTrainer || isSuperadmin">
 		<a [routerLink]="['/trainerview']">
 			<div>
 				trainer View<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
@@ -191,57 +232,5 @@
 			</div>
 		</a>
 	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isStreams">
-		<a [routerLink]="['/streams']">
-			<div>
-				Streams<a href="#!" class="secondary-content"><i class="material-icons">announcement</i></a>
-			</div>
-		</a>
-	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isPeople">
-		<a [routerLink]="['/people']">
-			<div>
-				People<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
-			</div>
-		</a>
-	</li>
-
-
-
-
-
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isGymowner">
-		<a [routerLink]="['/gymowner']">
-			<div>
-				GymOwner<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
-			</div>
-		</a>
-	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isTrainers">
-		<a [routerLink]="['/trainer']">
-			<div>
-				Trainers<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
-			</div>
-		</a>
-	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isFollowing">
-		<a [routerLink]="['/people', 'following']">
-			<div>
-				Following<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
-			</div>
-		</a>
-	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-		*ngIf="isFollowers">
-		<a [routerLink]="['/people', 'followers']">
-			<div>
-				Followers<a href="#!" class="secondary-content"><i class="material-icons">people_outline</i></a>
-			</div>
-		</a>
-	</li>
+	
 </ul>

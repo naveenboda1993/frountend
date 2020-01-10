@@ -34,6 +34,7 @@ export class SideComponent implements OnInit {
 	isGymowners: boolean = false;
 	isTrainer: boolean = false;
 	isAdmin: boolean = false;
+	isSuperadmin: boolean = false;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
 		this.socket = io(Constants.HOME_URL);
@@ -67,23 +68,7 @@ export class SideComponent implements OnInit {
 					case "admin":
 						this.isAdmin = true;
 					case "superadmin":
-						this.isPhotos= true;
-						this.isFollowers = true;
-						this.isStreams = true;
-						this.isPeople = true;
-						this.isGymowner = true;
-						this.isTrainers = true;
-						this.isFollowing = true;
-						this.isWorkinghours = true;
-						this.isGymview = true;
-						this.isTrainerview = true;
-						this.isGymprofile = true;
-						this.isTrainerprofile = true;
-						this.isClientRole = true;
-						this.isGymowners = true;
-						this.isTrainer = true;
-						this.isAdmin = true;
-
+						this.isSuperadmin = true;
 					default:
 						break;
 				}
