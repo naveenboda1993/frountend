@@ -6,14 +6,18 @@
         </div>
         <div class="col s12 m6 l9">
             <div class="row">
-                <h4 class="text" style="padding-left: 40px;">  Edit Trainer Information</h4>
+                <h4 class="text" style="padding-left: 40px;"> Edit Trainer Information</h4>
                 <div class="col s10 addtrainerForm">
                     <div class="row">
-                        <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="trainer()">
+                        <!-- <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="updatetrainer()"> -->
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="user_name" type="text" formControlName="username" />
-                                    <label for="user_name">Username</label>
+                                    <!-- <input id="username" type="text" /> -->
+                                    <label for="username">username</label>
+                                    <br>  
+                                    
+                                    <input type="text" name="username" value="" [(ngModel)]="   username">
+                                    
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['username'].valid && addtrainerForm.controls['username'].touched">Username
                                         is required</span>
@@ -21,8 +25,9 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" formControlName="email" />
-                                    <label for="email">Email</label>
+                                    <label for="email">Email</label><br>
+                                    <input id="email" type="email" name="email" value="" [(ngModel)]="email"  />
+                                    
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['email'].valid && addtrainerForm.controls['email'].touched">Email
                                         is required</span>
@@ -30,7 +35,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="age" type="text" formControlName="age" />
+                                    <input id="age" type="text"  />
                                     <label for="age">Age</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['age'].valid && addtrainerForm.controls['age'].touched">Age
@@ -39,7 +44,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="Phone_number" type="text" formControlName="phonenumber" />
+                                    <input id="Phone_number" type="text"  />
                                     <label for="phone_number">PhoneNumber</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['phonenumber'].valid && addtrainerForm.controls['phonenumber'].touched">Phone
@@ -49,7 +54,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="address" type="text" formControlName="address" />
+                                    <input id="address" type="text"  />
                                     <label for="address">Address</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['address'].valid && addtrainerForm.controls['address'].touched">Address
@@ -58,7 +63,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="certification" type="text" formControlName="certification" />
+                                    <input id="certification" type="text"  />
                                     <label for="certification">Certification</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['certification'].valid && addtrainerForm.controls['certification'].touched">Certifications
@@ -67,7 +72,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="specialization" type="text" formControlName="specialization" />
+                                    <input id="specialization" type="text"  />
                                     <label for="specialization">Specialization</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['specialization'].valid && addtrainerForm.controls['specialization'].touched">Specialization
@@ -76,7 +81,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="tagline" type="text" formControlName="tagline" />
+                                    <input id="tagline" type="text"  />
                                     <label for="tagline">Tag Line</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['tagline'].valid && addtrainerForm.controls['tagline'].touched">Tag
@@ -86,7 +91,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="experience" type="text" formControlName="experience" />
+                                    <input id="experience" type="text"  />
                                     <label for="experience">Experience</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['experience'].valid && addtrainerForm.controls['experience'].touched">Experience
@@ -95,7 +100,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="id" type="text" formControlName="id" />
+                                    <input id="id" type="text" />
                                     <label for="id">Trainer Id</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['id'].valid && addtrainerForm.controls['id'].touched">Experience
@@ -104,14 +109,14 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="language" type="text" formControlName="language" />
+                                    <input id="language" type="text"  />
                                     <label for="language">languages are known</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['language'].valid && addtrainerForm.controls['language'].touched">Language
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <!-- <div class="row col s12">
                                 <div class="input-field col s12">
                                     <input id="pass-word" type="password" formControlName="password" />
                                     <label for="pass-word">Password</label>
@@ -119,10 +124,10 @@
                                         *ngIf="!addtrainerForm.controls['password'].valid && addtrainerForm.controls['password'].touched">Password
                                         is required</span>
                                 </div>
-                            </div>
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addtrainerForm.valid">ADD
+                            </div> -->
+                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addtrainerForm.valid">UPDATE
                                 TRAINER</button>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>

@@ -55,16 +55,16 @@ export class TrainerComponent implements OnInit {
     }
   
     ViewUser(user) {
-      this.router.navigate([user.username]);
-      if (this.loggedInUser.username !== user.username) {
-        // console.log(user.username);
-        this.userService.ProfileNotifications(user._id).subscribe(
-          data => {
-            this.socket.emit('refresh', {});
-          },
-          err => console.log(err)
-        );
-      }
+      this.router.navigate(['trainerview']);
+      // if (this.loggedInUser.username !== user.username) {
+      //   // console.log(user.username);
+      //   this.userService.ProfileNotifications(user._id).subscribe(
+      //     data => {
+      //       this.socket.emit('refresh', {});
+      //     },
+      //     err => console.log(err)
+      //   );
+      // }
     }
   
     CheckInArray(arr, id) {

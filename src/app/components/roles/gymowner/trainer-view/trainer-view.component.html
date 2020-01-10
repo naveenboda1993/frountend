@@ -35,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h2 style="color: black;">Rock</h2>
+                <h2 style="color: black;">{{user.username}}</h2>
             </div>
             <div>
                 <h3> Personal trainer</h3>
@@ -57,9 +57,40 @@
                     </figure>
                 </div>
                 <div class="col m6 l6">
-                    <h2>About Me</h2>
+                    <h4>About Me</h4>
+                    <h5>Name: {{user.username}}</h5>
+                    <h6>Certified proffessional trainer</h6>
+                    <div class="col m4 l4">
+                        <p>ID: {{user.id}}</p>
+                    </div>
+                    <div class="col m4 l4">
+                        <p>Exp: {{user.experience}} </p>
+                    </div>
+                    <div class="col m4 l4">
+                        <P>
+                            <i class="fa fa-circle" *ngIf="CheckIfOnline(user.username)"></i>
+                            
+                        </P>
+                    </div>
+                    <h4>Certification</h4>
+                    <p>Pursuing Fitapp certification</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6 l6" style="margin-left: 20px;">
+                    <h3 style="margin-left: 25px;">Specilazation</h3>
+                    <p style="margin-left: 25px;">{{user.specilazation}}</p>
+                    <!-- <p>group fitness instructions</p> -->
+                </div>
+                <div class="col m5 l5">
+                    <button class="button"> single session </button>
+                    <button class="button"> group session </button>
+                    <br>
+                    <label for="price"> price</label>
+                    <input type="text" name="price">
                 </div>
             </div>
         </div>
+        <button style="margin-left: 50%;"> BOOK NOW </button>
     </section>
 </main>

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, EmailValidator } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { UsersService } from 'src/app/services/users.service';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-trainer-profile',
@@ -10,12 +12,17 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./trainer-profile.component.css']
 })
 export class TrainerProfileComponent implements OnInit {
+  username: any;
+  email: any;
   errorMessage: string;
   showSpinner = false;
   addtrainerForm: FormGroup;
+  loggedInUser: any;
+  users: any;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
+    private userService: UsersService,
     private router: Router,
     private tokenService: TokenService) { }
 
@@ -24,6 +31,8 @@ export class TrainerProfileComponent implements OnInit {
 
   }
   init() {
+    this.username = ''
+    this.email = ' your email'
     this.addtrainerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
@@ -38,16 +47,27 @@ export class TrainerProfileComponent implements OnInit {
       address: ['', Validators.required],
       language: ['', Validators.required],
     });
+    this.GetUsers();
   }
-  trainer() {
+
+  GetUsers() {
+    this.showSpinner = true;
+    this.userService.GetTrainerOne().subscribe(data => {
+      console.log(data);
+      this.users = data.result;
+      this.showSpinner = false;
+    });
+  }
+
+  updatetrainer() {
     // console.log(this.signupForm.value);
     this.showSpinner = true;
-    this.authService.trainer(this.addtrainerForm.value).subscribe(
+    this.authService.updatetrainer(this.addtrainerForm.value).subscribe(
       data => {
         // this.tokenService.SetToken(data.token);
         this.addtrainerForm.reset();
         setTimeout(() => {
-          this.router.navigate(['trainer']);
+          this.router.navigate(['updatetrainer']);
         }, 2000);
 
       },

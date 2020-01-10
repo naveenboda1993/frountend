@@ -258,3 +258,8 @@ visibility: hidden;
 figure, ol, p, ul {
     margin-bottom: 1.3em;
 }
+.button{
+    width: 40%;
+    height: 25px;
+    margin: 5px;
+}
