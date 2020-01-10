@@ -20,7 +20,7 @@ export class EditTimingsComponent implements OnInit {
   selectGym: { workinghours: any };
   selectDateValue: { duration: any, numberofbookings: any, slots?: any, multiplebookings?: any, status?: any };
   socket: any;
-  constructor(private route: ActivatedRoute, private userService: UsersService,private router: Router) {
+  constructor(private route: ActivatedRoute, private userService: UsersService, private router: Router) {
     this.socket = io(Constants.HOME_URL);
   }
 

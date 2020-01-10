@@ -16,24 +16,29 @@ export class TrainerProfileComponent implements OnInit {
   email: any;
   errorMessage: string;
   showSpinner = false;
-  addtrainerForm: FormGroup;
+  updateTrainerForm: FormGroup;
   loggedInUser: any;
-  users: any;
+  user: any;
+  trainer: any;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService) {
+      
+     }
 
   ngOnInit() {
+    this.user = { username: ''};
+		this.trainer={certification:'',experience:'',specialization:'',tagline:'',id:'', age:''};
+    this.loggedInUser = this.tokenService.GetPayload();
     this.init();
-
   }
   init() {
     this.username = ''
     this.email = ' your email'
-    this.addtrainerForm = this.fb.group({
+    this.updateTrainerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
@@ -52,9 +57,9 @@ export class TrainerProfileComponent implements OnInit {
 
   GetUsers() {
     this.showSpinner = true;
-    this.userService.GetTrainerOne().subscribe(data => {
-      console.log(data);
-      this.users = data.result;
+    this.userService.GetTrainerOne(this.loggedInUser._id).subscribe(data => {
+      this.user = data.user;
+      this.trainer = data.tranier;
       this.showSpinner = false;
     });
   }
@@ -62,10 +67,10 @@ export class TrainerProfileComponent implements OnInit {
   updatetrainer() {
     // console.log(this.signupForm.value);
     this.showSpinner = true;
-    this.authService.updatetrainer(this.addtrainerForm.value).subscribe(
+    this.authService.updatetrainer(this.updateTrainerForm.value).subscribe(
       data => {
         // this.tokenService.SetToken(data.token);
-        this.addtrainerForm.reset();
+        this.updateTrainerForm.reset();
         setTimeout(() => {
           this.router.navigate(['updatetrainer']);
         }, 2000);
