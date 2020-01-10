@@ -18,19 +18,22 @@ export class SideComponent implements OnInit {
 	role = 'gumowner';
 	streams: any;
 	userrole: any;
-	isPhotos: boolean = true;
-	isFollowers: boolean = true;
-	isStreams: boolean = true;
-	isPeople: boolean = true;
-	isGymowner: Boolean = true;
-	isTrainers: boolean = true;
-	isFollowing: boolean = true;
-	isWorkinghours: boolean = true;
-	isGymview: boolean = true;
-	isTrainerview: boolean = true;
-	isGymprofile: boolean = true;
-	isTrainerprofile: boolean = true;
+	isPhotos: boolean = false;
+	isFollowers: boolean = false;
+	isStreams: boolean = false;
+	isPeople: boolean = false;
+	isGymowner: Boolean = false;
+	isTrainers: boolean = false;
+	isFollowing: boolean = false;
+	isWorkinghours: boolean = false;
+	isGymview: boolean = false;
+	isTrainerview: boolean = false;
+	isGymprofile: boolean = false;
+	isTrainerprofile: boolean = false;
 	isClientRole: boolean = false;
+	isGymowners: boolean = false;
+	isTrainer: boolean = false;
+	isAdmin: boolean = false;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
 		this.socket = io(Constants.HOME_URL);
@@ -53,47 +56,34 @@ export class SideComponent implements OnInit {
 				this.userrole = data.role;
 				switch (data.role) {
 					case "gymowner":
-						this.isPhotos = true;
-						this.isFollowers = false;
-						this.isStreams = false;
-						this.isPeople = false;
-						this.isGymowner = false;
-						this.isTrainers = false;
-						this.isFollowing = false;
-						this.isGymprofile = true;
-						this.isGymview = true;
-						this.isTrainerview = false;
-						this.isTrainerprofile = false;
-						this.isWorkinghours = true;
+						this.isGymowners = true;
 						break;
 					case "trainer":
-						this.isPhotos = true;
-						this.isFollowers = false;
-						this.isStreams = false;
-						this.isPeople = false;
-						this.isGymowner = false;
-						this.isTrainers = true;
-						this.isFollowing = false;
-						this.isGymprofile = false;
-						this.isGymview = false;
-						this.isTrainerview = true;
-						this.isTrainerprofile = true;
-						this.isWorkinghours = false;
+						this.isTrainer = true;
 						break;
 					case "user":
-						this.isPhotos = false;
-						this.isFollowers = false;
-						this.isStreams = false;
-						this.isPeople = false;
-						this.isGymowner = false;
-						this.isTrainers = false;
-						this.isFollowing = false;
-						this.isGymprofile = false;
-						this.isGymview = false;
-						this.isTrainerview = false;
-						this.isTrainerprofile = false;
-						this.isWorkinghours = false;
-						this.isClientRole=true;
+						this.isClientRole = true;
+						break;
+					case "admin":
+						this.isAdmin = true;
+					case "superadmin":
+						this.isPhotos= true;
+						this.isFollowers = true;
+						this.isStreams = true;
+						this.isPeople = true;
+						this.isGymowner = true;
+						this.isTrainers = true;
+						this.isFollowing = true;
+						this.isWorkinghours = true;
+						this.isGymview = true;
+						this.isTrainerview = true;
+						this.isGymprofile = true;
+						this.isTrainerprofile = true;
+						this.isClientRole = true;
+						this.isGymowners = true;
+						this.isTrainer = true;
+						this.isAdmin = true;
+
 					default:
 						break;
 				}
