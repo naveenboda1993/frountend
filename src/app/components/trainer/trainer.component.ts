@@ -55,7 +55,7 @@ export class TrainerComponent implements OnInit {
     }
   
     ViewUser(user) {
-      this.router.navigate(['trainerview']);
+      this.router.navigate(['trainerview/'+user._id]);
       // if (this.loggedInUser.username !== user.username) {
       //   // console.log(user.username);
       //   this.userService.ProfileNotifications(user._id).subscribe(

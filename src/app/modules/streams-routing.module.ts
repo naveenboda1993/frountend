@@ -68,7 +68,7 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
-		path: 'trainerview',
+		path: 'trainerview/:id',
 		component: TrainerViewComponent,
 		canActivate: [AuthGuard]
 	},

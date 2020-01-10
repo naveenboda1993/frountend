@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from'moment';
+import * as moment from 'moment';
 import { ActivatedRoute } from '@angular/router';
 import * as M from 'materialize-css';
 import { UsersService } from 'src/app/services/users.service';
@@ -7,9 +7,9 @@ import _ from 'lodash';
 
 
 @Component({
-  selector: 'app-trainer-view',
-  templateUrl: './trainer-view.component.html',
-  styleUrls: ['./trainer-view.component.css']
+	selector: 'app-trainer-view',
+	templateUrl: './trainer-view.component.html',
+	styleUrls: ['./trainer-view.component.css']
 })
 export class TrainerViewComponent implements OnInit {
 	// tabElement: any;
@@ -19,30 +19,31 @@ export class TrainerViewComponent implements OnInit {
 	// posts = [];
 	following = [];
 	followers = [];
-	user: {username?:any};
-  name: any;
-  username:any;
+	user: { username?: any };
+	name: any;
+	username: any;
 	userid: any;
 	// gym: { workinghours: any };
-  trainer: any;
-  onlineusers: [];
+	trainer: {tagline?:any,specialization?:any,experience?:any,certification?:any,id?:any};
+	onlineusers: [];
 	constructor(private route: ActivatedRoute, private usersService: UsersService) { }
 
 	ngOnInit() {
-    this.user={username:'',};
+		this.user = { username: '', };
+		this.trainer={certification:'',experience:'',specialization:'',tagline:'',id:''};
 		// // this.postsTab = true;
-		// this.route.params.subscribe(params => {
-		// 	console.log(params.id);
-		// 	this.userid = params.id;
-		// });
+		this.route.params.subscribe(params => {
+			console.log(params.id);
+			this.userid = params.id;
+		});
 		const tabs = document.querySelectorAll('.tabs');
 		M.Tabs.init(tabs, {});
 		// this.tabElement = document.querySelector('.nav-content');
 
-		this.usersService.GetTrainerOne().subscribe(
+		this.usersService.GetTrainerOne(this.userid).subscribe(
 			data => {
 
-				this.trainer = data.trainer;
+				this.trainer = data.tranier;
 				this.user = data.user;
 			},
 			err => console.log(err)
@@ -68,8 +69,8 @@ export class TrainerViewComponent implements OnInit {
 	}
 	TimeFromNow(time) {
 		return moment(time).fromNow();
-  }
-  CheckIfOnline(name) {
+	}
+	CheckIfOnline(name) {
 		const result = _.indexOf(this.onlineusers, name);
 		if (result > -1) {
 			return true;
@@ -77,7 +78,7 @@ export class TrainerViewComponent implements OnInit {
 			return false;
 		}
 	}
-  online(event) {
+	online(event) {
 		this.onlineusers = event;
 	}
 

@@ -30,7 +30,7 @@
         </nav>
     </div>
 </header> -->
-<section class="header-intro"
+<!-- <section class="header-intro"
     style="background-image: url('assets/images/trainer1.jpg'); background-position: 0px 0px; height: 400px;">
     <div class="container">
         <div class="row">
@@ -45,7 +45,7 @@
     <span class="probootstrap-animate fadeInUp probootstrap-animated"><a
             class="probootstrap-scroll-down js-next probootstrap-sleep" href="#next-section">Scroll down <i
                 class="icon-chevron-down"></i></a></span>
-</section>
+</section> -->
 <main>
     <section id="next-section" class="body-section">
         <div class="container">
@@ -54,43 +54,37 @@
                     <figure>
                         <img src="assets/images/trainer1.jpg" alt=" pesronal trainer " style="float: left;
                         width: -webkit-fill-available;">
+                        <div class="col m4 l4">
+                            <p>ID: {{trainer.id}} </p>
+                        </div>
+                        <div class="col m4 l4">
+                            <p>Exp: {{trainer.experience}} </p>
+                        </div>
                     </figure>
                 </div>
                 <div class="col m6 l6">
-                    <h4>About Me</h4>
-                    <h5>Name: {{user.username}}</h5>
-                    <h6>Certified proffessional trainer</h6>
-                    <div class="col m4 l4">
-                        <p>ID: {{user.id}}</p>
-                    </div>
-                    <div class="col m4 l4">
-                        <p>Exp: {{user.experience}} </p>
-                    </div>
-                    <div class="col m4 l4">
-                        <P>
-                            <i class="fa fa-circle" *ngIf="CheckIfOnline(user.username)"></i>
-                            
-                        </P>
-                    </div>
-                    <h4>Certification</h4>
-                    <p>Pursuing Fitapp certification</p>
+                    <h3>Name: {{user.username}}</h3>
+                    <h4>{{trainer.tagline}}</h4>
+                    <h6>{{trainer.specialization}}</h6>                    
+                    <h4>Certification :</h4>
+                    <p>{{trainer.certification}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col m6 l6" style="margin-left: 20px;">
                     <h3 style="margin-left: 25px;">Specilazation</h3>
-                    <p style="margin-left: 25px;">{{user.specilazation}}</p>
+                    <p style="margin-left: 25px;">{{trainer.specilazation}}</p>
                     <!-- <p>group fitness instructions</p> -->
                 </div>
-                <div class="col m5 l5">
+                <!-- <div class="col m5 l5">
                     <button class="button"> single session </button>
                     <button class="button"> group session </button>
                     <br>
                     <label for="price"> price</label>
                     <input type="text" name="price">
-                </div>
+                </div> -->
             </div>
         </div>
-        <button style="margin-left: 50%;"> BOOK NOW </button>
+        <!-- <button style="margin-left: 50%;"> BOOK NOW </button> -->
     </section>
 </main>
