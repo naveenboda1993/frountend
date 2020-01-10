@@ -21,7 +21,8 @@ export class GymViewComponent implements OnInit {
 	user: any;
 	name: any;
 	gymid: any;
-	gym: { workinghours: any };
+	isView: boolean=false;
+	gym: { workinghours: any,gymname?:any }; 
 	constructor(private route: ActivatedRoute, private usersService: UsersService) { }
 
 	ngOnInit() {
@@ -39,6 +40,7 @@ export class GymViewComponent implements OnInit {
 
 				console.log(data.result);
 				this.gym = data.result[0];
+				this.isView=true;
 			},
 			err => console.log(err)
 		);
@@ -81,5 +83,11 @@ export class GymViewComponent implements OnInit {
 	// }
 	TimeFromNow(time) {
 		return moment(time).fromNow();
+	}
+	returnImg(image){
+		return "http://res.cloudinary.com/chatapplication/image/upload/v"+ image.imgVersion+"/"+image.imgId;
+	}
+	returnBImg(image){
+		return "http://res.cloudinary.com/chatapplication/image/upload/v"+ image.picVersion+"/"+image.picId;
 	}
 }

@@ -22,6 +22,8 @@ import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view
 import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
 import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.component';
 import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-profile/trainer-profile.component';
+import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gym-gallery.component';
+import { GymsListComponent } from '../components/roles/user/gyms-list/gyms-list.component';
 
 
 const routes: Routes = [
@@ -75,6 +77,7 @@ const routes: Routes = [
 		component: GymownerComponent,
 		canActivate: [AuthGuard]
 	},
+	
 	{
 		path: 'trainer',
 		component: TrainerComponent,
@@ -121,6 +124,11 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'gymgallery/:name',
+		component: GymGalleryComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'images/:name',
 		component: ImagesComponent,
 		canActivate: [AuthGuard]
@@ -135,7 +143,10 @@ const routes: Routes = [
 		component: ChangePasswordComponent,
 		canActivate: [AuthGuard]
 	},
-	
+	{
+		path: 'gymslist',
+		component: GymsListComponent
+	},	
 	{
 		path: '**',
 		redirectTo: 'streams'

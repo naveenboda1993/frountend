@@ -112,4 +112,12 @@ export class UsersService {
 	ChangePassword(body): Observable<any> {
 		return this.http.post(`${BASEURL}/change-password`, body);
 	}
+	AddGymGallery(image,id): Observable<any> {
+		return this.http.post(`${BASEURL}/upload-gym-gallery`, {
+			image,id
+		});
+	}
+	SetVisibleImage(imageId, imageStatus): Observable<any> {
+		return this.http.get(`${BASEURL}/set-gym-visible-image/${imageId}/${imageStatus}`);
+	}
 }

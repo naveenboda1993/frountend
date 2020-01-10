@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AuthTabsComponent } from './components/auth-tabs/auth-tabs.component';
 import { AuthRoutingModule } from './modules/auth-routing.module';
 import { AuthModule } from './modules/auth.module';
 import { StreamsModule } from './modules/streams.module';

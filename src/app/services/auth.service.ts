@@ -33,4 +33,8 @@ export class AuthService {
 	deleteUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/deleteuser`, body);
 	}
+	//without getgyms
+	getGyms(): Observable<any> {
+		return this.http.get(`${BASEURL}/getgyms`);
+	}
 }

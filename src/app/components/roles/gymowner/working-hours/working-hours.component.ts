@@ -36,6 +36,6 @@ export class WorkingHoursComponent implements OnInit {
       if (obj._id == gymid) {
         return obj;
       };
-    });
+    })[0];
   }
 }

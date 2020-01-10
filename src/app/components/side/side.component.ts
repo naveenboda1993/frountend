@@ -30,6 +30,7 @@ export class SideComponent implements OnInit {
 	isTrainerview: boolean = true;
 	isGymprofile: boolean = true;
 	isTrainerprofile: boolean = true;
+	isClientRole: boolean = false;
 
 	constructor(private tokenService: TokenService, private usersService: UsersService) {
 		this.socket = io(Constants.HOME_URL);
@@ -77,8 +78,22 @@ export class SideComponent implements OnInit {
 						this.isGymview = false;
 						this.isTrainerview = true;
 						this.isTrainerprofile = true;
+						this.isWorkinghours = false;
 						break;
-
+					case "user":
+						this.isPhotos = false;
+						this.isFollowers = false;
+						this.isStreams = false;
+						this.isPeople = false;
+						this.isGymowner = false;
+						this.isTrainers = false;
+						this.isFollowing = false;
+						this.isGymprofile = false;
+						this.isGymview = false;
+						this.isTrainerview = false;
+						this.isTrainerprofile = false;
+						this.isWorkinghours = false;
+						this.isClientRole=true;
 					default:
 						break;
 				}
