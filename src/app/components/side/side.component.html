@@ -36,20 +36,20 @@
 			</div>
 		</a>
 	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymprofile">
+		<a [routerLink]="['/gymprofile']">
+			<div>
+				Gym Profiles<a href="#!" class="secondary-content"><i class="material-icons">fitness_center</i></a>
+			</div>
+		</a>
+	</li>
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isWorkinghours">
 		<a [routerLink]="['/workinghours']">
 			<div>
 				Working Hours<a href="#!" class="secondary-content"><i class="material-icons">access_time</i></a>
 			</div>
 		</a>
-	</li>
-	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isGymprofile">
-		<a [routerLink]="['/gymprofile']">
-			<div>
-				Gym Profile<a href="#!" class="secondary-content"><i class="material-icons">fitness_center</i></a>
-			</div>
-		</a>
-	</li>
+	</li>	
 	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isTrainerprofile">
 		<a [routerLink]="['/trainerprofile']">
 			<div>

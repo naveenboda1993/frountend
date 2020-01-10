@@ -56,7 +56,7 @@ export class SideComponent implements OnInit {
 						this.isFollowers = false;
 						this.isStreams = false;
 						this.isPeople = false;
-						this.isGymowner = true;
+						this.isGymowner = false;
 						this.isTrainers = false;
 						this.isFollowing = false;
 						this.isGymprofile = true;

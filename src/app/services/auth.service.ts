@@ -24,6 +24,9 @@ export class AuthService {
 	trainer(body): Observable<any> {
 		return this.http.post(`${BASEURL}/trainer`, body);
 	}
+	updatetrainer(body): Observable<any> {
+		return this.http.post(`${BASEURL}/updatetrainer`, body);
+	}
 	loginUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/login`, body);
 	}
