@@ -22,7 +22,13 @@ export class AppComponent implements OnInit {
 							this.router.navigate(['gymprofile']);							
 							break;
 						case "trainer":
-							this.router.navigate(['streams']);
+							this.router.navigate(['trainerprofile']);
+							break;
+						case "admin":
+							this.router.navigate(['gymowner']);
+							break;
+						case "user":
+							this.router.navigate(['gymslist']);
 							break;
 						default:
 							this.router.navigate(['streams']);

@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
 	selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
 		private authService: AuthService,
 		private fb: FormBuilder,
 		private router: Router,
-		private tokenService: TokenService
+		private tokenService: TokenService, private usersService: UsersService
 	) {}
 
 	ngOnInit() {
@@ -39,7 +40,26 @@ export class LoginComponent implements OnInit {
 				this.tokenService.SetToken(data.token);
 				this.loginForm.reset();
 				setTimeout(() => {
-					this.router.navigate(['streams']);
+					this.usersService.GetUserRole().subscribe(
+						data => {
+							switch (data.role) {
+								case "gymowner":
+									this.router.navigate(['gymprofile']);							
+									break;
+								case "trainer":
+									this.router.navigate(['trainerprofile']);
+									break;
+								case "admin":
+									this.router.navigate(['gymowner']);
+									break;
+								case "user":
+									this.router.navigate(['gymslist']);
+									break;
+								default:
+									this.router.navigate(['streams']);
+									break;
+							}
+						});
 				}, 2000);
 			},
 			err => {
