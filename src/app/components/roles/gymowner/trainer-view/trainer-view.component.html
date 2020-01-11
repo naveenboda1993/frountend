@@ -50,40 +50,55 @@
     <section id="next-section" class="body-section">
         <div class="container">
             <div class="row">
-                <div class="col m6 l6">
-                    <figure>
-                        <img src="assets/images/trainer1.jpg" alt=" pesronal trainer " style="float: left;
-                        width: -webkit-fill-available;">
-                        <div class="col m4 l4">
-                            <p>ID: {{trainer.id}} </p>
+                <div class="card">
+                    <div class="card-action" style="height: 500px;">
+                        <div class="col m6 l6">
+                            <figure>
+                                <img src="assets/images/trainer1.jpg" alt=" pesronal trainer " style="float: left; height: 300px;
+                                width: -webkit-fill-available;">
+                                <div class="col m4 l4">
+                                    <h6>ID: {{trainer.id}} </h6>
+                                </div>
+                                <div class="col m4 l4">
+                                    <h6>Exp: {{trainer.experience}} </h6>
+                                </div>
+                                <div class="col m4 l4">
+                                    <h6>Age: {{trainer.age}} </h6>
+                                </div>
+                            </figure>
                         </div>
-                        <div class="col m4 l4">
-                            <p>Exp: {{trainer.experience}} </p>
+                        <div class="col m6 l6">
+                            <h5>Name:- {{user.username}}</h5>
+                            <p>{{trainer.tagline}}</p>
+                            <!-- <p>{{trainer.specialization}}</p> -->
+                            <h5>Certification :</h5>
+                            <p>{{trainer.certification}}</p>
+                            <h5>Specilazation</h5>
+                            <p>{{trainer.specialization}}</p>
+                            <h5>Address</h5>
+                            <P>{{trainer.address}}</P>
+                            <h5>Email</h5>
+                            <a href="email" style="color: red;">{{user.email}}</a>
+                            <h5>Phone Number</h5>
+                            <a href="phone" style="color: red;">{{user.phonenumber}}</a>
                         </div>
-                    </figure>
+                        <div class="col m6 l6">
+                            
+                            <!-- <p>group fitness instructions</p> -->
+                        </div>
+                        <!-- <div class="col m5 l5">
+                                <button class="button"> single session </button>
+                                <button class="button"> group session </button>
+                                <br>
+                                <label for="price"> price</label>
+                                <input type="text" name="price">
+                            </div> -->
+                    </div>
+
                 </div>
-                <div class="col m6 l6">
-                    <h3>Name: {{user.username}}</h3>
-                    <h4>{{trainer.tagline}}</h4>
-                    <h6>{{trainer.specialization}}</h6>                    
-                    <h4>Certification :</h4>
-                    <p>{{trainer.certification}}</p>
-                </div>
+
             </div>
-            <div class="row">
-                <div class="col m6 l6" style="margin-left: 20px;">
-                    <h3 style="margin-left: 25px;">Specilazation</h3>
-                    <p style="margin-left: 25px;">{{trainer.specilazation}}</p>
-                    <!-- <p>group fitness instructions</p> -->
-                </div>
-                <!-- <div class="col m5 l5">
-                    <button class="button"> single session </button>
-                    <button class="button"> group session </button>
-                    <br>
-                    <label for="price"> price</label>
-                    <input type="text" name="price">
-                </div> -->
-            </div>
+
         </div>
         <!-- <button style="margin-left: 50%;"> BOOK NOW </button> -->
     </section>
