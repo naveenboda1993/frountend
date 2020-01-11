@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as M from 'materialize-css';
 import { UsersService } from 'src/app/services/users.service';
 import _ from 'lodash';
+import { TokenService } from 'src/app/services/token.service';
 
 
 @Component({
@@ -19,18 +20,21 @@ export class TrainerViewComponent implements OnInit {
 	// posts = [];
 	following = [];
 	followers = [];
-	user: { username?: any,email:any,phonenumber:any,address:any};
+	user: { username?: any, email: any, phonenumber: any, address: any };
 	name: any;
 	username: any;
 	userid: any;
 	// gym: { workinghours: any };
-	trainer: {tagline?:any,specialization?:any,experience?:any,certification?:any,id?:any,age:any};
+	trainer: { tagline?: any, specialization?: any, experience?: any, certification?: any, id?: any, age: any };
 	onlineusers: [];
-	constructor(private route: ActivatedRoute, private usersService: UsersService) { }
+	constructor(
+		private route: ActivatedRoute,
+		private usersService: UsersService,
+		private tokenService: TokenService) { }
 
 	ngOnInit() {
-		this.user = { username: '',email:'',phonenumber:'',address:''   };
-		this.trainer={certification:'',experience:'',specialization:'',tagline:'',id:'',age:''};
+		this.user = { username: '', email: '', phonenumber: '', address: '' };
+		this.trainer = { certification: '', experience: '', specialization: '', tagline: '', id: '', age: '' };
 		// // this.postsTab = true;
 		this.route.params.subscribe(params => {
 			console.log(params.id);
@@ -38,11 +42,13 @@ export class TrainerViewComponent implements OnInit {
 		});
 		const tabs = document.querySelectorAll('.tabs');
 		M.Tabs.init(tabs, {});
-		// this.tabElement = document.querySelector('.nav-content');
+		if (this.userid == 'myprofile') {
+			this.userid = this.tokenService.GetPayload();
+			this.userid=this.userid._id;
 
+		}
 		this.usersService.GetTrainerOne(this.userid).subscribe(
 			data => {
-
 				this.trainer = data.tranier;
 				this.user = data.user;
 			},
