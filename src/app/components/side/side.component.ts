@@ -67,6 +67,7 @@ export class SideComponent implements OnInit {
 						break;
 					case "admin":
 						this.isAdmin = true;
+						break
 					case "superadmin":
 						this.isSuperadmin = true;
 					default:

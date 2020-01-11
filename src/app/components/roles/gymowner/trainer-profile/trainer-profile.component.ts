@@ -71,7 +71,7 @@ export class TrainerProfileComponent implements OnInit {
       data => {
         // this.tokenService.SetToken(data.token);
         this.updateTrainerForm.reset();
-        setTimeout(() => {
+        setTimeout(() => {          
           this.router.navigate(['updatetrainer']);
         }, 2000);
 
