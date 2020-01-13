@@ -37,6 +37,12 @@ export class AddtrainerComponent implements OnInit {
       id: ['', Validators.required],
       address: ['', Validators.required],
       language: ['', Validators.required],
+      accountnumber: ['', Validators.required],
+      bankname: ['', Validators.required],
+      ifsccode: ['', Validators.required],
+      holdername: ['', Validators.required],
+      officenumber: ['', Validators.required],
+      
     });
   }
   trainer() {

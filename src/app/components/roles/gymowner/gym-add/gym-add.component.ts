@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
@@ -9,10 +9,13 @@ import { TokenService } from 'src/app/services/token.service';
   templateUrl: './gym-add.component.html',
   styleUrls: ['./gym-add.component.css']
 })
-export class GymAddComponent implements OnInit{
+export class GymAddComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
+  select:Array<any>;
   addgymForm: FormGroup;
+  services= new FormControl();
+  ServicesList: string[] = ['kick boxing', 'zimba', 'cycling', 'cheast']
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -20,21 +23,33 @@ export class GymAddComponent implements OnInit{
     private tokenService: TokenService) { }
 
   ngOnInit() {
+    this.select = [
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' },
+      ];
     this.init();
   }
   init() {
     this.addgymForm = this.fb.group({
       gymname: ['', Validators.required],
-      tag: ['',Validators.required],
+      tag: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
+      phonenumber: ['', Validators.required],
+      officenumber: ['', Validators.required],
+      address: ['', Validators.required],
+      discripition: ['', Validators.required],
+      services: ['', Validators.required],
+      accountnumber: ['', Validators.required],
+      bankname: ['', Validators.required],
+      ifsccode: ['', Validators.required],
+      holdername: ['', Validators.required],
+      timings: ['', Validators.required]
+
       // password: ['', Validators.required],
-      phonenumber: ['',Validators.required],
-      // age: ['',Validators.required],
-      address: ['',Validators.required],
-      // language: ['',Validators.required],
-      discripition: ['',Validators.required],
-      services: ['',Validators.required],
       // role: ['', Validators.required]
+      // language: ['',Validators.required],
+      // age: ['',Validators.required],
 
     });
   }
@@ -62,3 +77,4 @@ export class GymAddComponent implements OnInit{
     ); // we are passing an object so we are subscribing, register user takes an object
   }
 }
+

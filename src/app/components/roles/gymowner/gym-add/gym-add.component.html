@@ -1,10 +1,10 @@
-<app-toolbar ></app-toolbar>
-    <div class="container" style="margin-top: 30px;">
+<app-toolbar></app-toolbar>
+<div class="container" style="margin-top: 30px;">
     <div class="row">
         <div class="col s12 m5 l3">
             <app-side></app-side>
-            <!-- <h1> this is app side component</h1> -->   
-        </div>  
+            <!-- <h1> this is app side component</h1> -->
+        </div>
         <div class="col s12 m6 l9">
             <div class="row">
                 <h3>Add Gym</h3>
@@ -22,29 +22,32 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="tag" type="text" formControlName="tag" />
-                                    <label for="tag">Gym Tag Line</label>
+                                    <input id="emial" type="text" formControlName="email" />
+                                    <label for="email">email</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym Tag Line 
+                                        *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial
+                                        is
+                                        required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="Phone_number" type="text" formControlName="phonenumber" />
+                                    <label for="phone_number">PhoneNumber</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['phonenumber'].valid && addgymForm.controls['phonenumber'].touched">Phone
+                                        number
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
-                                    <input id="discripition" type="text" formControlName="discripition"/>
-                                    <label for="discripition">Gym Discripition</label>
+                                    <input id="office_number" type="text" formControlName="officenumber" />
+                                    <label for="office_number">Office Number</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym discripition
+                                        *ngIf="!addgymForm.controls['officenumber'].valid && addgymForm.controls['officenumber'].touched">Office
+                                        number
                                         is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="services" type="text" formControlName="services" />
-                                    <label for="services">Services</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['services'].valid && addgymForm.controls['services'].touched"> Services are required
-                                    </span>
                                 </div>
                             </div>
                             <div class="row col s12">
@@ -58,20 +61,114 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="emial" type="text" formControlName="email" />
-                                    <label for="email">email</label>
+                                    <input id="tag" type="text" formControlName="tag" />
+                                    <label for="tag">Gym Tag Line</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial is
-                                        required</span>
+                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
+                                        Tag Line
+                                        is required</span>
                                 </div>
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="Phone_number" type="text" formControlName="phonenumber" />
-                                    <label for="phone_number">PhoneNumber</label>
+                                    <input id="discripition" type="text" formControlName="discripition" />
+                                    <label for="discripition">Gym Discripition</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['phonenumber'].valid && addgymForm.controls['phonenumber'].touched">Phone
-                                        number
+                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
+                                        discripition
+                                        is required</span>
+                                </div>
+                            </div>
+                            <!-- <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <label>Services</label>
+                                    <input id="services" type="text" />
+                                    <select [formControl]="services" multiple name="services">
+                                        <option *ngFor="let services of servicesList" [ngValue]="services">{{services}}
+                                        </option>
+                                    </select>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['services'].valid && addgymForm.controls['services'].touched">
+                                        Services are required
+                                    </span>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <mdb-select [services]="select" [multiple]="true" [highlightFirst]="false" placeholder="Choose your option"></mdb-select>
+                                    <label> services </label>
+                                    
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['services'].valid && addgymForm.controls['services'].touched">
+                                        Services are required
+                                    </span>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row"> -->
+                                <!-- <div class="input-field col s12"> -->
+                                   
+                                    <!-- <input id="services" type="text" />
+                                    <label>Label example</label> -->
+                                    <select multiple searchable="Search here..">
+                                        <option value="" disabled selected>Choose your country</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">Germany</option>
+                                        <option value="3">France</option>
+                                        <option value="4">Poland</option>
+                                        <option value="5">Japan</option>
+                                    </select>
+                                    <!-- <button class="btn-save btn btn-primary btn-sm">Save</button> -->
+
+                                <!-- </div> -->
+                            <!-- </div> -->
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="timings" type="text" formControlName="timings" />
+                                    <label for="timings">Gym Timings</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['timings'].valid && addgymForm.controls['timings'].touched">Gym
+                                        Timings are required</span>
+                                </div>
+                            </div>
+                            <br>
+                            <P>BANK DETAILS </P>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="accountnumber" type="text" formControlName="accountnumber" />
+                                    <label for="accountnumber">Account Number</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['accountnumber'].valid && addgymForm.controls['accountnumber'].touched">Account
+                                        Number
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="bankname" type="text" formControlName="bankname" />
+                                    <label for="bankname"> Bank Name</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['bankname'].valid && addgymForm.controls['bankname'].touched">
+                                      Bank Name
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="ifsccode" type="text" formControlName="ifsccode" />
+                                    <label for="ifsccode">IFSC Code</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['ifsccode'].valid && addgymForm.controls['ifsccode'].touched">IFSC
+                                        Code
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="holdername" type="text" formControlName="holdername" />
+                                    <label for="holdername">Account Holder Name</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['holdername'].valid && addgymForm.controls['holdername'].touched">Account
+                                        Holder Name
                                         is required</span>
                                 </div>
                             </div>
@@ -95,5 +192,4 @@
             </div>
         </div>
     </div>
-    </div>
-
+</div>

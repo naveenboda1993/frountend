@@ -1,4 +1,4 @@
-<app-toolbar></app-toolbar>
+	<app-toolbar></app-toolbar>
 
 <div class="container" style="margin-top:30px;" *ngIf="isView">
 	<section class="background" [ngStyle]="{'background-image': 'url('+returnBImg(gym)+')' }" style="background-position: 0px 0px;">
@@ -26,7 +26,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col m4 l5">
+		<div class="col m4 l4">
 			<div class="card">
 				<div class="card-action">
 					<h5>{{gym.gymname}}</h5>
@@ -43,15 +43,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="col m4 l3">
+		<div class="col m4 l4">
 			<div class="card">
 				<div class="card-action">
-					<h5>contact us</h5>
-					<p> {{gym.address}}</p>
+					<h5>Contact Us</h5>
+					<p><i class="material-icons">room</i> {{gym.address}}</p>
 
 					<a href="email" style="color: red;">{{gym.email}}</a>
 					<br>
 					<a href="phone" style="color: red;">{{gym.phonenumber}}</a>
+					<h5><i class="material-icons">account_balance</i> Bank Details</h5>
+						<p>Name:  {{gym.holdername}}</p>
+						<p>A/C No: {{gym.accountnumber}}</p>
+						<p>IFSC Code: {{gym.ifsccode}}</p>
 				</div>
 			</div>
 		</div>
