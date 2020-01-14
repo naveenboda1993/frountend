@@ -10,6 +10,7 @@ const BASEURL = Constants.BACKEND_URL;
 	providedIn: 'root'
 })
 export class UsersService {
+ 
 	constructor(private http: HttpClient) {}
 
 	GetUserRole(): Observable<any> {
@@ -120,4 +121,9 @@ export class UsersService {
 	SetVisibleImage(imageId, imageStatus): Observable<any> {
 		return this.http.get(`${BASEURL}/set-gym-visible-image/${imageId}/${imageStatus}`);
 	}
+	SaveGymServices(data) {
+		return this.http.post(`${BASEURL}/updatinggymservices`, {
+			data
+		});
+	  }
 }

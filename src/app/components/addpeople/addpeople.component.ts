@@ -31,9 +31,6 @@ export class AddpeopleComponent implements OnInit {
       age: ['',Validators.required],
       address: ['',Validators.required],
       language: ['',Validators.required],
-
-
-
       // role: ['', Validators.required]
 
     });

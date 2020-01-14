@@ -31,6 +31,9 @@ import { AddtrainerComponent } from '../components/addtrainer/addtrainer.compone
 import { GymownerComponent } from '../components/gymowner/gymowner.component';
 import { TrainerComponent } from '../components/trainer/trainer.component';
 import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
+import { ServiceListComponent } from '../components/service/service-list/service-list.component';
+import { AddServiceComponent } from '../components/service/add-service/add-service.component';
+import { GymServicesComponent } from '../components/roles/gymowner/gym-services/gym-services.component';
 import { GymprofileComponent } from '../components/roles/gymowner/gymprofile/gymprofile.component';
 import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
 import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
@@ -64,6 +67,9 @@ import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gy
 		GymownerComponent,
 		TrainerComponent,
 		WorkingHoursComponent,
+		ServiceListComponent,
+		AddServiceComponent,
+		GymServicesComponent,
 		GymprofileComponent,
 		GymViewComponent,
 		TrainerViewComponent,

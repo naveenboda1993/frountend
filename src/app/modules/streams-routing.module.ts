@@ -18,6 +18,9 @@ import { TrainerComponent } from '../components/trainer/trainer.component';
 import { WorkingHoursComponent } from '../components/roles/gymowner/working-hours/working-hours.component';
 import { GymprofileComponent } from '../components/roles/gymowner/gymprofile/gymprofile.component';
 import { EditTimingsComponent } from '../components/edit-timings/edit-timings.component';
+import { ServiceListComponent } from '../components/service/service-list/service-list.component';
+import { AddServiceComponent } from '../components/service/add-service/add-service.component';
+import { GymServicesComponent } from '../components/roles/gymowner/gym-services/gym-services.component';
 import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
 import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
 import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.component';
@@ -129,10 +132,27 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'gymservices',
+		component: GymServicesComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'images/:name',
 		component: ImagesComponent,
 		canActivate: [AuthGuard]
 	},
+	{
+		path: 'servicelist',
+		component: ServiceListComponent,
+		canActivate: [AuthGuard]
+
+	},
+	{
+		path: 'addservice',
+		component: AddServiceComponent,
+		canActivate: [AuthGuard]
+
+	},	
 	{
 		path: ':name',
 		component: ViewUserComponent,
@@ -147,6 +167,7 @@ const routes: Routes = [
 		path: 'gymslist',
 		component: GymsListComponent
 	},	
+	
 	{
 		path: '**',
 		redirectTo: 'streams'

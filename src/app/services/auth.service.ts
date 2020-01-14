@@ -18,6 +18,9 @@ export class AuthService {
 	gymowner(body): Observable<any> {
 		return this.http.post(`${BASEURL}/gymowner`, body);
 	}
+	addservice(body): Observable<any> {
+		return this.http.post(`${BASEURL}/addservice`, body);
+	}
 	gymadd(body): Observable<any> {
 		return this.http.post(`${BASEURL}/creategymprofile`, body);
 	}
@@ -32,6 +35,10 @@ export class AuthService {
 	}
 	deleteUser(body): Observable<any> {
 		return this.http.post(`${BASEURL}/deleteuser`, body);
+	}
+
+	getServices(): Observable<any> {
+		return this.http.get(`${BASEURL}/getservice`);
 	}
 	//without getgyms
 	getGyms(): Observable<any> {
