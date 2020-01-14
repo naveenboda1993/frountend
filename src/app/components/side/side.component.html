@@ -236,7 +236,15 @@
 		*ngIf="isAdmin">
 		<a [routerLink]="['/gymservices']">
 			<div>
-				Gym Servicess<a href="#!" class="secondary-content"><i class="material-icons">access_time</i></a>
+				Gym Services<a href="#!" class="secondary-content"><i class="material-icons">access_time</i></a>
+			</div>
+		</a>
+	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+		*ngIf="isAdmin">
+		<a [routerLink]="['/gymprices']">
+			<div>
+				Gym prices<a href="#!" class="secondary-content"><i class="material-icons">access_time</i></a>
 			</div>
 		</a>
 	</li>

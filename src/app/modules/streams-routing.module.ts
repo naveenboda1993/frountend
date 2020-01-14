@@ -22,6 +22,7 @@ import { ServiceListComponent } from '../components/service/service-list/service
 import { AddServiceComponent } from '../components/service/add-service/add-service.component';
 import { GymServicesComponent } from '../components/roles/gymowner/gym-services/gym-services.component';
 import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
+import { GymPricesComponent } from '../components/roles/gymowner/gym-prices/gym-prices.component';
 import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
 import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.component';
 import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-profile/trainer-profile.component';
@@ -146,6 +147,11 @@ const routes: Routes = [
 	{
 		path: 'gymservices',
 		component: GymServicesComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'gymprices',
+		component: GymPricesComponent,
 		canActivate: [AuthGuard]
 	},
 	{
