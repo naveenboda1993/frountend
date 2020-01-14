@@ -43,7 +43,7 @@ import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.co
 import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-profile/trainer-profile.component';
 import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gym-gallery.component';
 import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edit/gymowner-edit.component';
-// import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
+import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
 
 
 // import { CommentsComponent } from '../componets/comments/comments.component';
@@ -83,7 +83,7 @@ import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edi
 		TrainerProfileComponent,
 		GymGalleryComponent,
 		GymownerEditComponent,
-		// GymEditComponent
+		GymEditComponent
 	],
 	imports: [
 		CommonModule,

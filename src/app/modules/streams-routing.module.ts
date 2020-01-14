@@ -29,7 +29,7 @@ import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-pr
 import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gym-gallery.component';
 import { GymsListComponent } from '../components/roles/user/gyms-list/gyms-list.component';
 import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edit/gymowner-edit.component';
-// import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
+import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
 
 
 const routes: Routes = [
@@ -88,11 +88,11 @@ const routes: Routes = [
 		component: GymownerEditComponent,
 		canActivate: [AuthGuard]
 	},
-	// {
-	// 	path: 'gymedit',
-	// 	component: GymEditComponent,
-	// 	canActivate: [AuthGuard]
-	// },
+	{
+		path: 'gymedit',
+		component: GymEditComponent,
+		canActivate: [AuthGuard]
+	},
 
 	{
 		path: 'trainer',
