@@ -30,7 +30,14 @@ export class AddpeopleComponent implements OnInit {
       phonenumber: ['',Validators.required],
       age: ['',Validators.required],
       address: ['',Validators.required],
+<<<<<<< HEAD
       language: ['',Validators.required],
+=======
+      // language: ['',Validators.required],
+
+
+
+>>>>>>> 116ccd578ffebfdbf7c49d676b3edaa69e2f05d8
       // role: ['', Validators.required]
 
     });

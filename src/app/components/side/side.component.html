@@ -264,5 +264,13 @@
 			</div>
 		</a>
 	</li>
+	<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+		*ngIf="isAdmin || isSuperadmin || isGymowners">
+		<a [routerLink]="['/gymedit']">
+			<div>
+				Edit Gyms<a href="#!" class="secondary-content"><i class="material-icons">vpn_key</i></a>
+			</div>
+		</a>
+	</li>
 
-</ul>
+</ul>	

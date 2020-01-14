@@ -9,7 +9,7 @@
             <div class="row">
                 <h3>Add Gym</h3>
                 <div class="col s10  addgymForm">
-                    <div class="row">
+                    <div class="row" *ngIf="isForm"  >
                         <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()">
                             <div class="row col s12">
                                 <div class="input-field col s12">
@@ -77,57 +77,6 @@
                                         *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
                                         discripition
                                         is required</span>
-                                </div>
-                            </div>
-                            <!-- <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <label>Services</label>
-                                    <input id="services" type="text" />
-                                    <select [formControl]="services" multiple name="services">
-                                        <option *ngFor="let services of servicesList" [ngValue]="services">{{services}}
-                                        </option>
-                                    </select>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['services'].valid && addgymForm.controls['services'].touched">
-                                        Services are required
-                                    </span>
-                                </div>
-                            </div> -->
-                            <!-- <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <mdb-select [services]="select" [multiple]="true" [highlightFirst]="false" placeholder="Choose your option"></mdb-select>
-                                    <label> services </label>
-                                    
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['services'].valid && addgymForm.controls['services'].touched">
-                                        Services are required
-                                    </span>
-                                </div>
-                            </div> -->
-                            <!-- <div class="row"> -->
-                                <!-- <div class="input-field col s12"> -->
-                                   
-                                    <!-- <input id="services" type="text" />
-                                    <label>Label example</label> -->
-                                    <select multiple searchable="Search here..">
-                                        <option value="" disabled selected>Choose your country</option>
-                                        <option value="1">USA</option>
-                                        <option value="2">Germany</option>
-                                        <option value="3">France</option>
-                                        <option value="4">Poland</option>
-                                        <option value="5">Japan</option>
-                                    </select>
-                                    <!-- <button class="btn-save btn btn-primary btn-sm">Save</button> -->
-
-                                <!-- </div> -->
-                            <!-- </div> -->
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="timings" type="text" formControlName="timings" />
-                                    <label for="timings">Gym Timings</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['timings'].valid && addgymForm.controls['timings'].touched">Gym
-                                        Timings are required</span>
                                 </div>
                             </div>
                             <br>

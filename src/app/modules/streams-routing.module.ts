@@ -27,6 +27,8 @@ import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.co
 import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-profile/trainer-profile.component';
 import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gym-gallery.component';
 import { GymsListComponent } from '../components/roles/user/gyms-list/gyms-list.component';
+import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edit/gymowner-edit.component';
+// import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
 
 
 const routes: Routes = [
@@ -62,9 +64,9 @@ const routes: Routes = [
 	},
 	{
 		path: 'gymadd',
-		component:GymAddComponent,
+		component: GymAddComponent,
 		canActivate: [AuthGuard]
-	},	
+	},
 	{
 		path: 'gymview/:id',
 		component: GymViewComponent,
@@ -80,7 +82,17 @@ const routes: Routes = [
 		component: GymownerComponent,
 		canActivate: [AuthGuard]
 	},
-	
+	{
+		path: 'gymowneredit',
+		component: GymownerEditComponent,
+		canActivate: [AuthGuard]
+	},
+	// {
+	// 	path: 'gymedit',
+	// 	component: GymEditComponent,
+	// 	canActivate: [AuthGuard]
+	// },
+
 	{
 		path: 'trainer',
 		component: TrainerComponent,
@@ -166,8 +178,12 @@ const routes: Routes = [
 	{
 		path: 'gymslist',
 		component: GymsListComponent
+<<<<<<< HEAD
 	},	
 	
+=======
+	},
+>>>>>>> 116ccd578ffebfdbf7c49d676b3edaa69e2f05d8
 	{
 		path: '**',
 		redirectTo: 'streams'
