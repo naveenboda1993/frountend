@@ -42,6 +42,9 @@ export class UsersService {
 	GetTrainerOne(id): Observable<any> {
 		return this.http.get(`${BASEURL}/gettrainerone/${id}`);
 	}
+	GetGymownerOne(id): Observable<any> {
+		return this.http.get(`${BASEURL}/getgymownerone/${id}`);
+	}
 	GetUpateTrainer(): Observable<any> {
 		return this.http.get(`${BASEURL}/updatetrainer`);
 	}
