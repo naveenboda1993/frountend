@@ -1,4 +1,4 @@
-<app-toolbar (onlineUsers)="online($event)"></app-toolbar>
+<app-toolbar></app-toolbar>
 <div class="container" style="margin-top:30px;">
     <div class="row">
         <div class="col s12 m5 l3">
@@ -10,7 +10,7 @@
                 <h3 class="text"> Add Trainer</h3>
                 <div class="col s10 addtrainerForm">
                     <div class="row">
-                        <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="trainer()">
+                        <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="saveTrainer()">
                             <div class="row col s12">
                                 <div class="input-field col s12">
                                     <input id="user_name" type="text" formControlName="username" />
@@ -47,7 +47,8 @@
                                         number
                                         is required</span>
                                 </div>
-                            </div><div class="row col s6">
+                            </div>
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="Office_number" type="text" formControlName="officenumber" />
                                     <label for="Office_number">Alternate Number</label>
@@ -134,6 +135,16 @@
 
                             <div class="row col s12">
                                 <div class="input-field col s12">
+                                    <input id="holdername" type="text" formControlName="holdername" />
+                                    <label for="holdername">Account Holder Name</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['holdername'].valid && addtrainerForm.controls['holdername'].touched">Account
+                                        Holder Name
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
                                     <input id="accountnumber" type="text" formControlName="accountnumber" />
                                     <label for="accountnumber">Account Number</label>
                                     <span class="error"
@@ -162,16 +173,31 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="holdername" type="text" formControlName="holdername" />
-                                    <label for="holdername">Account Holder Name</label>
-                                    <span class="error"
-                                        *ngIf="!addtrainerForm.controls['holdername'].valid && addtrainerForm.controls['holdername'].touched">Account
-                                        Holder Name
-                                        is required</span>
+                            
+                            <!-- <div class="row col s12">
+                                <p>Active Time</p>
+
+
+
+
+                                <div>
+                                    <div class="iput-field s9">
+                                        <label> Starting Time </label>
+                                        <input type="text" class="form" [(ngModel)]="startingtime">
+                                        <label> Ending Time </label>
+                                        <input type="text" class="form" [(ngModel)]="endingtime">
+                                    </div>
+                                    <button (click)="addTimeing()"> Add </button>
+                                    <div class="iput-field s9" *ngFor="let timing of timings">
+                                        <label> Starting Time : {{timing.starting}} </label>
+                                        <label> Ending Time : {{timing.ending}} </label>
+                                        <button (click)="removeTimeing(timing)"> Remove </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </div> -->
+                            
+
+
                             <button class="btn waves-effects" id="signupbtn" [disabled]="!addtrainerForm.valid">ADD
                                 TRAINER</button>
                         </form>

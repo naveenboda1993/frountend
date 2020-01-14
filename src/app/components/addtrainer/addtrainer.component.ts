@@ -12,7 +12,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AddtrainerComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
+  startingtime: any;
+  endingtime: any;
+  id: number = 1;
+  timings: Array<{ id: number, starting: string, ending: string }>;
   addtrainerForm: FormGroup;
+  // slots: { id: number; starting: string; ending: string; }[];
+  slots?: any;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -41,32 +47,47 @@ export class AddtrainerComponent implements OnInit {
       bankname: ['', Validators.required],
       ifsccode: ['', Validators.required],
       holdername: ['', Validators.required],
-      officenumber: ['', Validators.required],
-      
+      officenumber: ['', Validators.required]
+    });
+    this.timings = [{ id: this.id, starting: '10:00 AM', ending: '09:00 PM' }];
+  }
+  addTimeing() {
+    this.id++;
+    this.timings.push({ id: this.id, starting: this.startingtime, ending: this.endingtime });
+    this.startingtime = '';
+    this.endingtime = '';
+  }
+  removeTimeing(timing) {
+    this.timings = this.timings.filter(function (obj) {
+      return obj.id !== timing.id;
     });
   }
-  trainer() {
-    // console.log(this.signupForm.value);
-    this.showSpinner = true;
-    this.authService.trainer(this.addtrainerForm.value).subscribe(
-      data => {
-        // this.tokenService.SetToken(data.token);
-        this.addtrainerForm.reset();
-        setTimeout(() => {
-          this.router.navigate(['trainer']);
-        }, 2000);
+  saveTrainer() {
+    console.log({ result: this.addtrainerForm.value, timings: this.timings });
+    if (this.addtrainerForm.valid) {
 
-      },
-      err => {
-        this.showSpinner = false;
-        // console.log(err);
-        if (err.error.msg) {
-          this.errorMessage = err.error.msg[0].message; //validation error, value at index 0,array
+
+      this.showSpinner = true;
+      this.authService.trainer({ result: this.addtrainerForm.value, timings: this.timings }).subscribe(
+        data => {
+          // this.tokenService.SetToken(data.token);
+          this.addtrainerForm.reset();
+          setTimeout(() => {
+            this.router.navigate(['trainer']);
+          }, 2000);
+
+        },
+        err => {
+          this.showSpinner = false;
+          // console.log(err);
+          if (err.error.msg) {
+            this.errorMessage = err.error.msg[0].message; //validation error, value at index 0,array
+          }
+          if (err.error.message) {
+            this.errorMessage = err.error.message;
+          }
         }
-        if (err.error.message) {
-          this.errorMessage = err.error.message;
-        }
-      }
-    ); // we are passing an object so we are subscribing, register user takes an object
+      ); // we are passing an object so we are subscribing, register user takes an object
+    }
   }
 }

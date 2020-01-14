@@ -178,12 +178,7 @@ const routes: Routes = [
 	{
 		path: 'gymslist',
 		component: GymsListComponent
-<<<<<<< HEAD
-	},	
-	
-=======
 	},
->>>>>>> 116ccd578ffebfdbf7c49d676b3edaa69e2f05d8
 	{
 		path: '**',
 		redirectTo: 'streams'

@@ -1,0 +1,39 @@
+<app-toolbar></app-toolbar>
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="progress" *ngIf="showSpinner">
+            <div class="indeterminate"></div>
+        </div>
+        <div class="col s12 m4 l3">
+            <app-side></app-side>
+        </div>
+        <button class="btn" style="float: right; margin: 2px;" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <a [routerLink]="['/addservice']">
+                <span style="color: beige;"> Add Services</span>
+            </a>
+        </button>
+        <div class="col s12 m8 l9">
+            <div class="row">
+                <div class="col s12 m6 l4 cardDiv" style="width: 40%;" *ngFor="let service of services">
+                    <div class="card">
+                        <div class="card-image imgDiv">
+                            <!-- <img class="imgCircle responsive-img"
+                                src="http://res.cloudinary.com/chatapplication/image/upload/v{{ user.picVersion }}/{{ user.picId }}" /> -->
+                        </div>
+                        <div class="card-action" style="padding: 0px 20px; line-height: 0.5;">
+                            <h4 class="card-title">
+                               Name:- {{service.name }}
+                            </h4>
+                            <p> S.Dis:- {{service.servicedec}}</p>
+                            <p>S.Code:- {{service.servicecode}}</p>
+                            <button class="btn" style="margin: 2.5px;"
+                                (click)="addservice">Edit</button>
+                            <button class="btn" (click)="DeleteUser(user)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
