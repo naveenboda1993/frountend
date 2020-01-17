@@ -50,9 +50,9 @@ export class GymAddComponent implements OnInit {
         bankname: ['', Validators.required],
         ifsccode: ['', Validators.required],
         holdername: ['', Validators.required],
-        timings: ['', Validators.required],
-        services:
-          this.fb.array(data.result),
+        // timings: ['', Validators.required],
+        // services:
+        //   this.fb.array(data.result),
   
         // password: ['', Validators.required],
         // role: ['', Validators.required]
