@@ -55,6 +55,9 @@ export class UsersService {
 	GetUserByName(username): Observable<any> {
 		return this.http.get(`${BASEURL}/username/${username}`);
 	}
+	GetPrice(id): Observable<any> {
+		return this.http.get(`${BASEURL}/getpricing`);
+	}
 
 	GetGymWorking(gym): Observable<any> {
 		return this.http.post(`${BASEURL}/updategymworkinghours`, {
