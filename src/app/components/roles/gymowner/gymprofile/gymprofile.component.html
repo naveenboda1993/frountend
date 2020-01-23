@@ -15,7 +15,7 @@
 		<div class="col s12 m8 l9">
 			<div class="row">
 				<div class="col s12 m6 l4 cardDiv" style="width: 50%;" *ngFor="let gym of gyms">
-					<div class="card" >
+					<div class="card">
 						<a (click)="ViewGym(gym)">
 							<div class="card-image imgDiv">
 								<img class=" responsive-img"
@@ -31,9 +31,8 @@
 											<!-- <i class="fa fa-circle" *ngIf="CheckIfOnline(gym.gymname)"></i> -->
 										</h3>
 										<!-- <p *ngIf="gym.gymtag"> {{gym.gymtag}}</p> -->
-										<button class="btn" 
-											(click)="DeleteGym(gym)">Remove</button>
-
+										<button class="btn" (click)="DeleteGym(gym)">Remove</button>
+										<button style="margin: 5px;" class="btn" [routerLink]="['/gymedit/'+gym._id]">Edit</button>
 										<!-- <p *ngIf="user.city">{{ user.city }},{{ user.country }}</p> -->
 										<!-- <p *ngIf="user.role">{{ user.role }}</p> -->
 										<!-- <button class="btn" style="margin: 2.5px;" *ngIf="!CheckInArray(userArr, user._id)"

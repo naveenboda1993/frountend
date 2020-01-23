@@ -1,57 +1,10 @@
 <app-toolbar></app-toolbar>
-<!-- <header role="banner" class="header">
-    <div class="container-fluid">
-        <a href="streams.html" class="header-logo">
-            Trainer
-            <span>.</span>
-        </a>
-        <a href="#" class="header-menu visible-xs">
-            <i>Menu</i>
-        </a>
-        <div class="mobile-menu"></div>
-        <nav role="navigation" class="header-nav hidden-xs" style="width: 70%;     background-color: #d1d1d1;">
-            <ul class="header-main-nav">
-                <li class="active">
-                    <a href="streams.html"> Home </a>
-                </li>
-                <li>
-                    <a href="#"> programes </a>
-                </li>
-                <li>
-                    <a href="#"> Gallery </a>
-                </li>
-                <li>
-                    <a href="#"> About Me </a>
-                </li>
-                <li>
-                    <a href="#"> Contact us </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header> -->
-<!-- <section class="header-intro"
-    style="background-image: url('assets/images/trainer1.jpg'); background-position: 0px 0px; height: 400px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <h2 style="color: black;">{{user.username}}</h2>
-            </div>
-            <div>
-                <h3> Personal trainer</h3>
-            </div>
-        </div>
-    </div>
-    <span class="probootstrap-animate fadeInUp probootstrap-animated"><a
-            class="probootstrap-scroll-down js-next probootstrap-sleep" href="#next-section">Scroll down <i
-                class="icon-chevron-down"></i></a></span>
-</section> -->
 <main>
     <section id="next-section" class="body-section">
         <div class="container">
             <div class="row">
                 <div class="card">
-                    <div class="card-action" style="height: 500px;">
+                    <div class="card-action" style="height: 550px;">
                         <div class="col m6 l6">
                             <figure>
                                 <img src="assets/images/trainer1.jpg" alt=" pesronal trainer " style="float: left; height: 300px;
@@ -63,43 +16,27 @@
                                     <h6>Exp: {{trainer.experience}} </h6>
                                 </div>
                                 <div class="col m4 l4">
-                                    <h6>Age: {{trainer.age}} </h6>
+                                    <h6>Age: {{user.age}} </h6>
                                 </div>
                             </figure>
                         </div>
                         <div class="col m6 l6">
                             <h5>Name:- {{user.username}}</h5>
                             <p>{{trainer.tagline}}</p>
-                            <!-- <p>{{trainer.specialization}}</p> -->
                             <h5>Certification :</h5>
                             <p>{{trainer.certification}}</p>
                             <h5>Specilazation</h5>
                             <p>{{trainer.specialization}}</p>
                             <h5>Address</h5>
-                            <P>{{trainer.address}}</P>
+                            <P>{{user.address}}</P>
                             <h5>Email</h5>
                             <a href="email" style="color: red;">{{user.email}}</a>
                             <h5>Phone Number</h5>
                             <a href="phone" style="color: red;">{{user.phonenumber}}</a>
-                        </div>
-                        <div class="col m6 l6">
-                            
-                            <!-- <p>group fitness instructions</p> -->
-                        </div>
-                        <!-- <div class="col m5 l5">
-                                <button class="button"> single session </button>
-                                <button class="button"> group session </button>
-                                <br>
-                                <label for="price"> price</label>
-                                <input type="text" name="price">
-                            </div> -->
+                        </div>                        
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-        <!-- <button style="margin-left: 50%;"> BOOK NOW </button> -->
     </section>
 </main>

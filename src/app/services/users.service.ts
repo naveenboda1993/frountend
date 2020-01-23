@@ -43,6 +43,10 @@ export class UsersService {
 	GetTrainerOne(id): Observable<any> {
 		return this.http.get(`${BASEURL}/gettrainerone/${id}`);
 	}
+	
+	GetPrice(id): Observable<any> {
+		return this.http.get(`${BASEURL}/creategymprofile/${id}`);
+	}
 	GetGymownerOne(id): Observable<any> {
 		return this.http.get(`${BASEURL}/getgymownerone/${id}`);
 	}
@@ -55,14 +59,15 @@ export class UsersService {
 	GetUserByName(username): Observable<any> {
 		return this.http.get(`${BASEURL}/username/${username}`);
 	}
-	GetPrice(id): Observable<any> {
-		return this.http.get(`${BASEURL}/getpricing`);
-	}
 
 	GetGymWorking(gym): Observable<any> {
 		return this.http.post(`${BASEURL}/updategymworkinghours`, {
 			gym
 		});
+	}
+	// getting one gym 
+	GetGymOne(id): Observable<any> {
+		return this.http.get(`${BASEURL}/getgymone/${id}`);
 	}
 	FollowUser(userFollowed): Observable<any> {
 		return this.http.post(`${BASEURL}/follow-user`, {

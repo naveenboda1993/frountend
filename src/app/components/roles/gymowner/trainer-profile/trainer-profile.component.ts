@@ -38,20 +38,20 @@ export class TrainerProfileComponent implements OnInit {
   init() {
     this.username = ''
     this.email = ' your email'
-    this.updateTrainerForm = this.fb.group({
-      username: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
-      password: ['', Validators.required],
-      phonenumber: ['', Validators.required],
-      age: ['', Validators.required],
-      certification: ['', Validators.required],
-      specialization: ['', Validators.required],
-      tagline: ['', Validators.required],
-      experience: ['', Validators.required],
-      id: ['', Validators.required],
-      address: ['', Validators.required],
-      language: ['', Validators.required],
-    });
+    // this.updateTrainerForm = this.fb.group({
+    //   username: ['', Validators.required],
+    //   email: ['', [Validators.email, Validators.required]],
+    //   password: ['', Validators.required],
+    //   phonenumber: ['', Validators.required],
+    //   age: ['', Validators.required],
+    //   certification: ['', Validators.required],
+    //   specialization: ['', Validators.required],
+    //   tagline: ['', Validators.required],
+    //   experience: ['', Validators.required],
+    //   id: ['', Validators.required],
+    //   address: ['', Validators.required],
+    //   language: ['', Validators.required],
+    // });
     this.GetUsers();
   }
 
@@ -67,12 +67,12 @@ export class TrainerProfileComponent implements OnInit {
   updatetrainer() {
     // console.log(this.signupForm.value);
     this.showSpinner = true;
-    this.authService.updatetrainer(this.updateTrainerForm.value).subscribe(
+    this.authService.updatetrainer({user:this.user,tranier:this.trainer},this.user._id).subscribe(
       data => {
         // this.tokenService.SetToken(data.token);
-        this.updateTrainerForm.reset();
+        // this.updateTrainerForm.reset();
         setTimeout(() => {          
-          this.router.navigate(['updatetrainer']);
+          this.router.navigate(['trainerview/myprofile']);
         }, 2000);
 
       },

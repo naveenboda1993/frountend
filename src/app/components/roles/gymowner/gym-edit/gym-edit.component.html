@@ -1,136 +1,101 @@
 <app-toolbar></app-toolbar>
 <div class="container" style="margin-top: 30px;">
-    <div class="row">
-        <div class="col s12 m5 l3">
-            <app-side></app-side>
-            <!-- <h1> this is app side component</h1> -->
-        </div>
-        <div class="col s12 m6 l9">
-            <div class="row">
-                <h3>Add Gym</h3>
-                <div class="col s10  addgymForm">
-                    <div class="row" *ngIf="isForm"  >
-                        <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()">
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="gym_name" type="text" formControlName="gymname" />
-                                    <label for="gym_name">Gymname</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['gymname'].valid && addgymForm.controls['gymname'].touched">Gymname
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="emial" type="text" formControlName="email" />
-                                    <label for="email">email</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial
-                                        is
-                                        required</span>
-                                </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="Phone_number" type="text" formControlName="phonenumber" />
-                                    <label for="phone_number">PhoneNumber</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['phonenumber'].valid && addgymForm.controls['phonenumber'].touched">Phone
-                                        number
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="office_number" type="text" formControlName="officenumber" />
-                                    <label for="office_number">Office Number</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['officenumber'].valid && addgymForm.controls['officenumber'].touched">Office
-                                        number
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="address" type="text" formControlName="address" />
-                                    <label for="address">Address</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['address'].valid && addgymForm.controls['address'].touched">Address
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="tag" type="text" formControlName="tag" />
-                                    <label for="tag">Gym Tag Line</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
-                                        Tag Line
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="discripition" type="text" formControlName="discripition" />
-                                    <label for="discripition">Gym Discripition</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
-                                        discripition
-                                        is required</span>
-                                </div>
-                            </div>
-                            <br>
-                            <P>BANK DETAILS </P>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="accountnumber" type="text" formControlName="accountnumber" />
-                                    <label for="accountnumber">Account Number</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['accountnumber'].valid && addgymForm.controls['accountnumber'].touched">Account
-                                        Number
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="bankname" type="text" formControlName="bankname" />
-                                    <label for="bankname"> Bank Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['bankname'].valid && addgymForm.controls['bankname'].touched">
-                                      Bank Name
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="ifsccode" type="text" formControlName="ifsccode" />
-                                    <label for="ifsccode">IFSC Code</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['ifsccode'].valid && addgymForm.controls['ifsccode'].touched">IFSC
-                                        Code
-                                        is required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="holdername" type="text" formControlName="holdername" />
-                                    <label for="holdername">Account Holder Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['holdername'].valid && addgymForm.controls['holdername'].touched">Account
-                                        Holder Name
-                                        is required</span>
-                                </div>
-                            </div>
-                            
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addgymForm.valid">ADD
-                                GYM</button>
-                            <div class="progress" *ngIf="showSpinner">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col s12 m5 l3">
+			<app-side></app-side>
+			<!-- <h1> this is app side component</h1> -->
+		</div>
+		<div class="col s12 m6 l9">
+			<div class="row ">
+				<h3 style="padding-left: 40px;">Edit Gym</h3>
+				<div class="col s10 updateGymForm">
+					<div class="row">
+						<!-- <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()"> -->
+						<div class="row col s12">
+							<div class="input-field col s12">
+								<label for="gymname">Gym Name</label>
+								<br>
+
+								<input id="gymname" type="text"  [(ngModel)]="gym.gymname"/>
+							</div>
+                        </div>                        
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="email">email</label>
+                                <br>
+								<input id="email" type="text"  [(ngModel)]="gym.email" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="phonenumber">PhoneNumber</label>
+                                <br>
+								<input id="Phonenumber" type="text"  [(ngModel)]="gym.phonenumber" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="officenumber">Office Number</label>
+                                <br>
+								<input id="officenumber" type="text"  [(ngModel)]="gym.officenumber" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="address">Address</label>
+                                <br>
+								<input id="address" type="text"  [(ngModel)]="gym.address" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="tag">Gym Tag Line</label>
+                                <br>
+								<input id="tag" type="text"  [(ngModel)]="gym.gymtag" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="discripition">Gym Discripition</label>
+                                <br>
+								<input id="discripition" type="text"  [(ngModel)]="gym.gymdec" />
+							</div>
+						</div>
+						<br />
+						<P>BANK DETAILS </P>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="accountnumber">Account Number</label>
+                                <br>
+								<input id="accountnumber" type="text" [(ngModel)]="gym.accountnumber" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="bankname"> Bank Name</label>
+                                <br>
+								<input id="bankname" type="text"  [(ngModel)]="gym.bankname" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="ifsccode">IFSC Code</label>
+                                <br>
+								<input id="ifsccode" type="text" [(ngModel)]="gym.ifsccode" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+								<label for="holdername">Account Holder Name</label><br>
+								<input id="holdername" type="text"  [(ngModel)]="gym.holdername" />
+							</div>
+						</div>
+
+						<button class="btn waves-effects" id="signupbtn" (click)="updategym()"> UPDATE GYM</button>
+						<!-- </form> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

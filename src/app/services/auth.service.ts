@@ -24,11 +24,17 @@ export class AuthService {
 	gymadd(body): Observable<any> {
 		return this.http.post(`${BASEURL}/creategymprofile`, body);
 	}
+	updategym(body,id): Observable<any> {
+		return this.http.post(`${BASEURL}/updategymprofile/${id}`, body);
+	}
 	trainer(body): Observable<any> {
 		return this.http.post(`${BASEURL}/trainer`, body);
 	}
-	updatetrainer(body): Observable<any> {
-		return this.http.post(`${BASEURL}/updatetrainer`, body);
+	updatetrainer(body,id): Observable<any> {
+		return this.http.post(`${BASEURL}/updatetrainer/${id}`, body);
+	}
+	updateprice(body): Observable<any> {
+		return this.http.post(`${BASEURL}/updateprice`, body);
 	}
 	updategymowner(body): Observable<any> {
 		return this.http.post(`${BASEURL}/updateUser`, body);

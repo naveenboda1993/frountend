@@ -89,7 +89,7 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
-		path: 'gymedit',
+		path: 'gymedit/:id',
 		component: GymEditComponent,
 		canActivate: [AuthGuard]
 	},

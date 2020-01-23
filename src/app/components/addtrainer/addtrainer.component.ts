@@ -68,7 +68,7 @@ export class AddtrainerComponent implements OnInit {
 
 
       this.showSpinner = true;
-      this.authService.trainer({ result: this.addtrainerForm.value, timings: this.timings }).subscribe(
+      this.authService.trainer(this.addtrainerForm.value).subscribe(
         data => {
           // this.tokenService.SetToken(data.token);
           this.addtrainerForm.reset();
