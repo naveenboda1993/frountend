@@ -15,10 +15,16 @@
 							<div class="input-field col s12">
 								<label for="gymname">Gym Name</label>
 								<br>
-
 								<input id="gymname" type="text"  [(ngModel)]="gym.gymname"/>
 							</div>
-                        </div>                        
+						</div>    
+						<div class="row col s12">
+							<div class="input-field col s12">
+								<label for="ownername">Owner Name/Manager Name</label>
+								<br>
+								<input id="ownername" type="text"  [(ngModel)]="gym.ownername"/>
+							</div>
+                        </div>                       
 						<div class="row col s12">
 							<div class="input-field col s12">
                                 <label for="email">email</label>
@@ -40,11 +46,53 @@
 								<input id="officenumber" type="text"  [(ngModel)]="gym.officenumber" />
 							</div>
 						</div>
-						<div class="row col s12">
+						<div class="row col s4">
 							<div class="input-field col s12">
-                                <label for="address">Address</label>
+                                <label for="flatno">H NO/Flatno</label>
                                 <br>
-								<input id="address" type="text"  [(ngModel)]="gym.address" />
+								<input id="flatno" type="text"  [(ngModel)]="gym.flatno" />
+							</div>
+						</div>
+						<div class="row col s4">
+							<div class="input-field col s12">
+                                <label for="street">Street</label>
+                                <br>
+								<input id="street" type="text"  [(ngModel)]="gym.street" />
+							</div>
+						</div>
+						<div class="row col s4">
+							<div class="input-field col s12">
+                                <label for="area">Area</label>
+                                <br>
+								<input id="area" type="text"  [(ngModel)]="gym.area" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="locality">Locality</label>
+                                <br>
+								<input id="locality" type="text"  [(ngModel)]="gym.locality" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="city">City</label>
+                                <br>
+								<input id="city" type="text"  [(ngModel)]="gym.city" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="pincode">pincode</label>
+                                <br>
+								<input id="pincode" type="text"  [(ngModel)]="gym.pincode" />
+							</div>
+						</div>
+						<div class="row col s6">
+							<div class="input-field col s12">
+                                <label for="state">State</label>
+                                <br>
+								<input id="state" type="text"  [(ngModel)]="gym.state" />
 							</div>
 						</div>
 						<div class="row col s12">
@@ -63,33 +111,33 @@
 						</div>
 						<br />
 						<P>BANK DETAILS </P>
-						<div class="row col s12">
+						<div class="row col s6">
+							<div class="input-field col s12">
+								<label for="holdername">Account Holder Name</label><br>
+								<input id="holdername" type="text"  [(ngModel)]="gym.holdername" />
+							</div>
+						</div>
+						<div class="row col s6">
 							<div class="input-field col s12">
                                 <label for="accountnumber">Account Number</label>
                                 <br>
 								<input id="accountnumber" type="text" [(ngModel)]="gym.accountnumber" />
 							</div>
 						</div>
-						<div class="row col s12">
+						<div class="row col s6">
 							<div class="input-field col s12">
                                 <label for="bankname"> Bank Name</label>
                                 <br>
 								<input id="bankname" type="text"  [(ngModel)]="gym.bankname" />
 							</div>
 						</div>
-						<div class="row col s12">
+						<div class="row col s6">
 							<div class="input-field col s12">
                                 <label for="ifsccode">IFSC Code</label>
                                 <br>
 								<input id="ifsccode" type="text" [(ngModel)]="gym.ifsccode" />
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<label for="holdername">Account Holder Name</label><br>
-								<input id="holdername" type="text"  [(ngModel)]="gym.holdername" />
-							</div>
-						</div>
+						</div>					
 
 						<button class="btn waves-effects" id="signupbtn" (click)="updategym()"> UPDATE GYM</button>
 						<!-- </form> -->

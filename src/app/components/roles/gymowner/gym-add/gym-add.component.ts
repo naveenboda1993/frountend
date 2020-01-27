@@ -39,30 +39,36 @@ export class GymAddComponent implements OnInit {
       let arr = { red: true, blue: false };
       this.addgymForm = this.fb.group({
         gymname: ['', Validators.required],
+        ownername: ['', Validators.required],
         tag: ['', Validators.required],
         email: ['', [Validators.email, Validators.required]],
         phonenumber: ['', Validators.required],
         officenumber: ['', Validators.required],
-        address: ['', Validators.required],
+        flatno: ['', Validators.required],
+        street: ['', Validators.required],
+        area: ['', Validators.required],
+        locality: ['', Validators.required],
+        city: ['', Validators.required],
+        pincode: ['', Validators.required],
+        state: ['', Validators.required],
         discripition: ['', Validators.required],
-        // services: ['', Validators.required],
         accountnumber: ['', Validators.required],
         bankname: ['', Validators.required],
         ifsccode: ['', Validators.required],
         holdername: ['', Validators.required],
+        // services: ['', Validators.required],
         // timings: ['', Validators.required],
         // services:
-        //   this.fb.array(data.result),
-  
+        //   this.fb.array(data.result),  
         // password: ['', Validators.required],
         // role: ['', Validators.required]
         // language: ['',Validators.required],
         // age: ['',Validators.required],
-  
+
       });
-      this.isForm=true;
-		});
-    
+      this.isForm = true;
+    });
+
     // this.addgymForm.patchValue({'services':[{'red':false,'blue':true}]});
     console.log("hello")
   }

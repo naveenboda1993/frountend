@@ -12,13 +12,14 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class GymEditComponent implements OnInit {
   gymname: any;
+  ownername: any;
   email: any;
   errorMessage: string;
   showSpinner = false;
   updateGymForm: FormGroup;
   loggedInGym: any;
   user: any;
-  gym: { gymname: any,_id?:any };
+  gym: { gymname: any, _id?: any };
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -38,6 +39,7 @@ export class GymEditComponent implements OnInit {
   }
   init() {
     this.gymname = ''
+    this.ownername = ''
     this.email = ' your email'
     // this.updategymForm = this.fb.group({
     //   gymname: ['', Validators.required],
@@ -72,7 +74,7 @@ export class GymEditComponent implements OnInit {
   updategym() {
     // console.log(this.signupForm.value);
     this.showSpinner = true;
-    this.authService.updategym(this.gym,this.gym._id).subscribe(
+    this.authService.updategym(this.gym, this.gym._id).subscribe(
       data => {
         // this.tokenService.SetToken(data.token);
         // this.updateGymForm.reset();

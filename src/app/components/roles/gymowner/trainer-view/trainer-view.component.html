@@ -18,22 +18,27 @@
                                 <div class="col m4 l4">
                                     <h6>Age: {{user.age}} </h6>
                                 </div>
+                                <br>
+                                <div class="col m4 l4">
+                                    <h6> DOB:{{trainer.dob}} </h6>
+                                </div>
                             </figure>
                         </div>
                         <div class="col m6 l6">
-                            <h5>Name:- {{user.username}}</h5>
+                            <h5>Name:- {{trainer.surname}} {{trainer.name}}</h5>
                             <p>{{trainer.tagline}}</p>
                             <h5>Certification :</h5>
                             <p>{{trainer.certification}}</p>
                             <h5>Specilazation</h5>
                             <p>{{trainer.specialization}}</p>
                             <h5>Address</h5>
-                            <P>{{user.address}}</P>
+                            <P>{{trainer.flatno}} , {{trainer.street}} , {{trainer.area}}</P>
+                            <P>{{trainer.locality}}, {{trainer.city}}, {{trainer.pincode}}, {{trainer.state}}</P>
                             <h5>Email</h5>
                             <a href="email" style="color: red;">{{user.email}}</a>
                             <h5>Phone Number</h5>
-                            <a href="phone" style="color: red;">{{user.phonenumber}}</a>
-                        </div>                        
+                            <a href="phone" style="color: red;">{{user.phonenumber}} / {{user.officenumber}}</a>
+                        </div>
                     </div>
                 </div>
             </div>

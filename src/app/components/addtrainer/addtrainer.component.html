@@ -3,7 +3,6 @@
     <div class="row">
         <div class="col s12 m5 l3">
             <app-side></app-side>
-            <!-- <h1> this is app side component</h1> -->
         </div>
         <div class="col s12 m6 l9">
             <div class="row">
@@ -11,12 +10,21 @@
                 <div class="col s10 addtrainerForm">
                     <div class="row">
                         <form class="col s12" [formGroup]="addtrainerForm" novalidate (ngSubmit)="saveTrainer()">
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
-                                    <input id="user_name" type="text" formControlName="username" />
-                                    <label for="user_name">Username</label>
+                                    <input id="surname" type="text" formControlName="surname" />
+                                    <label for="surname">Sur Name</label>
                                     <span class="error"
-                                        *ngIf="!addtrainerForm.controls['username'].valid && addtrainerForm.controls['username'].touched">Username
+                                        *ngIf="!addtrainerForm.controls['surname'].valid && addtrainerForm.controls['surname'].touched">Surname
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="name" type="text" formControlName="name" />
+                                    <label for="name">Name</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['name'].valid && addtrainerForm.controls['name'].touched">Name
                                         is required</span>
                                 </div>
                             </div>
@@ -29,10 +37,25 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s4">
                                 <div class="input-field col s12">
-                                    <input id="age" type="text" formControlName="age" />
-                                    <label for="age">Age</label>
+                                    <input id="dob" type="text" formControlName="dob" [(ngModel)]="dob" />
+                                    <label for="dob">Date Of Birth</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['dob'].valid && addtrainerForm.controls['dob'].touched">Date
+                                        Of Birth
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <button (click)="CalculateAge()">Calculate Age</button>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <input id="age" type="text" value="{{age}}" [(ngModel)]="age"
+                                        formControlName="age" />
+                                    <br>
+                                    <label for="age">age</label>
                                     <span class="error"
                                         *ngIf="!addtrainerForm.controls['age'].valid && addtrainerForm.controls['age'].touched">Age
                                         is required</span>
@@ -48,6 +71,7 @@
                                         is required</span>
                                 </div>
                             </div>
+
                             <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="Office_number" type="text" formControlName="officenumber" />
@@ -57,34 +81,81 @@
                                         number is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s4">
                                 <div class="input-field col s12">
-                                    <label for="address">Address</label>
-                                    <input id="address" type="text" formControlName="address" />
+                                    <label for="flatno">H.No/ Flat No </label>
+                                    <input id="flatno" type="text" formControlName="flatno" />
                                     <span class="error"
-                                        *ngIf="!addtrainerForm.controls['address'].valid && addtrainerForm.controls['address'].touched">Address
+                                        *ngIf="!addtrainerForm.controls['flatno'].valid && addtrainerForm.controls['flatno'].touched">H.No/Flat
+                                        No
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s4">
                                 <div class="input-field col s12">
-                                    <label for="certification">Certification</label>
-                                    <input id="certification" type="text" formControlName="certification" />
+                                    <label for="street">Stret/ Road.No </label>
+                                    <input id="street" type="text" formControlName="street" />
                                     <span class="error"
-                                        *ngIf="!addtrainerForm.controls['certification'].valid && addtrainerForm.controls['certification'].touched">Certifications
-                                        are required</span>
-                                </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <label for="specialization">Specialization & Skils</label>
-                                    <input id="specialization" type="text" formControlName="specialization" />
-                                    <span class="error"
-                                        *ngIf="!addtrainerForm.controls['specialization'].valid && addtrainerForm.controls['specialization'].touched">Specialization
+                                        *ngIf="!addtrainerForm.controls['street'].valid && addtrainerForm.controls['street'].touched">Street/
+                                        Road.No
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="area">Area</label>
+                                    <input id="area" type="text" formControlName="area" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['area'].valid && addtrainerForm.controls['area'].touched">Area
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="locality">Locality</label>
+                                    <input id="locality" type="text" formControlName="locality" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['locality'].valid && addtrainerForm.controls['locality'].touched">Locality
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="city">City/District/town</label>
+                                    <input id="city" type="text" formControlName="city" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['city'].valid && addtrainerForm.controls['city'].touched">Cirty
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="pincode">Pincode</label>
+                                    <input id="pincode" type="text" formControlName="pincode" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['pincode'].valid && addtrainerForm.controls['pincode'].touched">pincode
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="state">State</label>
+                                    <input id="state" type="text" formControlName="state" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['state'].valid && addtrainerForm.controls['state'].touched">State
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="experience">Experience</label>
+                                    <input id="experience" type="text" formControlName="experience" />
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['experience'].valid && addtrainerForm.controls['experience'].touched">Experience
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s8">
                                 <div class="input-field col s12">
                                     <label for="tagline">Tag Line</label>
                                     <input id="tagline" type="text" formControlName="tagline" />
@@ -94,21 +165,21 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
-                                    <label for="experience">Experience</label>
-                                    <input id="experience" type="text" formControlName="experience" />
+                                    <label for="certification">Certification</label>
+                                    <input id="certification" type="text" formControlName="certification" />
                                     <span class="error"
-                                        *ngIf="!addtrainerForm.controls['experience'].valid && addtrainerForm.controls['experience'].touched">Experience
-                                        is required</span>
+                                        *ngIf="!addtrainerForm.controls['certification'].valid && addtrainerForm.controls['certification'].touched">Certifications
+                                        are required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
-                                    <label for="id">Trainer Id</label>
-                                    <input id="id" type="text" formControlName="id" />
+                                    <label for="specialization">Specialization & Skils</label>
+                                    <input id="specialization" type="text" formControlName="specialization" />
                                     <span class="error"
-                                        *ngIf="!addtrainerForm.controls['id'].valid && addtrainerForm.controls['id'].touched">Experience
+                                        *ngIf="!addtrainerForm.controls['specialization'].valid && addtrainerForm.controls['specialization'].touched">Specialization
                                         is required</span>
                                 </div>
                             </div>
@@ -121,7 +192,16 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="user_name" type="text" formControlName="username" />
+                                    <label for="user_name">Username</label>
+                                    <span class="error"
+                                        *ngIf="!addtrainerForm.controls['username'].valid && addtrainerForm.controls['username'].touched">Username
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <label for="pass-word">Password</label>
                                     <input id="pass-word" type="password" formControlName="password" />
@@ -130,10 +210,7 @@
                                         is required</span>
                                 </div>
                             </div>
-
-                            <p> Bank Details </p>
-
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="holdername" type="text" formControlName="holdername" />
                                     <label for="holdername">Account Holder Name</label>
@@ -143,7 +220,7 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="accountnumber" type="text" formControlName="accountnumber" />
                                     <label for="accountnumber">Account Number</label>
@@ -153,7 +230,7 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="bankname" type="text" formControlName="bankname" />
                                     <label for="bankname">Bank Name</label>
@@ -163,7 +240,7 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <div class="row col s6">
                                 <div class="input-field col s12">
                                     <input id="ifsccode" type="text" formControlName="ifsccode" />
                                     <label for="ifsccode">IFSC Code</label>
@@ -173,7 +250,38 @@
                                         is required</span>
                                 </div>
                             </div>
-                            
+                            <!-- <div class="col s12 m8 l9">
+                                <div class="row">
+                                    <div class="col s10">
+                                        <div class="file-field input-field">
+                                            <div class="btn">
+                                                <span>File</span>
+                                                <input type="file" ng2FileSelect [uploader]="uploader"
+                                                    (onFileSelected)="OnFileSelected($event)" />
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text" id="filePath" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s2">
+                                        <div class="file-field input-field">
+                                            <a class="waves-effect waves-light btn" (click)="Upload()"><i
+                                                    class="material-icons left"></i>Upload</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 m6 l4" *ngFor="let image of images">
+                                        <div class="item-img-wrap imgDiv">
+                                            <img class="imgCircle"
+                                                src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
+                                            <button class="btn imgBtn" (click)="SetProfileImage(image)">Set As
+                                                Profile</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
                             <!-- <div class="row col s12">
                                 <p>Active Time</p>
 
@@ -195,7 +303,7 @@
                                     </div>
                                 </div>
                             </div> -->
-                            
+
 
 
                             <button class="btn waves-effects" id="signupbtn" [disabled]="!addtrainerForm.valid">ADD

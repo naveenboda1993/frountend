@@ -7,17 +7,26 @@
         </div>
         <div class="col s12 m6 l9">
             <div class="row">
-                <h3>Add Gym</h3>
+                <h3 style="margin-left:30px;">Add Gym</h3>
                 <div class="col s10  addgymForm">
-                    <div class="row" *ngIf="isForm"  >
+                    <div class="row" *ngIf="isForm">
                         <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()">
                             <div class="row col s12">
                                 <div class="input-field col s12">
                                     <input id="gym_name" type="text" formControlName="gymname" />
-                                    <label for="gym_name">Gymname</label>
+                                    <label for="gym_name">Gym Name</label>
                                     <span class="error"
                                         *ngIf="!addgymForm.controls['gymname'].valid && addgymForm.controls['gymname'].touched">Gymname
                                         is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="ownername" type="text" formControlName="ownername" />
+                                    <label for="ownername">Owner Name/Manager Name</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['ownername'].valid && addgymForm.controls['ownername'].touched">Ownername
+                                        / Managaer name is required</span>
                                 </div>
                             </div>
                             <div class="row col s12">
@@ -50,12 +59,68 @@
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
+                            <h6 style="margin-left:30px;">Address</h6>
+                            <div class="row col s4">
                                 <div class="input-field col s12">
-                                    <input id="address" type="text" formControlName="address" />
-                                    <label for="address">Address</label>
+                                    <input id="flatno" type="text" formControlName="flatno" />
+                                    <label for="flatno">H.No/Flat NO</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['address'].valid && addgymForm.controls['address'].touched">Address
+                                        *ngIf="!addgymForm.controls['flatno'].valid && addgymForm.controls['flatno'].touched">H
+                                        No/Flat no
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <input id="street" type="text" formControlName="street" />
+                                    <label for="street">Street</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['street'].valid && addgymForm.controls['street'].touched">Street
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <input id="area" type="text" formControlName="area" />
+                                    <label for="area">Area</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['area'].valid && addgymForm.controls['area'].touched">Area
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="locality" type="text" formControlName="locality" />
+                                    <label for="locality">Locality</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['locality'].valid && addgymForm.controls['locality'].touched">Locality
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="city" type="text" formControlName="city" />
+                                    <label for="city">City/District/town</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['city'].valid && addgymForm.controls['city'].touched">city/district/town
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="pincode" type="text" formControlName="pincode" />
+                                    <label for="pincode">Pincode</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['pincode'].valid && addgymForm.controls['pincode'].touched">Pincode
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <input id="state" type="text" formControlName="state" />
+                                    <label for="state">State</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['state'].valid && addgymForm.controls['state'].touched">State
                                         is required</span>
                                 </div>
                             </div>
@@ -80,7 +145,7 @@
                                 </div>
                             </div>
                             <br>
-                            <P>BANK DETAILS </P>
+                            <h6 style="margin-left:30px;">Bank Details </h6>
                             <div class="row col s12">
                                 <div class="input-field col s12">
                                     <input id="accountnumber" type="text" formControlName="accountnumber" />
@@ -97,7 +162,7 @@
                                     <label for="bankname"> Bank Name</label>
                                     <span class="error"
                                         *ngIf="!addgymForm.controls['bankname'].valid && addgymForm.controls['bankname'].touched">
-                                      Bank Name
+                                        Bank Name
                                         is required</span>
                                 </div>
                             </div>
@@ -130,7 +195,8 @@
                                         is required</span>
                                 </div>
                             </div> -->
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addgymForm.valid">ADD GYM</button>
+                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addgymForm.valid">ADD
+                                GYM</button>
                             <div class="progress" *ngIf="showSpinner">
                                 <div class="indeterminate"></div>
                             </div>

@@ -25,7 +25,7 @@ export class TrainerViewComponent implements OnInit {
 	username: any;
 	userid: any;
 	// gym: { workinghours: any };
-	trainer: { tagline?: any, specialization?: any, experience?: any, certification?: any, id?: any, age: any };
+	trainer: { surname?:any, name?:any, dob?:any, tagline?: any, specialization?: any, experience?: any, certification?: any, id?: any, age: any, flatno?:any, area?:any, street?:any, locality?:any, city?:any, pincode?:any, state?:any, };
 	onlineusers: [];
 	constructor(
 		private route: ActivatedRoute,
@@ -34,7 +34,7 @@ export class TrainerViewComponent implements OnInit {
 
 	ngOnInit() {
 		this.user = { username: '', email: '', phonenumber: '', address: '' };
-		this.trainer = { certification: '', experience: '', specialization: '', tagline: '', id: '', age: '' };
+		this.trainer = { surname:'', name:'', dob:'', certification: '', experience: '', specialization: '', tagline: '', id: '', age: '', flatno:'', street:'', area:'', locality:'', city:'', pincode:'', state:'' };
 		// // this.postsTab = true;
 		this.route.params.subscribe(params => {
 			console.log(params.id);
