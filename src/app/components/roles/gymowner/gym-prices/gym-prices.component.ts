@@ -45,6 +45,7 @@ export class GymPricesComponent implements OnInit {
       twomonth: ['', Validators.required],
       threemonth: ['', Validators.required],
       sixmonth: ['', Validators.required],
+      twelvemonth: ['', Validators.required],
 
     });
     this.GetGymPrices();
