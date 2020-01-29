@@ -56,6 +56,7 @@ export class GymAddComponent implements OnInit {
         bankname: ['', Validators.required],
         ifsccode: ['', Validators.required],
         holdername: ['', Validators.required],
+        gst: ['', Validators.required],
         // services: ['', Validators.required],
         // timings: ['', Validators.required],
         // services:

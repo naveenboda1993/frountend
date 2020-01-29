@@ -10,25 +10,31 @@ import { TokenService } from 'src/app/services/token.service';
   templateUrl: './gym-prices.component.html',
   styleUrls: ['./gym-prices.component.css']
 })
-export class GymPricesComponent implements OnInit  {
+export class GymPricesComponent implements OnInit {
   price: any;
   errorMessage: string;
   showSpinner = false;
   updatePriceForm: FormGroup;
   loggedInUser: any;
-  user: any;
-  
+  selectedGymPrice: any;
+  isAdmin: boolean;
+  gyms: any;
+  GymsPrices: any;
+  selectService: any;
+  isService: boolean;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router,
     private tokenService: TokenService) {
-      
-     }
+
+  }
 
   ngOnInit() {
-    this.user = { price: ''};
+    this.isAdmin = false;
+    this.isService=false;
+    this.selectedGymPrice = { price: '' };
     this.loggedInUser = this.tokenService.GetPayload();
     this.init();
   }
@@ -39,17 +45,47 @@ export class GymPricesComponent implements OnInit  {
       twomonth: ['', Validators.required],
       threemonth: ['', Validators.required],
       sixmonth: ['', Validators.required],
-     
+
     });
-    this.GetUsers();
+    this.GetGymPrices();
   }
 
-  GetUsers() {
+  GetGymPrices() {
     this.showSpinner = true;
-    this.userService.GetPrice(this.loggedInUser._id).subscribe(data => {
-      this.user = data.result;
+    this.userService.GetGymPrice().subscribe(data => {
+      // if (data.role == 'admin') {
+        this.isAdmin = true;
+        this.userService.GetOwnerGyms().subscribe(data => {
+          this.gyms = data.result;
+          // this.selectedValue = this.gyms[0]._id;
+          // this.selectGym = this.gyms[0];          
+        });
+        this.GymsPrices = data.result;
+      // }else{
+      //   this.selectedGymPrice = data.result;
+        
+      // }
       this.showSpinner = false;
     });
+  }
+
+  onOptionsSelected(e) {
+    this.selectedGymPrice = this.GymsPrices.filter(function (obj) {
+      if (obj.gym == e.target.value) {
+        return obj;
+      };
+    })[0];
+    
+    
+  }
+   serviceOptionsSelected(e){
+     this.selectService = this.selectedGymPrice.servicesprices.filter(function (obj) {
+       if (obj._id == e.target.value) {
+         return obj;
+        };
+      })[0];
+      this.isService=true;
+    
   }
 
   updateprice() {

@@ -23,9 +23,9 @@ import { AddServiceComponent } from '../components/service/add-service/add-servi
 import { GymServicesComponent } from '../components/roles/gymowner/gym-services/gym-services.component';
 import { GymViewComponent } from '../components/roles/gymowner/gym-view/gym-view.component';
 import { GymPricesComponent } from '../components/roles/gymowner/gym-prices/gym-prices.component';
-import { TrainerViewComponent } from '../components/roles/gymowner/trainer-view/trainer-view.component';
+import { TrainerViewComponent } from '../components/roles/trainer/trainer-view/trainer-view.component';
 import { GymAddComponent } from '../components/roles/gymowner/gym-add/gym-add.component';
-import { TrainerProfileComponent } from '../components/roles/gymowner/trainer-profile/trainer-profile.component';
+import { TrainerProfileComponent } from '../components/roles/trainer/trainer-profile/trainer-profile.component';
 import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gym-gallery.component';
 import { GymsListComponent } from '../components/roles/user/gyms-list/gyms-list.component';
 import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edit/gymowner-edit.component';

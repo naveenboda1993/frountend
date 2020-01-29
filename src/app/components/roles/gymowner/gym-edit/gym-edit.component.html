@@ -27,9 +27,23 @@
                         </div>                       
 						<div class="row col s12">
 							<div class="input-field col s12">
-                                <label for="email">email</label>
+                                <label for="email">Email</label>
                                 <br>
 								<input id="email" type="text"  [(ngModel)]="gym.email" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="tag">Gym Tag Line</label>
+                                <br>
+								<input id="tag" type="text"  [(ngModel)]="gym.gymtag" />
+							</div>
+						</div>
+						<div class="row col s12">
+							<div class="input-field col s12">
+                                <label for="discripition">Gym Discripition</label>
+                                <br>
+								<input id="discripition" type="text"  [(ngModel)]="gym.gymdec" />
 							</div>
 						</div>
 						<div class="row col s6">
@@ -55,7 +69,7 @@
 						</div>
 						<div class="row col s4">
 							<div class="input-field col s12">
-                                <label for="street">Street</label>
+                                <label for="street">Street/ Road No	</label>
                                 <br>
 								<input id="street" type="text"  [(ngModel)]="gym.street" />
 							</div>
@@ -97,18 +111,12 @@
 						</div>
 						<div class="row col s12">
 							<div class="input-field col s12">
-                                <label for="tag">Gym Tag Line</label>
+                                <label for="gst">GST NO</label>
                                 <br>
-								<input id="tag" type="text"  [(ngModel)]="gym.gymtag" />
+								<input id="gst" type="text"  [(ngModel)]="gym.gst" />
 							</div>
 						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-                                <label for="discripition">Gym Discripition</label>
-                                <br>
-								<input id="discripition" type="text"  [(ngModel)]="gym.gymdec" />
-							</div>
-						</div>
+						
 						<br />
 						<P>BANK DETAILS </P>
 						<div class="row col s6">

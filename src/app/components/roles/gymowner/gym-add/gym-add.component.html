@@ -32,11 +32,31 @@
                             <div class="row col s12">
                                 <div class="input-field col s12">
                                     <input id="emial" type="text" formControlName="email" />
-                                    <label for="email">email</label>
+                                    <label for="email">Email</label>
                                     <span class="error"
                                         *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial
                                         is
                                         required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="tag" type="text" formControlName="tag" />
+                                    <label for="tag">Gym Tag Line</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
+                                        Tag Line
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <input id="discripition" type="text" formControlName="discripition" />
+                                    <label for="discripition">Gym Discripition</label>
+                                    <span class="error"
+                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
+                                        discripition
+                                        is required</span>
                                 </div>
                             </div>
                             <div class="row col s6">
@@ -73,7 +93,7 @@
                             <div class="row col s4">
                                 <div class="input-field col s12">
                                     <input id="street" type="text" formControlName="street" />
-                                    <label for="street">Street</label>
+                                    <label for="street">Street/Road No</label>
                                     <span class="error"
                                         *ngIf="!addgymForm.controls['street'].valid && addgymForm.controls['street'].touched">Street
                                         is required</span>
@@ -126,24 +146,14 @@
                             </div>
                             <div class="row col s12">
                                 <div class="input-field col s12">
-                                    <input id="tag" type="text" formControlName="tag" />
-                                    <label for="tag">Gym Tag Line</label>
+                                    <input id="gst" type="text" formControlName="gst" />
+                                    <label for="gst">GST NO</label>
                                     <span class="error"
-                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
-                                        Tag Line
+                                        *ngIf="!addgymForm.controls['gst'].valid && addgymForm.controls['gst'].touched">Gst No
                                         is required</span>
                                 </div>
                             </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="discripition" type="text" formControlName="discripition" />
-                                    <label for="discripition">Gym Discripition</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
-                                        discripition
-                                        is required</span>
-                                </div>
-                            </div>
+                            
                             <br>
                             <h6 style="margin-left:30px;">Bank Details </h6>
                             <div class="row col s12">
