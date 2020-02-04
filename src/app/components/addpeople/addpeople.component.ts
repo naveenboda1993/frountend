@@ -47,6 +47,7 @@ export class AddpeopleComponent implements OnInit {
   }
   gymowner() {
     // console.log(this.signupForm.value);
+    // this.router.navigate(['gymservices/5e3991d419bc1737949e7b04' ]);
     this.showSpinner = true;
     this.authService.gymowner(this.addpeopleForm.value).subscribe(
       data => {

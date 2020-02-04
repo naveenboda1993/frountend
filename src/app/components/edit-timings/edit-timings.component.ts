@@ -17,9 +17,11 @@ export class EditTimingsComponent implements OnInit {
   selectGymid: any;
   selectDay: any;
   gyms: any;
-  selectGym: { workinghours: any };
+  selectGym: { workinghours: any, terms: any };
   selectDateValue: { duration: any, numberofbookings: any, slots?: any, multiplebookings?: any, status?: any };
   socket: any;
+  isCreation = true;
+
   constructor(private route: ActivatedRoute, private userService: UsersService, private router: Router) {
     this.socket = io(Constants.HOME_URL);
   }
@@ -64,6 +66,9 @@ export class EditTimingsComponent implements OnInit {
           return obj1;
         };
       })[0];
+      if (this.selectGym.terms == '') {
+        this.isCreation = false;
+      }
       this.timings = this.selectDateValue.slots;
       this.showSpinner = false;
     });
@@ -79,7 +84,11 @@ export class EditTimingsComponent implements OnInit {
     console.log(data);
     this.userService.GetGymWorking(data).subscribe(data1 => {
       console.log(data1);
-      this.router.navigate(['workinghours']);
+      if (this.isCreation) {
+        this.router.navigate(['workinghours']);
+      } else {
+        this.router.navigate(['workinghours/' + this.selectGymid]);
+      }
       // router.navigate(['workinghours']);
     });
   }
