@@ -56,6 +56,11 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'workinghours/:id',
+		component: WorkingHoursComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'train-workinghours',
 		component: TrainerWorkinghoursComponent,
 		canActivate: [AuthGuard]
@@ -157,12 +162,27 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'gymgallery/:id',
+		component: GymGalleryComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'gymservices',
 		component: GymServicesComponent,
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'gymservices/:id',
+		component: GymServicesComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'gymprices',
+		component: GymPricesComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'gymprices/:id',
 		component: GymPricesComponent,
 		canActivate: [AuthGuard]
 	},
