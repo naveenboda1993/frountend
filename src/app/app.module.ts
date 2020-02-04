@@ -9,11 +9,10 @@ import { StreamsRoutingModule } from './modules/streams-routing.module';
 import { CookieService } from 'ngx-cookie-service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/token-interceptor';
-import { TrainerWorkinghoursComponent } from './components/roles/trainer/trainer-workinghours/trainer-workinghours.component';
 
 
 @NgModule({
-	declarations: [AppComponent, TrainerWorkinghoursComponent],
+	declarations: [AppComponent],
 	imports: [BrowserModule, AuthModule, AuthRoutingModule, StreamsModule, StreamsRoutingModule,],
 	providers: [
 		CookieService,

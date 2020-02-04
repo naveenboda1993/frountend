@@ -30,6 +30,8 @@ import { GymGalleryComponent } from '../components/roles/gymowner/gym-gallery/gy
 import { GymsListComponent } from '../components/roles/user/gyms-list/gyms-list.component';
 import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edit/gymowner-edit.component';
 import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
+import { TrainerWorkinghoursComponent } from '../components/roles/trainer/trainer-workinghours/trainer-workinghours.component';
+import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-trainertimings/edit-trainertimings.component';
 
 
 const routes: Routes = [
@@ -51,6 +53,11 @@ const routes: Routes = [
 	{
 		path: 'workinghours',
 		component: WorkingHoursComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'train-workinghours',
+		component: TrainerWorkinghoursComponent,
 		canActivate: [AuthGuard]
 	},
 	{
@@ -127,6 +134,11 @@ const routes: Routes = [
 	{
 		path: 'edittimings/:name/:value',
 		component: EditTimingsComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'trainer-edittimings/:name/:value',
+		component: EditTrainertimingsComponent,
 		canActivate: [AuthGuard]
 	},
 	{

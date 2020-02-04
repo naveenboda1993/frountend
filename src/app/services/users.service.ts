@@ -10,8 +10,8 @@ const BASEURL = Constants.BACKEND_URL;
 	providedIn: 'root'
 })
 export class UsersService {
- 
-	constructor(private http: HttpClient) {}
+
+	constructor(private http: HttpClient) { }
 
 	GetUserRole(): Observable<any> {
 		return this.http.get(`${BASEURL}/userrole`);
@@ -43,13 +43,16 @@ export class UsersService {
 	GetTrainer(): Observable<any> {
 		return this.http.get(`${BASEURL}/gettrainer`);
 	}
+	GetAllTrainers(): Observable<any> {
+		return this.http.get(`${BASEURL}/getalltrainer`);
+	}
 	GetOneTrainer(): Observable<any> {
 		return this.http.get(`${BASEURL}/trainer`);
 	}
 	GetTrainerOne(id): Observable<any> {
 		return this.http.get(`${BASEURL}/gettrainerone/${id}`);
 	}
-	
+
 	GetPrice(id): Observable<any> {
 		return this.http.get(`${BASEURL}/creategymprofile/${id}`);
 	}
@@ -71,6 +74,11 @@ export class UsersService {
 			gym
 		});
 	}
+	GetTrainerWorking(trainer): Observable<any> {
+		return this.http.post(`${BASEURL}/updatetrainerworkinghours`, {
+			trainer
+		});
+	}
 	// getting one gym 
 	GetGymOne(id): Observable<any> {
 		return this.http.get(`${BASEURL}/getgymone/${id}`);
@@ -83,18 +91,18 @@ export class UsersService {
 	DeleteUser(email): Observable<any> {
 		return this.http.post(`${BASEURL}/deleteuser`, {
 			email
-		});		
+		});
 	}
 	DeleteGym(email): Observable<any> {
 		return this.http.post(`${BASEURL}/deletegym`, {
 			email
-		});		
+		});
 	}
 	addUser(username): Observable<any> {
 		return this.http.post(`${BASEURL}/saveuser`, {
 			username
 		});
-		
+
 	}
 
 	UnFollowUser(userFollowed): Observable<any> {
@@ -130,9 +138,9 @@ export class UsersService {
 	ChangePassword(body): Observable<any> {
 		return this.http.post(`${BASEURL}/change-password`, body);
 	}
-	AddGymGallery(image,id): Observable<any> {
+	AddGymGallery(image, id): Observable<any> {
 		return this.http.post(`${BASEURL}/upload-gym-gallery`, {
-			image,id
+			image, id
 		});
 	}
 	SetVisibleImage(imageId, imageStatus): Observable<any> {
@@ -142,5 +150,5 @@ export class UsersService {
 		return this.http.post(`${BASEURL}/updatinggymservices`, {
 			data
 		});
-	  }
+	}
 }
