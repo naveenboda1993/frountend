@@ -1,14 +1,14 @@
 <app-toolbar></app-toolbar>
 <div class="container" style="margin-top: 30px;">
 	<div class="row">
-		<div class="col s12 m5 l3">
+		<div class="col s12 m5 l3" *ngIf="isCreation">
 			<app-side></app-side>
 			<!-- <h1> this is app side component</h1> -->
 		</div>
 		<div class="col s12 36 l9">
 			<div class="row">
 				<h3>Prices View</h3>
-				<div class="col s12 m11 l8" style="margin-top: 10px;" >
+				<div class="col s12 m11 l8" style="margin-top: 10px;" *ngIf="isCreation">
 					<select class="browser-default custom-select" (change)='onOptionsSelected($event)'>
 						<label> select gym </label>
 						<option value="">--Select Gym--</option>
@@ -84,15 +84,15 @@
 							</p>
 							<p>
 								<label for="price">Three Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.indiviual.threemonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.indiviual.threemonth" />
 							</p>
 							<p>
 								<label for="price">Six Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.indiviual.sixmonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.indiviual.sixmonth" />
 							</p>
 							<p>
 								<label for="price">Twelve Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.indiviual.twelvemonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.indiviual.twelvemonth" />
 							</p>
 						</div>
 					</div>
@@ -108,19 +108,19 @@
 							</p>
 							<p>
 								<label for="price">Two Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.withpackage.twomonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.withpackage.twomonth" />
 							</p>
 							<p>
 								<label for="price">Three Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.withpackage.threemonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.withpackage.threemonth" />
 							</p>
 							<p>
 								<label for="price">Six Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.withpackage.sixmonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.withpackage.sixmonth" />
 							</p>
 							<p>
 								<label for="price">Twelve Months Fee is </label>
-								<input id="price" type="text" [(ngModel)]="selectService.withpackage.twelvemonth"/>
+								<input id="price" type="text" [(ngModel)]="selectService.withpackage.twelvemonth" />
 							</p>
 						</div>
 					</div>
@@ -140,7 +140,7 @@
 							</div>
 						</div> -->
 
-			<button class="btn waves-effects" id="signupbtn" (click)="updateprice()">UPDATE
+			<button class="btn waves-effects" id="updateprice" (click)="updateprice()">UPDATE
 				PRICES </button>
 		</div>
 	</div>

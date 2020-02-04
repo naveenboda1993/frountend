@@ -27,11 +27,11 @@
 
     <div>
         <label>
-            <input type="checkbox" class="filled-in" checked="checked" (change)="onServiceSelected(service1)" />
+            <input type="checkbox" class="filled-in" (change)="onAgreeTerms()" />
             <span>Agree terms and conditions</span>
         </label>
-<br>
-        <button id="signupbtn"> Submit</button>
+        <br>
+        <button class="btn waves-effects" id="finishgym" *ngIf="isFinish" (click)="finishgym()">Finish</button>
     </div>
 
 </div>

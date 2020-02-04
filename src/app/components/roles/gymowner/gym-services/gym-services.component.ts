@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gym-services',
@@ -17,8 +17,9 @@ export class GymServicesComponent implements OnInit {
   servicesData: any;
   servicesList: any;
   isService: boolean = false;
+  isCreation: boolean = true;
   constructor(private userService: UsersService, private authService: AuthService,
-    private router: Router, ) { }
+    private router: Router, private route: ActivatedRoute) { }
 
 
 
@@ -32,14 +33,31 @@ export class GymServicesComponent implements OnInit {
     this.showSpinner = true;
     this.userService.GetOwnerGyms().subscribe(data => {
       this.gyms = data.result;
-      this.selectedValue = this.gyms[0]._id;
-      this.selectGym = this.gyms[0];
+
       this.authService.getServices().subscribe(data1 => {
         this.servicesData = data1.result;
-        this.services = this.removeElements(data1.result, data.result[0].services);
-        this.servicesList = data.result[0].services;
+        this.route.params.subscribe(params => {
+          if (params.id == undefined) {
+            this.selectedValue = this.gyms[0]._id;
+            this.selectGym = this.gyms[0];
+            this.services = this.removeElements(data1.result, data.result[0].services);
+            this.servicesList = data.result[0].services;
+            this.isService = true;
+          } else {
+            this.selectGym = this.gyms.filter(function (obj) {
+              if (obj._id == params.id) {
+                return obj;
+              };
+            })[0];
+            this.services = this.removeElements(this.servicesData, this.selectGym.services);
+
+            this.servicesList = this.selectGym.services;
+            console.log(this.selectGym);
+            this.isService = true;
+            this.isCreation = false;
+          }
+        });
         // this.services = data.result;
-        this.isService = true;
       });
     });
 
@@ -78,11 +96,18 @@ export class GymServicesComponent implements OnInit {
   }
 
   submitServices() {
+
+
     this.userService.SaveGymServices({ gymid: this.selectGym._id, services: this.servicesList }).subscribe(data => {
       console.log(data);
-      setTimeout(() => {
-        this.router.navigate(['gymprofile']);
-      }, 2000);
+      if (!this.isCreation) {
+        this.router.navigate(['workinghours/' + this.selectGym._id]);
+      } else {
+        setTimeout(() => {
+          this.router.navigate(['gymprofile']);
+        }, 2000);
+      }
+
     });
   }
 

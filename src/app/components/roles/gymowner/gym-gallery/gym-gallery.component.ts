@@ -4,6 +4,7 @@ import { UsersService } from 'src/app/services/users.service';
 import { TokenService } from 'src/app/services/token.service';
 import io from 'socket.io-client';
 import { Constants } from "src/app/constants";
+import { ActivatedRoute, Router } from '@angular/router';
 
 const BASEURL = Constants.HOME_URL;
 const URL = Constants.IMG_URL;
@@ -26,7 +27,9 @@ export class GymGalleryComponent implements OnInit {
   gyms: any;
   selectGym: { images?: any, _id?: any };
   showSpinner = false;
-  constructor(private usersService: UsersService, private tokenService: TokenService) {
+  isCreation = true;
+  constructor(private usersService: UsersService, private tokenService: TokenService, private route: ActivatedRoute,
+    private router: Router) {
     this.socket = io(Constants.HOME_URL);
   }
 
@@ -44,8 +47,22 @@ export class GymGalleryComponent implements OnInit {
     this.usersService.GetOwnerGyms().subscribe(data => {
       console.log(data);
       this.gyms = data.result;
-      this.selectedValue = this.gyms[0]._id;
-      this.selectGym = this.gyms[0];
+
+      this.route.params.subscribe(params => {
+        console.log(params.id);
+        if (params.id == undefined) {
+          this.selectedValue = this.gyms[0]._id;
+          this.selectGym = this.gyms[0];
+        } else {
+          this.selectGym = this.gyms.filter(function (obj) {
+            if (obj._id == params.id) {
+              return obj;
+            };
+          })[0];
+          this.selectedValue = this.selectGym._id;
+          this.isCreation = false;
+        }
+      });
       this.showSpinner = false;
     });
   }
@@ -117,6 +134,10 @@ export class GymGalleryComponent implements OnInit {
       reader.readAsDataURL(file);
     });
     return fileValue;
+  }
+
+  nextgym() {
+    this.router.navigate(['terms/' + this.selectGym._id]);
   }
 
 }

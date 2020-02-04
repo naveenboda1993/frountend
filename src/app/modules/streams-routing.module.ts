@@ -97,7 +97,7 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
-		path: 'terms',
+		path: 'terms/:id',
 		component: TermsComponent,
 		canActivate: [AuthGuard]
 	},
@@ -163,12 +163,12 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
-		path: 'gymgallery/:name',
+		path: 'gymgallery/:id',
 		component: GymGalleryComponent,
 		canActivate: [AuthGuard]
 	},
 	{
-		path: 'gymgallery/:id',
+		path: 'gymgallery/:name',
 		component: GymGalleryComponent,
 		canActivate: [AuthGuard]
 	},

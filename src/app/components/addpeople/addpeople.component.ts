@@ -21,15 +21,15 @@ export class AddpeopleComponent implements OnInit {
 
   ngOnInit() {
     this.init();
+    console.log("gymowner");
   }
   init() {
     this.addpeopleForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
-      phonenumber: ['',Validators.required],
-      age: ['',Validators.required],
-      address: ['',Validators.required],
+      phonenumber: ['', Validators.required],
+      age: ['', Validators.required],
       gymname: ['', Validators.required],
       ownername: ['', Validators.required],
       officenumber: ['', Validators.required],
@@ -40,13 +40,9 @@ export class AddpeopleComponent implements OnInit {
       city: ['', Validators.required],
       pincode: ['', Validators.required],
       state: ['', Validators.required],
+      gst: ['', Validators.required],
       discripition: ['', Validators.required],
-      // language: ['',Validators.required],
-
-
-
-      // role: ['', Validators.required]
-
+     
     });
   }
   gymowner() {
@@ -57,7 +53,8 @@ export class AddpeopleComponent implements OnInit {
         // this.tokenService.SetToken(data.token);
         this.addpeopleForm.reset();
         setTimeout(() => {
-          this.router.navigate(['gymowner']);
+          this.router.navigate(['gymservices/' + data.gymid]);
+          // this.router.navigate(['gymowner']);
         }, 2000);
       },
       err => {

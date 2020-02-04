@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-working-hours',
@@ -12,7 +13,9 @@ export class WorkingHoursComponent implements OnInit {
   selectedValue: any;
   gyms: any;
   selectGym: any;
-  constructor(private userService: UsersService) {
+  isCreation = true;
+  constructor(private userService: UsersService, private route: ActivatedRoute,
+    private router: Router,) {
 
   }
 
@@ -25,8 +28,22 @@ export class WorkingHoursComponent implements OnInit {
     this.userService.GetOwnerGyms().subscribe(data => {
       console.log(data);
       this.gyms = data.result;
-      this.selectedValue = this.gyms[0]._id;
-      this.selectGym = this.gyms[0];
+      this.route.params.subscribe(params => {
+        console.log(params.id);
+        if (params.id == undefined) {
+          this.selectedValue = this.gyms[0]._id;
+          this.selectGym = this.gyms[0];
+        } else {
+          this.selectGym = this.gyms.filter(function (obj) {
+            if (obj._id == params.id) {
+              return obj;
+            };
+          })[0];
+          this.selectedValue = this.selectGym._id;
+          this.isCreation = false;
+        }
+      });
+
       this.showSpinner = false;
     });
   }
@@ -37,5 +54,9 @@ export class WorkingHoursComponent implements OnInit {
         return obj;
       };
     })[0];
+  }
+
+  nextgym(){
+    this.router.navigate(['gymprices/' + this.selectGym._id]);
   }
 }
