@@ -32,6 +32,7 @@ import { GymownerEditComponent } from '../components/roles/gymowner/gymowner-edi
 import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit.component';
 import { TrainerWorkinghoursComponent } from '../components/roles/trainer/trainer-workinghours/trainer-workinghours.component';
 import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-trainertimings/edit-trainertimings.component';
+import { TermsComponent } from '../components/terms/terms.component';
 
 
 const routes: Routes = [
@@ -93,6 +94,11 @@ const routes: Routes = [
 	{
 		path: 'gymowner',
 		component: GymownerComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'terms',
+		component: TermsComponent,
 		canActivate: [AuthGuard]
 	},
 	{
