@@ -345,4 +345,11 @@
 			</div>
 		</a>
 	</li>
+	<li class="collection-item" *ngIf="isSuperadmin || isGymowners ||isAdmin">
+		<a [routerLink]="['/terms']">
+			<div>
+				Terms & Conditions<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>
+			</div>
+		</a>
+	</li>
 </ul>
