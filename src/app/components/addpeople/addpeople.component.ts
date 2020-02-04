@@ -30,6 +30,17 @@ export class AddpeopleComponent implements OnInit {
       phonenumber: ['',Validators.required],
       age: ['',Validators.required],
       address: ['',Validators.required],
+      gymname: ['', Validators.required],
+      ownername: ['', Validators.required],
+      officenumber: ['', Validators.required],
+      flatno: ['', Validators.required],
+      street: ['', Validators.required],
+      area: ['', Validators.required],
+      locality: ['', Validators.required],
+      city: ['', Validators.required],
+      pincode: ['', Validators.required],
+      state: ['', Validators.required],
+      discripition: ['', Validators.required],
       // language: ['',Validators.required],
 
 
