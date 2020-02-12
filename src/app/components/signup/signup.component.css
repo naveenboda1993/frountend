@@ -6,7 +6,7 @@
 	float: right;
 
 	margin-right: 10px;
-	background-color: #64b5f6;
+	background-color: #f01515;
 	font-weight: 500;
 }
 #title {
@@ -27,7 +27,7 @@ form {
 	color: red;
 }
 .indeterminate {
-	background-color: #64b5f6 !important;
+	background-color: #f01515 !important;
 }
 .input-field {
 	margin-bottom: 0px !important;

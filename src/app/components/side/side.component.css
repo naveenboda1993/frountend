@@ -5,11 +5,11 @@ a {
 	color: #ffffff !important;
 }
 .active {
-	background-color: #64b5f6 !important;
+	background-color: #ea4f44 !important;
 }
 
 .material-icons {
-	color: #64b5f6;
+	color:black;
 }
 
 .active .material-icons {

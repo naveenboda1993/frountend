@@ -47,6 +47,7 @@ import { GymEditComponent } from '../components/roles/gymowner/gym-edit/gym-edit
 import { TrainerWorkinghoursComponent } from '../components/roles/trainer/trainer-workinghours/trainer-workinghours.component';
 import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-trainertimings/edit-trainertimings.component';
 import { TermsComponent } from '../components/terms/terms.component';
+import { BankDetailsComponent } from '../components/bank-details/bank-details.component';
 
 
 // import { CommentsComponent } from '../componets/comments/comments.component';
@@ -89,7 +90,9 @@ import { TermsComponent } from '../components/terms/terms.component';
 		GymEditComponent,
 		TrainerWorkinghoursComponent,
 		EditTrainertimingsComponent,
-		TermsComponent
+		TermsComponent,
+		BankDetailsComponent,
+
 	],
 	imports: [
 		CommonModule,
