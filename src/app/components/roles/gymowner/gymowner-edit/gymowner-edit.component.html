@@ -6,47 +6,49 @@
             <!-- <h1> this is app side component</h1> -->
         </div>
         <div class="col s12 m6 l9">
-            <div class="row">
-                <h3 class="text"> Edit Gym Owner</h3>
-                <div class="col s10  editpeopleForm">
-                    <div class="row">
-                        <!-- <form class="col s12" [formGroup]="editpeopleForm" novalidate (ngSubmit)="gymowner()"> -->
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="user_name">Username</label> <br>
-                                <input id="user_name" type="text" [(ngModel)]="user.username" />
+            <div class="card" style="color: #ff0000; margin-left: 35px;">
+                <div class="row">
+                    <h3 class="text"> Edit Gym Owner</h3>
+                    <div class="col s10  editpeopleForm">
+                        <div class="row">
+                            <!-- <form class="col s12" [formGroup]="editpeopleForm" novalidate (ngSubmit)="gymowner()"> -->
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="user_name">Username</label> <br>
+                                    <input id="user_name" type="text" [(ngModel)]="user.username" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="email">Email</label><br>
-                                <input id="email" type="email" [(ngModel)]="user.email" />
-
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="email">Email</label><br>
+                                    <input id="email" type="email" [(ngModel)]="user.email" />
+    
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="age">Age</label><br>
-                                <input id="age" type="text" [(ngModel)]="user.age" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="age">Age</label><br>
+                                    <input id="age" type="text" [(ngModel)]="user.age" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="phone_number">PhoneNumber</label><br>
-                                <input id="Phone_number" type="text" [(ngModel)]="user.phonenumber" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="phone_number">PhoneNumber</label><br>
+                                    <input id="Phone_number" type="text" [(ngModel)]="user.phonenumber" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="address">Address</label><br>
-                                <input id="address" type="text" [(ngModel)]="user.address" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="address">Address</label><br>
+                                    <input id="address" type="text" [(ngModel)]="user.address" />
+                                </div>
                             </div>
+                            <button class="btn waves-effects" id="signupbtn"  (click)="updategymowner()"> Save Changes </button>
+                            <!-- <div class="progress" *ngIf="showSpinner">
+                                    <div class="indeterminate"></div>
+                                </div> -->
+                            <!-- </form> -->
                         </div>
-                        <button class="btn waves-effects" id="signupbtn"  (click)="updategymowner()"> Save Changes </button>
-                        <!-- <div class="progress" *ngIf="showSpinner">
-                                <div class="indeterminate"></div>
-                            </div> -->
-                        <!-- </form> -->
                     </div>
                 </div>
             </div>

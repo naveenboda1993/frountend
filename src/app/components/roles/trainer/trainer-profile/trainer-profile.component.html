@@ -5,163 +5,165 @@
             <app-side></app-side>
         </div>
         <div class="col s12 m6 l9">
-            <div class="row">
-                <h4 class="text" style="padding-left: 40px;"> Edit Trainer Information</h4>
-                <div class="col s10 ">
-                    <div class="row">
-                        <!-- <form class="col s12" [formGroup]="updateTrainerForm" [ngModelOptions]="{standalone: true}" novalidate (ngSubmit)="updatetrainer()"> -->
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="surname">surname</label>
-                                <br>
-                                <input type="text" name="surrname" value="" [(ngModel)]="trainer.surname">
-                            </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="name">name</label>
-                                <br>
-                                <input type="text" name="name" value="" [(ngModel)]="trainer.name">
-                            </div>
-                        </div>
-                        <div class="row col s12">
-                            <div class="input-field col s12">
-                                <label for="email">Email</label>
-                                <br>
-                                <input type="email" name="emial" value="" [(ngModel)]="user.email">
-                            </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="dob">Date OF Birth</label>
-                                <br>
-                                <input id="dob" type="text" [(ngModel)]="trainer.dob" />
-                            </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="age">Age</label>
-                                <br>
-                                <input id="age" type="text" [(ngModel)]="user.age" />
-                            </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="phone_number">PhoneNumber</label>
-                                <br>
-                                <input id="Phone_number" type="text" [(ngModel)]="user.phonenumber" />
-                            </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="officenumber">Alternate Number</label>
-                                <br>
-                                <input id="officenumber" type="text" [(ngModel)]="user.officenumber" />
-                            </div>
-                        </div>
-                        <!-- <div class="row col s12">
+            <div class="card">
+                <div class="row">
+                    <h4 class="text" style="padding-left: 30px; color: #ff0000;"> Edit Trainer Information</h4>
+                    <div class="col s10 ">
+                        <div class="row">
+                            <!-- <form class="col s12" [formGroup]="updateTrainerForm" [ngModelOptions]="{standalone: true}" novalidate (ngSubmit)="updatetrainer()"> -->
+                            <div class="row col s6">
                                 <div class="input-field col s12">
-                                    <label for="address">Address</label>
+                                    <label for="surname">surname</label>
                                     <br>
-                                    <input id="address" type="text" [(ngModel)]="user.address" />
+                                    <input type="text" name="surrname" value="" [(ngModel)]="trainer.surname">
                                 </div>
-                            </div> -->
-                        <div class="row col s4">
-                            <div class="input-field col s12">
-                                <label for="flatno">Flatno</label>
-                                <br>
-                                <input id="flatno" type="text" [(ngModel)]="trainer.flatno" />
                             </div>
-                        </div>
-                        <div class="row col s4">
-                            <div class="input-field col s12">
-                                <label for="street">Street</label>
-                                <br>
-                                <input id="street" type="text" [(ngModel)]="trainer.street" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="name">name</label>
+                                    <br>
+                                    <input type="text" name="name" value="" [(ngModel)]="trainer.name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s4">
-                            <div class="input-field col s12">
-                                <label for="area">Area</label>
-                                <br>
-                                <input id="area" type="text" [(ngModel)]="trainer.area" />
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <label for="email">Email</label>
+                                    <br>
+                                    <input type="email" name="emial" value="" [(ngModel)]="user.email">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="locality">Locality</label>
-                                <br>
-                                <input id="locality" type="text" [(ngModel)]="trainer.locality" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="dob">Date OF Birth</label>
+                                    <br>
+                                    <input id="dob" type="text" [(ngModel)]="trainer.dob" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="city">city</label>
-                                <br>
-                                <input id="city" type="text" [(ngModel)]="trainer.city" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="age">Age</label>
+                                    <br>
+                                    <input id="age" type="text" [(ngModel)]="user.age" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="pincode">pincode</label>
-                                <br>
-                                <input id="pincode" type="text" [(ngModel)]="trainer.pincode" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="phone_number">PhoneNumber</label>
+                                    <br>
+                                    <input id="Phone_number" type="text" [(ngModel)]="user.phonenumber" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="state">State</label>
-                                <br>
-                                <input id="state" type="text" [(ngModel)]="trainer.state" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="officenumber">Alternate Number</label>
+                                    <br>
+                                    <input id="officenumber" type="text" [(ngModel)]="user.officenumber" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="certification">Certification</label>
-                                <br>
-                                <input id="certification" type="text" [(ngModel)]="trainer.certification" />
+                            <!-- <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <label for="address">Address</label>
+                                        <br>
+                                        <input id="address" type="text" [(ngModel)]="user.address" />
+                                    </div>
+                                </div> -->
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="flatno">Flatno</label>
+                                    <br>
+                                    <input id="flatno" type="text" [(ngModel)]="trainer.flatno" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s6">
-                            <div class="input-field col s12">
-                                <label for="specialization">Specialization</label>
-                                <br>
-                                <input id="specialization" type="text" [(ngModel)]="trainer.specialization" />
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="street">Street</label>
+                                    <br>
+                                    <input id="street" type="text" [(ngModel)]="trainer.street" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s4">
-                            <div class="input-field col s12">
-                                <label for="experience">Experience</label>
-                                <br>
-                                <input id="experience" type="text" [(ngModel)]="trainer.experience" />
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="area">Area</label>
+                                    <br>
+                                    <input id="area" type="text" [(ngModel)]="trainer.area" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s8">
-                            <div class="input-field col s12">
-                                <label for="tagline">Tag Line</label>
-                                <br>
-                                <input id="tagline" type="text" [(ngModel)]="trainer.tagline" />
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="locality">Locality</label>
+                                    <br>
+                                    <input id="locality" type="text" [(ngModel)]="trainer.locality" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s12">
-                            <div class="input-field col s12">
-                                <label for="id">Trainer Id</label>
-                                <br>
-                                <input id="id" type="text" [(ngModel)]="trainer.id" />
-
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="city">city</label>
+                                    <br>
+                                    <input id="city" type="text" [(ngModel)]="trainer.city" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row col s12">
-                            <div class="input-field col s12">
-                                <label for="language">languages are known</label>
-                                <br>
-                                <input id="language" type="text" [(ngModel)]="trainer.languages" />
-
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="pincode">pincode</label>
+                                    <br>
+                                    <input id="pincode" type="text" [(ngModel)]="trainer.pincode" />
+                                </div>
                             </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="state">State</label>
+                                    <br>
+                                    <input id="state" type="text" [(ngModel)]="trainer.state" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="certification">Certification</label>
+                                    <br>
+                                    <input id="certification" type="text" [(ngModel)]="trainer.certification" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="specialization">Specialization</label>
+                                    <br>
+                                    <input id="specialization" type="text" [(ngModel)]="trainer.specialization" />
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="experience">Experience</label>
+                                    <br>
+                                    <input id="experience" type="text" [(ngModel)]="trainer.experience" />
+                                </div>
+                            </div>
+                            <div class="row col s8">
+                                <div class="input-field col s12">
+                                    <label for="tagline">Tag Line</label>
+                                    <br>
+                                    <input id="tagline" type="text" [(ngModel)]="trainer.tagline" />
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <label for="id">Trainer Id</label>
+                                    <br>
+                                    <input id="id" type="text" [(ngModel)]="trainer.id" />
+    
+                                </div>
+                            </div>
+                            <div class="row col s12">
+                                <div class="input-field col s12">
+                                    <label for="language">languages are known</label>
+                                    <br>
+                                    <input id="language" type="text" [(ngModel)]="trainer.languages" />
+    
+                                </div>
+                            </div>
+                            <button class="btn waves-effects" id="signupbtn" (click)="updatetrainer()">UPDATE
+                                TRAINER</button>
+                            <!-- </form> -->
                         </div>
-                        <button class="btn waves-effects" id="signupbtn" (click)="updatetrainer()">UPDATE
-                            TRAINER</button>
-                        <!-- </form> -->
                     </div>
                 </div>
             </div>

@@ -6,211 +6,213 @@
             <!-- <h1> this is app side component</h1> -->
         </div>
         <div class="col s12 m6 l9">
-            <div class="row">
-                <h3 style="margin-left:30px;">Add Gym</h3>
-                <div class="col s10  addgymForm">
-                    <div class="row" *ngIf="isForm">
-                        <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()">
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="gym_name" type="text" formControlName="gymname" />
-                                    <label for="gym_name">Gym Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['gymname'].valid && addgymForm.controls['gymname'].touched">Gymname
-                                        is required</span>
+            <div class="card">
+                <div class="row">
+                    <h3 style="margin-left:30px; color: #ff0000;">Add Gym</h3>
+                    <div class="col s10  addgymForm">
+                        <div class="row" *ngIf="isForm">
+                            <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()">
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="gym_name" type="text" formControlName="gymname" />
+                                        <label for="gym_name">Gym Name</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['gymname'].valid && addgymForm.controls['gymname'].touched">Gymname
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="ownername" type="text" formControlName="ownername" />
-                                    <label for="ownername">Owner Name/Manager Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['ownername'].valid && addgymForm.controls['ownername'].touched">Ownername
-                                        / Managaer name is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="ownername" type="text" formControlName="ownername" />
+                                        <label for="ownername">Owner Name/Manager Name</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['ownername'].valid && addgymForm.controls['ownername'].touched">Ownername
+                                            / Managaer name is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="emial" type="text" formControlName="email" />
-                                    <label for="email">Email</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial
-                                        is
-                                        required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="emial" type="text" formControlName="email" />
+                                        <label for="email">Email</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['email'].valid && addgymForm.controls['email'].touched">emial
+                                            is
+                                            required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="tag" type="text" formControlName="tag" />
-                                    <label for="tag">Gym Tag Line</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
-                                        Tag Line
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="tag" type="text" formControlName="tag" />
+                                        <label for="tag">Gym Tag Line</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['tag'].valid && addgymForm.controls['tag'].touched">Gym
+                                            Tag Line
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="discripition" type="text" formControlName="discripition" />
-                                    <label for="discripition">Gym Discripition</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
-                                        discripition
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="discripition" type="text" formControlName="discripition" />
+                                        <label for="discripition">Gym Discripition</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['discripition'].valid && addgymForm.controls['discripition'].touched">Gym
+                                            discripition
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="Phone_number" type="text" formControlName="phonenumber" />
-                                    <label for="phone_number">PhoneNumber</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['phonenumber'].valid && addgymForm.controls['phonenumber'].touched">Phone
-                                        number
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="Phone_number" type="text" formControlName="phonenumber" />
+                                        <label for="phone_number">PhoneNumber</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['phonenumber'].valid && addgymForm.controls['phonenumber'].touched">Phone
+                                            number
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="office_number" type="text" formControlName="officenumber" />
-                                    <label for="office_number">Office Number</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['officenumber'].valid && addgymForm.controls['officenumber'].touched">Office
-                                        number
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="office_number" type="text" formControlName="officenumber" />
+                                        <label for="office_number">Office Number</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['officenumber'].valid && addgymForm.controls['officenumber'].touched">Office
+                                            number
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h6 style="margin-left:30px;">Address</h6>
-                            <div class="row col s4">
-                                <div class="input-field col s12">
-                                    <input id="flatno" type="text" formControlName="flatno" />
-                                    <label for="flatno">H.No/Flat NO</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['flatno'].valid && addgymForm.controls['flatno'].touched">H
-                                        No/Flat no
-                                        is required</span>
+                                <h6 style="margin-left:30px;">Address</h6>
+                                <div class="row col s4">
+                                    <div class="input-field col s12">
+                                        <input id="flatno" type="text" formControlName="flatno" />
+                                        <label for="flatno">H.No/Flat NO</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['flatno'].valid && addgymForm.controls['flatno'].touched">H
+                                            No/Flat no
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s4">
-                                <div class="input-field col s12">
-                                    <input id="street" type="text" formControlName="street" />
-                                    <label for="street">Street/Road No</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['street'].valid && addgymForm.controls['street'].touched">Street
-                                        is required</span>
+                                <div class="row col s4">
+                                    <div class="input-field col s12">
+                                        <input id="street" type="text" formControlName="street" />
+                                        <label for="street">Street/Road No</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['street'].valid && addgymForm.controls['street'].touched">Street
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s4">
-                                <div class="input-field col s12">
-                                    <input id="area" type="text" formControlName="area" />
-                                    <label for="area">Area</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['area'].valid && addgymForm.controls['area'].touched">Area
-                                        is required</span>
+                                <div class="row col s4">
+                                    <div class="input-field col s12">
+                                        <input id="area" type="text" formControlName="area" />
+                                        <label for="area">Area</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['area'].valid && addgymForm.controls['area'].touched">Area
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="locality" type="text" formControlName="locality" />
-                                    <label for="locality">Locality</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['locality'].valid && addgymForm.controls['locality'].touched">Locality
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="locality" type="text" formControlName="locality" />
+                                        <label for="locality">Locality</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['locality'].valid && addgymForm.controls['locality'].touched">Locality
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="city" type="text" formControlName="city" />
-                                    <label for="city">City/District/town</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['city'].valid && addgymForm.controls['city'].touched">city/district/town
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="city" type="text" formControlName="city" />
+                                        <label for="city">City/District/town</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['city'].valid && addgymForm.controls['city'].touched">city/district/town
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="pincode" type="text" formControlName="pincode" />
-                                    <label for="pincode">Pincode</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['pincode'].valid && addgymForm.controls['pincode'].touched">Pincode
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="pincode" type="text" formControlName="pincode" />
+                                        <label for="pincode">Pincode</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['pincode'].valid && addgymForm.controls['pincode'].touched">Pincode
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s6">
-                                <div class="input-field col s12">
-                                    <input id="state" type="text" formControlName="state" />
-                                    <label for="state">State</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['state'].valid && addgymForm.controls['state'].touched">State
-                                        is required</span>
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <input id="state" type="text" formControlName="state" />
+                                        <label for="state">State</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['state'].valid && addgymForm.controls['state'].touched">State
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="gst" type="text" formControlName="gst" />
-                                    <label for="gst">GST NO</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['gst'].valid && addgymForm.controls['gst'].touched">Gst No
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="gst" type="text" formControlName="gst" />
+                                        <label for="gst">GST NO</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['gst'].valid && addgymForm.controls['gst'].touched">Gst No
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <br>
-                            <h6 style="margin-left:30px;">Bank Details </h6>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="accountnumber" type="text" formControlName="accountnumber" />
-                                    <label for="accountnumber">Account Number</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['accountnumber'].valid && addgymForm.controls['accountnumber'].touched">Account
-                                        Number
-                                        is required</span>
+                                
+                                <br>
+                                <h6 style="margin-left:30px;">Bank Details </h6>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="accountnumber" type="text" formControlName="accountnumber" />
+                                        <label for="accountnumber">Account Number</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['accountnumber'].valid && addgymForm.controls['accountnumber'].touched">Account
+                                            Number
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="bankname" type="text" formControlName="bankname" />
-                                    <label for="bankname"> Bank Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['bankname'].valid && addgymForm.controls['bankname'].touched">
-                                        Bank Name
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="bankname" type="text" formControlName="bankname" />
+                                        <label for="bankname"> Bank Name</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['bankname'].valid && addgymForm.controls['bankname'].touched">
+                                            Bank Name
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="ifsccode" type="text" formControlName="ifsccode" />
-                                    <label for="ifsccode">IFSC Code</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['ifsccode'].valid && addgymForm.controls['ifsccode'].touched">IFSC
-                                        Code
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="ifsccode" type="text" formControlName="ifsccode" />
+                                        <label for="ifsccode">IFSC Code</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['ifsccode'].valid && addgymForm.controls['ifsccode'].touched">IFSC
+                                            Code
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="holdername" type="text" formControlName="holdername" />
-                                    <label for="holdername">Account Holder Name</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['holdername'].valid && addgymForm.controls['holdername'].touched">Account
-                                        Holder Name
-                                        is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="holdername" type="text" formControlName="holdername" />
+                                        <label for="holdername">Account Holder Name</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['holdername'].valid && addgymForm.controls['holdername'].touched">Account
+                                            Holder Name
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="pass-word" type="password" formControlName="password" />
-                                    <label for="pass-word">Password</label>
-                                    <span class="error"
-                                        *ngIf="!addgymForm.controls['password'].valid && addgymForm.controls['password'].touched">Password
-                                        is required</span>
+                                <!-- <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="pass-word" type="password" formControlName="password" />
+                                        <label for="pass-word">Password</label>
+                                        <span class="error"
+                                            *ngIf="!addgymForm.controls['password'].valid && addgymForm.controls['password'].touched">Password
+                                            is required</span>
+                                    </div>
+                                </div> -->
+                                <button class="btn waves-effects" style="margin: 10px;" id="signupbtn" [disabled]="!addgymForm.valid">ADD
+                                    GYM</button>
+                                <div class="progress" *ngIf="showSpinner">
+                                    <div class="indeterminate"></div>
                                 </div>
-                            </div> -->
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!addgymForm.valid">ADD
-                                GYM</button>
-                            <div class="progress" *ngIf="showSpinner">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

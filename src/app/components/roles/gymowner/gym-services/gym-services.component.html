@@ -4,35 +4,40 @@
         <div class="col s12 m5 l3" *ngIf="isCreation">
             <app-side></app-side>
         </div>
-
         <div class="col s12 m11 l8" style="margin-top: 70px;" *ngIf="isService">
-            <select class="browser-default custom-select" (change)='onOptionsSelected($event)' *ngIf="isCreation">
-                <option *ngFor="let gym of gyms" value="{{gym._id}}">{{gym.gymname}}</option>
-            </select>
-            <div *ngFor="let service1 of selectGym.services">
-                <p *ngIf="service1.status=='Enable'">
-                    <label>
-                        <input type="checkbox" class="filled-in" checked="checked"
-                            (change)="onServiceSelected(service1)" />
-                        <span>{{service1.name}}</span>
-                    </label>
-                </p>
+            <div class="card"> 
+                <br>
+                    <select class="browser-default custom-select" (change)='onOptionsSelected($event)'
+                        *ngIf="isCreation" style="margin: 0px 5px 4px 20px; width: 85%;">
+                        <option *ngFor="let gym of gyms" value="{{gym._id}}">{{gym.gymname}}</option>
+                    </select>
+                    <div *ngFor="let service1 of selectGym.services" style="margin-left: 10px;">
+                        <p *ngIf="service1.status=='Enable'">
+                            <label>
+                                <input type="checkbox" class="filled-in" checked="checked"
+                                    (change)="onServiceSelected(service1)" />
+                                <span>{{service1.name}}</span>
+                            </label>
+                        </p>
+                    </div>
+                    <br>
+                    <hr>
+                    <div *ngFor="let service of services" style="margin-left: 10px;">
+                        <p *ngIf="service.status=='Enable'">
+                            <label>
+                                <input type="checkbox" class="filled-in" (change)='onServiceSelected(service)' />
+                                <span>{{service.name}}</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="center">
+                        <button class="btn" style="float: center; margin: 2px;" (click)="submitServices()">
+                            <span style="color: beige;"> Update Services</span>
+                        </button>
+                    </div>
+                
             </div>
-            <br>
-            <hr>
-            <div *ngFor="let service of services">
-                <p *ngIf="service.status=='Enable'">
-                    <label>
-                        <input type="checkbox" class="filled-in" (change)='onServiceSelected(service)' />
-                        <span>{{service.name}}</span>
-                    </label>
-                </p>
-            </div>
-            <div class="center">
-                <button class="btn" style="float: center; margin: 2px;" (click)="submitServices()">
-                    <span style="color: beige;"> Update Services</span>
-                </button>
-            </div>
+
         </div>
     </div>
 

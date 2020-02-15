@@ -8,55 +8,57 @@
             <app-side></app-side>
         </div>
         <div class="col s12 m6 l9">
-            <div class="row">
-                <h3 class="text" style="padding-left: 25px;"> Add Services </h3>
-                <div class="col s10  addserviceForm">
-                    <div class="row">
-                        <form class="col s12" [formGroup]="addserviceForm" novalidate (ngSubmit)="addservice()">
-                            <div class="row col s8">
-                                <div class="input-field col s12">
-                                    <input id="servicename" type="text" formControlName="servicename" />
-                                    <label for="servicename">Service Name</label>
-                                    <span class="error"
-                                        *ngIf="!addserviceForm.controls['servicename'].valid && addserviceForm.controls['servicename'].touched">service
-                                        Name is required</span>
+            <div class="card">
+                <div class="row">
+                    <h3 class="text" style="padding-left: 25px; color: #ff0000;"> Add Services </h3>
+                    <div class="col s10  addserviceForm">
+                        <div class="row">
+                            <form class="col s12" [formGroup]="addserviceForm" novalidate (ngSubmit)="addservice()">
+                                <div class="row col s8">
+                                    <div class="input-field col s12">
+                                        <input id="servicename" type="text" formControlName="servicename" />
+                                        <label for="servicename">Service Name</label>
+                                        <span class="error"
+                                            *ngIf="!addserviceForm.controls['servicename'].valid && addserviceForm.controls['servicename'].touched">service
+                                            Name is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s8">
-                                <div class="input-field col s12">
-                                    <input id="servicedec" type="text" formControlName="servicedec" />
-                                    <label for="servicedec">Service Description</label>
-                                    <span class="error"
-                                        *ngIf="!addserviceForm.controls['servicedec'].valid && addserviceForm.controls['servicedec'].touched">Description
-                                        is required</span>
+                                <div class="row col s8">
+                                    <div class="input-field col s12">
+                                        <input id="servicedec" type="text" formControlName="servicedec" />
+                                        <label for="servicedec">Service Description</label>
+                                        <span class="error"
+                                            *ngIf="!addserviceForm.controls['servicedec'].valid && addserviceForm.controls['servicedec'].touched">Description
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s8">
-                                <div class="input-field col s12">
-                                    <input id="servicecode" type="text" formControlName="servicecode" />
-                                    <label for="servicecode"> Service Code </label>
-                                    <span class="error"
-                                        *ngIf="!addserviceForm.controls['servicecode'].valid && addserviceForm.controls['servicecode'].touched">Service
-                                        code is required</span>
+                                <div class="row col s8">
+                                    <div class="input-field col s12">
+                                        <input id="servicecode" type="text" formControlName="servicecode" />
+                                        <label for="servicecode"> Service Code </label>
+                                        <span class="error"
+                                            *ngIf="!addserviceForm.controls['servicecode'].valid && addserviceForm.controls['servicecode'].touched">Service
+                                            code is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s8">
-                                <div class="input-field col s12">
-                                    <label> Status </label>
-                                    <br>
-                                    <br>
-                                    <select class="browser-default custom-select" formControlName="status">
-                                        <option value="Enable">Enable</option>
-                                        <option value="Disable">Disable</option>
-                                    </select>
+                                <div class="row col s8">
+                                    <div class="input-field col s12">
+                                        <label> Status </label>
+                                        <br>
+                                        <br>
+                                        <select class="browser-default custom-select" formControlName="status">
+                                            <option value="Enable">Enable</option>
+                                            <option value="Disable">Disable</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="btn waves-effects" id="signupbtn"
-                                [disabled]="!addserviceForm.valid">Save</button>
-                            <div class="progress" *ngIf="showSpinner">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </form>
+                                <button class="btn waves-effects" id="signupbtn"
+                                    [disabled]="!addserviceForm.valid">Save</button>
+                                <div class="progress" *ngIf="showSpinner">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

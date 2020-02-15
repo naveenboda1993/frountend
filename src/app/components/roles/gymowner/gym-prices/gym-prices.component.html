@@ -6,55 +6,57 @@
 			<!-- <h1> this is app side component</h1> -->
 		</div>
 		<div class="col s12 36 l9">
-			<div class="row">
-				<h3>Prices View</h3>
-				<div class="col s12 m11 l8" style="margin-top: 10px;" *ngIf="isCreation">
-					<select class="browser-default custom-select" (change)='onOptionsSelected($event)'>
-						<label> select gym </label>
-						<option value="">--Select Gym--</option>
-						<option *ngFor="let gym of gyms" value="{{gym._id}}">{{gym.gymname}}</option>
-					</select>
-				</div>
-				<div class="col s10 updatePriceForm" *ngIf="!showSpinner">
-					<div class="row">
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<!-- <input id="price" type="text"/> -->
-								<label for="price">One Month Fee is </label>
-								<br>
-								<input id="price" type="text" [(ngModel)]="selectedGymPrice.onemonth" />
+			<div class="card">
+				<div class="row">
+					<h3 style="color: #ff0000; margin-left: 35px;"> Prices View</h3>
+					<div class="col s12 m11 l8" style="margin-top: 10px; margin-left: 20px;" *ngIf="isCreation">
+						<select class="browser-default custom-select" (change)='onOptionsSelected($event)'>
+							<label> select gym </label>
+							<option value="">--Select Gym--</option>
+							<option *ngFor="let gym of gyms" value="{{gym._id}}">{{gym.gymname}}</option>
+						</select>
+					</div>
+					<div class="col s10 updatePriceForm" *ngIf="!showSpinner">
+						<div class="row">
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<!-- <input id="price" type="text"/> -->
+									<label for="price">One Month Fee is </label>
+									<br>
+									<input id="price" type="text" [(ngModel)]="selectedGymPrice.onemonth" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<!-- <input id="gym_name" type="text"/> -->
-								<label for="price">Two Months Fee is</label>
-								<br>
-								<input id="price" type="text" [(ngModel)]="selectedGymPrice.twomonth" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<!-- <input id="gym_name" type="text"/> -->
+									<label for="price">Two Months Fee is</label>
+									<br>
+									<input id="price" type="text" [(ngModel)]="selectedGymPrice.twomonth" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<!-- <input id="gym_name" type="text"/> -->
-								<label for="price">Three Months Fee is</label>
-								<br>
-								<input id="price" type="text" [(ngModel)]="selectedGymPrice.threemonth" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<!-- <input id="gym_name" type="text"/> -->
+									<label for="price">Three Months Fee is</label>
+									<br>
+									<input id="price" type="text" [(ngModel)]="selectedGymPrice.threemonth" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<!-- <input id="gym_name" type="text"/> -->
-								<label for="price">Six Months Fee is </label>
-								<br>
-								<input id="price" type="text" [(ngModel)]="selectedGymPrice.sixmonth" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<!-- <input id="gym_name" type="text"/> -->
+									<label for="price">Six Months Fee is </label>
+									<br>
+									<input id="price" type="text" [(ngModel)]="selectedGymPrice.sixmonth" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<!-- <input id="gym_name" type="text"/> -->
-								<label for="price">Twelve Months Fee is </label>
-								<br>
-								<input id="price" type="text" [(ngModel)]="selectedGymPrice.twelvemonth" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<!-- <input id="gym_name" type="text"/> -->
+									<label for="price">Twelve Months Fee is </label>
+									<br>
+									<input id="price" type="text" [(ngModel)]="selectedGymPrice.twelvemonth" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -125,23 +127,20 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<!-- <div class="row col s12">
+				<!-- <div class="row col s12">
 							<div class="input-field col s12">
 								<p>
 									<label>
 										<input type="checkbox" class="filled-in" ng-checked="selectedGymPrice.isvip=='yes'" />
 										<span>VIP Gym</span>
 									</label>
-
 								</p>
-
 							</div>
 						</div> -->
-
-			<button class="btn waves-effects" id="updateprice" (click)="updateprice()">UPDATE
-				PRICES </button>
+				<button class="btn waves-effects" id="updateprice" style="margin: 10px 20px 10px 20px;" (click)="updateprice()">UPDATE
+					PRICES </button>
+			</div>
 		</div>
 	</div>
 </div>

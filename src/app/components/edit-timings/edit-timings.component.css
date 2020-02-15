@@ -1,12 +1,12 @@
 .title{
     text-align: center;
-    color: royalblue;
+    color: #ff0000;
 }
 /* .form{
     padding: 25px;
     margin: 20px;
 } */
 .row{
-    width: 60%;
-    margin-left: 15%;
+    width: 50%;
+    margin-left: 10px;
 }

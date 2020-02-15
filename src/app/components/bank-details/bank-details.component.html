@@ -5,55 +5,57 @@
             <app-side></app-side>
         </div>
         <div class="col s12 m6 l9">
-            <div class="row">
-                <h3 class="text"> Add Bank Details </h3>
-                <div class="col s10  bankForm">
-                    <div class="row">
-                        <form class="col s12" [formGroup]="bankForm" >
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="bank_name" type="text" formControlName="bankname" />
-                                    <label for="bank_name">Bank Name</label>
-                                    <span class="error"
-                                        *ngIf="!bankForm.controls['bankname'].valid && bankForm.controls['bankname'].touched">Bankname
-                                        is required</span>
+            <div class="card">
+                <div class="row">
+                    <h3 class="text" style="color: #ff0000; margin-left: 35px;"> Add Bank Details </h3>
+                    <div class="col s10  bankForm">
+                        <div class="row">
+                            <form class="col s12" [formGroup]="bankForm">
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="bank_name" type="text" formControlName="bankname" />
+                                        <label for="bank_name">Bank Name</label>
+                                        <span class="error"
+                                            *ngIf="!bankForm.controls['bankname'].valid && bankForm.controls['bankname'].touched">Bankname
+                                            is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="holdername" type="text" formControlName="holdername" />
-                                    <label for="holdername">Account Holder Name</label>
-                                    <span class="error"
-                                        *ngIf="!bankForm.controls['holdername'].valid && bankForm.controls['holdername'].touched">Account
-                                        Holder name is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="holdername" type="text" formControlName="holdername" />
+                                        <label for="holdername">Account Holder Name</label>
+                                        <span class="error"
+                                            *ngIf="!bankForm.controls['holdername'].valid && bankForm.controls['holdername'].touched">Account
+                                            Holder name is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="account_number" type="text"   formControlName="account_number" />  
-                                    <label for="account_number">Account Number</label>
-                                    <span class="error"
-                                        *ngIf="!bankForm.controls['accountnumber'].valid && bankForm.controls['accountnumber'].touched">Account
-                                        Number is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="account_number" type="text" formControlName="account_number" />
+                                        <label for="account_number">Account Number</label>
+                                        <span class="error"
+                                            *ngIf="!bankForm.controls['accountnumber'].valid && bankForm.controls['accountnumber'].touched">Account
+                                            Number is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row col s12">
-                                <div class="input-field col s12">
-                                    <input id="ifsccode" type="text"   formControlName="ifsccode" />  
-                                    <label for="ifsccode">IFSC Code</label>
-                                    <span class="error"
-                                        *ngIf="!bankForm.controls['ifsccode'].valid && bankForm.controls['ifsccode'].touched">Account
-                                        Number is required</span>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="ifsccode" type="text" formControlName="ifsccode" />
+                                        <label for="ifsccode">IFSC Code</label>
+                                        <span class="error"
+                                            *ngIf="!bankForm.controls['ifsccode'].valid && bankForm.controls['ifsccode'].touched">Account
+                                            Number is required</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="btn waves-effects" id="signupbtn" [disabled]="!bankForm.valid">ADD
-                                Bank</button>
-                            <!-- <button class="btn waves-effects" id="signupbtn">ADD
+                                <button class="btn waves-effects" id="signupbtn" [disabled]="!bankForm.valid" style="margin-left: 50%;">ADD
+                                    Bank</button>
+                                <!-- <button class="btn waves-effects" id="signupbtn">ADD
                                 Gym</button> -->
-                            <div class="progress" *ngIf="showSpinner">
-                                <div class="indeterminate"></div>
-                            </div>
-                        </form>
+                                <div class="progress" *ngIf="showSpinner">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
