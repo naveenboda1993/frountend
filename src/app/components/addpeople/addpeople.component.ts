@@ -13,6 +13,7 @@ export class AddpeopleComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
   addpeopleForm: FormGroup;
+  areas:any;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
@@ -42,12 +43,18 @@ export class AddpeopleComponent implements OnInit {
       state: ['', Validators.required],
       gst: ['', Validators.required],
       discripition: ['', Validators.required],
-     
+
     });
+    this.authService.getAreas().subscribe(data => {
+      console.log(data.areas);
+      this.areas=data.areas;
+    }, err => {
+      console.log(err);
+    })
   }
   gymowner() {
     // console.log(this.signupForm.value);
-    // this.router.navigate(['gymservices/5e3991d419bc1737949e7b04' ]);
+    // this.router.navigate(['gymservices/5e3991d419bc1737949e7b04']);
     this.showSpinner = true;
     this.authService.gymowner(this.addpeopleForm.value).subscribe(
       data => {

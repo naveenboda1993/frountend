@@ -49,6 +49,9 @@ export class AuthService {
 		return this.http.post(`${BASEURL}/deleteuser`, body);
 	}
 
+	getAreas(): Observable<any> {
+		return this.http.get(`${BASEURL}/getareas`);
+	}
 	getServices(): Observable<any> {
 		return this.http.get(`${BASEURL}/getservice`);
 	}

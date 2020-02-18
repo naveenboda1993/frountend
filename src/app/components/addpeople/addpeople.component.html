@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <h6 style="margin-left:30px;">Address</h6>
-                                <div class="row col s4">
+                                <div class="row col s12">
                                     <div class="input-field col s12">
                                         <input id="flatno" type="text" formControlName="flatno" />
                                         <label for="flatno">H.No/Flat NO</label>
@@ -80,21 +80,12 @@
                                             is required</span>
                                     </div>
                                 </div>
-                                <div class="row col s4">
+                                <div class="row col s6">
                                     <div class="input-field col s12">
                                         <input id="street" type="text" formControlName="street" />
                                         <label for="street">Street/Road No</label>
                                         <span class="error"
                                             *ngIf="!addpeopleForm.controls['street'].valid && addpeopleForm.controls['street'].touched">Street
-                                            is required</span>
-                                    </div>
-                                </div>
-                                <div class="row col s4">
-                                    <div class="input-field col s12">
-                                        <input id="area" type="text" formControlName="area" />
-                                        <label for="area">Area</label>
-                                        <span class="error"
-                                            *ngIf="!addpeopleForm.controls['area'].valid && addpeopleForm.controls['area'].touched">Area
                                             is required</span>
                                     </div>
                                 </div>
@@ -109,11 +100,33 @@
                                 </div>
                                 <div class="row col s6">
                                     <div class="input-field col s12">
-                                        <input id="city" type="text" formControlName="city" />
-                                        <label for="city">City/District/town</label>
+                                        <!-- <input id="area" type="text" formControlName="area" />
+                                        <label for="area">Area</label>
+                                        <span class="error"
+                                            *ngIf="!addpeopleForm.controls['area'].valid && addpeopleForm.controls['area'].touched">Area
+                                            is required</span> -->
+                                        <select class="browser-default custom-select"
+                                            style="margin: 0px 5px 4px 20px; width: 85%;">
+                                            <option *ngFor="let area of areas?.areas" value="{{area.name}}">
+                                                {{area.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+                                <div class="row col s6">
+                                    <div class="input-field col s12">
+                                        <!-- <input id="city" type="text" formControlName="city" /> -->
+                                        <select class="browser-default custom-select"
+                                            style="margin: 0px 5px 4px 20px; width: 85%;">
+                                            <option *ngFor="let city of areas?.cities" value="{{city.name}}">
+                                                {{city.name}}
+                                            </option>
+                                        </select>
+                                        <!-- <label for="city">City/District/town</label>
                                         <span class="error"
                                             *ngIf="!addpeopleForm.controls['city'].valid && addpeopleForm.controls['city'].touched">city/district/town
-                                            is required</span>
+                                            is required</span> -->
                                     </div>
                                 </div>
                                 <div class="row col s6">
@@ -127,11 +140,17 @@
                                 </div>
                                 <div class="row col s6">
                                     <div class="input-field col s12">
-                                        <input id="state" type="text" formControlName="state" />
+                                        <select class="browser-default custom-select"
+                                            style="margin: 0px 5px 4px 20px; width: 85%;">
+                                            <option *ngFor="let state of areas?.states" value="{{state.name}}">
+                                                {{state.name}}
+                                            </option>
+                                        </select>
+                                        <!-- <input id="state" type="text" formControlName="state" />
                                         <label for="state">State</label>
                                         <span class="error"
                                             *ngIf="!addpeopleForm.controls['state'].valid && addpeopleForm.controls['state'].touched">State
-                                            is required</span>
+                                            is required</span> -->
                                     </div>
                                 </div>
                                 <div class="row col s12">
