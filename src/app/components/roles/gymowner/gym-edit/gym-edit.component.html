@@ -6,149 +6,151 @@
 			<!-- <h1> this is app side component</h1> -->
 		</div>
 		<div class="col s12 m6 l9">
-			<div class="row ">
-				<h3 style="padding-left: 40px;">Edit Gym</h3>
-				<div class="col s10 updateGymForm">
-					<div class="row">
-						<!-- <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()"> -->
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<label for="gymname">Gym Name</label>
-								<br>
-								<input id="gymname" type="text"  [(ngModel)]="gym.gymname"/>
+			<div class="card">
+				<div class="row ">
+					<h3 style="padding-left: 40px; color: #ff0000;" >Edit Gym</h3>
+					<div class="col s10 updateGymForm">
+						<div class="row">
+							<!-- <form class="col s12" [formGroup]="addgymForm" novalidate (ngSubmit)="gymadd()"> -->
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="gymname">Gym Name</label>
+									<br>
+									<input id="gymname" type="text" [(ngModel)]="gym.gymname" />
+								</div>
 							</div>
-						</div>    
-						<div class="row col s12">
-							<div class="input-field col s12">
-								<label for="ownername">Owner Name/Manager Name</label>
-								<br>
-								<input id="ownername" type="text"  [(ngModel)]="gym.ownername"/>
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="ownername">Owner Name/Manager Name</label>
+									<br>
+									<input id="ownername" type="text" [(ngModel)]="gym.ownername" />
+								</div>
 							</div>
-                        </div>                       
-						<div class="row col s12">
-							<div class="input-field col s12">
-                                <label for="email">Email</label>
-                                <br>
-								<input id="email" type="text"  [(ngModel)]="gym.email" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="email">Email</label>
+									<br>
+									<input id="email" type="text" [(ngModel)]="gym.email" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-                                <label for="tag">Gym Tag Line</label>
-                                <br>
-								<input id="tag" type="text"  [(ngModel)]="gym.gymtag" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="tag">Gym Tag Line</label>
+									<br>
+									<input id="tag" type="text" [(ngModel)]="gym.gymtag" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-                                <label for="discripition">Gym Discripition</label>
-                                <br>
-								<input id="discripition" type="text"  [(ngModel)]="gym.gymdec" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="discripition">Gym Discripition</label>
+									<br>
+									<input id="discripition" type="text" [(ngModel)]="gym.gymdec" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="phonenumber">PhoneNumber</label>
-                                <br>
-								<input id="Phonenumber" type="text"  [(ngModel)]="gym.phonenumber" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="phonenumber">PhoneNumber</label>
+									<br>
+									<input id="Phonenumber" type="text" [(ngModel)]="gym.phonenumber" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="officenumber">Office Number</label>
-                                <br>
-								<input id="officenumber" type="text"  [(ngModel)]="gym.officenumber" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="officenumber">Office Number</label>
+									<br>
+									<input id="officenumber" type="text" [(ngModel)]="gym.officenumber" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s4">
-							<div class="input-field col s12">
-                                <label for="flatno">H NO/Flatno</label>
-                                <br>
-								<input id="flatno" type="text"  [(ngModel)]="gym.flatno" />
+							<div class="row col s4">
+								<div class="input-field col s12">
+									<label for="flatno">H NO/Flatno</label>
+									<br>
+									<input id="flatno" type="text" [(ngModel)]="gym.flatno" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s4">
-							<div class="input-field col s12">
-                                <label for="street">Street/ Road No	</label>
-                                <br>
-								<input id="street" type="text"  [(ngModel)]="gym.street" />
+							<div class="row col s4">
+								<div class="input-field col s12">
+									<label for="street">Street/ Road No </label>
+									<br>
+									<input id="street" type="text" [(ngModel)]="gym.street" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s4">
-							<div class="input-field col s12">
-                                <label for="area">Area</label>
-                                <br>
-								<input id="area" type="text"  [(ngModel)]="gym.area" />
+							<div class="row col s4">
+								<div class="input-field col s12">
+									<label for="area">Area</label>
+									<br>
+									<input id="area" type="text" [(ngModel)]="gym.area" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="locality">Locality</label>
-                                <br>
-								<input id="locality" type="text"  [(ngModel)]="gym.locality" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="locality">Locality</label>
+									<br>
+									<input id="locality" type="text" [(ngModel)]="gym.locality" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="city">City</label>
-                                <br>
-								<input id="city" type="text"  [(ngModel)]="gym.city" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="city">City</label>
+									<br>
+									<input id="city" type="text" [(ngModel)]="gym.city" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="pincode">pincode</label>
-                                <br>
-								<input id="pincode" type="text"  [(ngModel)]="gym.pincode" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="pincode">pincode</label>
+									<br>
+									<input id="pincode" type="text" [(ngModel)]="gym.pincode" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="state">State</label>
-                                <br>
-								<input id="state" type="text"  [(ngModel)]="gym.state" />
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="state">State</label>
+									<br>
+									<input id="state" type="text" [(ngModel)]="gym.state" />
+								</div>
 							</div>
-						</div>
-						<div class="row col s12">
-							<div class="input-field col s12">
-                                <label for="gst">GST NO</label>
-                                <br>
-								<input id="gst" type="text"  [(ngModel)]="gym.gst" />
+							<div class="row col s12">
+								<div class="input-field col s12">
+									<label for="gst">GST NO</label>
+									<br>
+									<input id="gst" type="text" [(ngModel)]="gym.gst" />
+								</div>
 							</div>
-						</div>
-						
-						<br />
-						<P>BANK DETAILS </P>
-						<div class="row col s6">
-							<div class="input-field col s12">
-								<label for="holdername">Account Holder Name</label><br>
-								<input id="holdername" type="text"  [(ngModel)]="gym.holdername" />
-							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="accountnumber">Account Number</label>
-                                <br>
-								<input id="accountnumber" type="text" [(ngModel)]="gym.accountnumber" />
-							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="bankname"> Bank Name</label>
-                                <br>
-								<input id="bankname" type="text"  [(ngModel)]="gym.bankname" />
-							</div>
-						</div>
-						<div class="row col s6">
-							<div class="input-field col s12">
-                                <label for="ifsccode">IFSC Code</label>
-                                <br>
-								<input id="ifsccode" type="text" [(ngModel)]="gym.ifsccode" />
-							</div>
-						</div>					
 
-						<button class="btn waves-effects" id="signupbtn" (click)="updategym()"> UPDATE GYM</button>
-						<!-- </form> -->
+							<br />
+							<P style="padding-left: 20px; color: #ff0000;">BANK DETAILS </P>
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="holdername">Account Holder Name</label><br>
+									<input id="holdername" type="text" [(ngModel)]="gym.holdername" />
+								</div>
+							</div>
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="accountnumber">Account Number</label>
+									<br>
+									<input id="accountnumber" type="text" [(ngModel)]="gym.accountnumber" />
+								</div>
+							</div>
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="bankname"> Bank Name</label>
+									<br>
+									<input id="bankname" type="text" [(ngModel)]="gym.bankname" />
+								</div>
+							</div>
+							<div class="row col s6">
+								<div class="input-field col s12">
+									<label for="ifsccode">IFSC Code</label>
+									<br>
+									<input id="ifsccode" type="text" [(ngModel)]="gym.ifsccode" />
+								</div>
+							</div>
+
+							<button class="btn waves-effects" id="signupbtn" style="margin-left: 40px;" (click)="updategym()"> UPDATE GYM</button>
+							<!-- </form> -->
+						</div>
 					</div>
 				</div>
 			</div>
