@@ -15,16 +15,16 @@
         </button>
         <div class="col s12 m8 l9">
             <div class="row">
-                <div class="col s12 m6 l4 cardDiv" style="width: 40%;" *ngFor="let service of services">
+                <div class="col s12 m6 l4 cardDiv" style="width: 50%;" *ngFor="let service of services">
                     <div class="card">
                         <div class="card-image imgDiv">
                             <!-- <img class="imgCircle responsive-img"
                                 src="http://res.cloudinary.com/chatapplication/image/upload/v{{ user.picVersion }}/{{ user.picId }}" /> -->
                         </div>
-                        <div class="card-action" style="padding: 0px 20px; line-height: 0.5;">
-                            <h4 class="card-title">
+                        <div class="card-action" style="padding: 0px 20px; line-height: 1;">
+                            <h6 class="card-title">
                                Name:- {{service.name }}
-                            </h4>
+                            </h6>
                             <p> S.Dis:- {{service.servicedec}}</p>
                             <p>S.Code:- {{service.servicecode}}</p>
                             <button class="btn" style="margin: 2.5px;"

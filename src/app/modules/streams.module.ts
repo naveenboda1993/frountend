@@ -48,6 +48,7 @@ import { TrainerWorkinghoursComponent } from '../components/roles/trainer/traine
 import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-trainertimings/edit-trainertimings.component';
 import { TermsComponent } from '../components/terms/terms.component';
 import { BankDetailsComponent } from '../components/bank-details/bank-details.component';
+import { DocumentsComponent } from '../components/documents/documents.component';
 
 
 // import { CommentsComponent } from '../componets/comments/comments.component';
@@ -92,6 +93,7 @@ import { BankDetailsComponent } from '../components/bank-details/bank-details.co
 		EditTrainertimingsComponent,
 		TermsComponent,
 		BankDetailsComponent,
+		DocumentsComponent,
 
 	],
 	imports: [

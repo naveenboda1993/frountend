@@ -34,6 +34,9 @@ export class UsersService {
 	GetOwnerGyms(): Observable<any> {
 		return this.http.get(`${BASEURL}/getownergyms`);
 	}
+	GetNames(): Observable<any> {
+		return this.http.get(`${BASEURL}/getnames`);
+	}
 	GetServices(): Observable<any> {
 		return this.http.get(`${BASEURL}/getservice`);
 	}
@@ -144,6 +147,11 @@ export class UsersService {
 	AddGymGallery(image, id): Observable<any> {
 		return this.http.post(`${BASEURL}/upload-gym-gallery`, {
 			image, id
+		});
+	}
+	AddDocuments(documents, id): Observable<any> {
+		return this.http.post(`${BASEURL}/upload-documents`, {
+			documents, id
 		});
 	}
 	SetVisibleImage(imageId, imageStatus): Observable<any> {

@@ -14,8 +14,8 @@ export class AddtrainerComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
   startingtime: any;
-  dob:Date;
-  age:number;
+  dob: Date;
+  age: number;
   selectedFile: any;
   socket: any;
   endingtime: any;
@@ -77,7 +77,9 @@ export class AddtrainerComponent implements OnInit {
       return obj.id !== timing.id;
     });
   }
-  saveTrainer() {
+  saveTrainer() { 
+    // console.log(this.addtrainerForm.value);
+    // this.router.navigate(['train-workinghours/5e340fefaf88ca4340f10663' ]);
     console.log({ result: this.addtrainerForm.value, timings: this.timings });
     if (this.addtrainerForm.valid) {
 
@@ -88,7 +90,7 @@ export class AddtrainerComponent implements OnInit {
           // this.tokenService.SetToken(data.token);
           this.addtrainerForm.reset();
           setTimeout(() => {
-            this.router.navigate(['trainer']);
+            this.router.navigate(['train-workinghours/' + data.trainerid]);
           }, 2000);
 
         },
@@ -119,11 +121,11 @@ export class AddtrainerComponent implements OnInit {
       );
     }
   }
-  CalculateAge()
-{
-  if (this.dob) {
-    var timeDiff = Math.abs(Date.now() - new Date(this.dob).getTime());
-    this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
-      }
-}
+  CalculateAge() 
+  {
+    if (this.dob) {
+      var timeDiff = Math.abs(Date.now() - new Date(this.dob).getTime());
+      this.age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
+    }
+  }
 }

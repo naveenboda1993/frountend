@@ -270,7 +270,14 @@
 						</div>
 					</a>
 				</li>
-
+				<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+					<a [routerLink]="['/documents']">
+						<div>
+							Upload Documents<a href="#!" class="secondary-content">
+								<i class="material-icons"></i></a>
+						</div>
+					</a>
+				</li>
 			</ul>
 		</li>
 		<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"

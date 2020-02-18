@@ -34,6 +34,7 @@ import { TrainerWorkinghoursComponent } from '../components/roles/trainer/traine
 import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-trainertimings/edit-trainertimings.component';
 import { TermsComponent } from '../components/terms/terms.component';
 import { BankDetailsComponent } from '../components/bank-details/bank-details.component';
+import { DocumentsComponent } from '../components/documents/documents.component';
 
 
 const routes: Routes = [
@@ -80,6 +81,11 @@ const routes: Routes = [
 	{
 		path: 'bank',
 		component: BankDetailsComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'documents',
+		component: DocumentsComponent,
 		canActivate: [AuthGuard]
 	},
 	{
