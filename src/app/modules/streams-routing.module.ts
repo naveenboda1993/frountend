@@ -79,6 +79,11 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'trainerprofile/:id',
+		component: TrainerProfileComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'bank',
 		component: BankDetailsComponent,
 		canActivate: [AuthGuard]
