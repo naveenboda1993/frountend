@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, EmailValidator } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
 import { UsersService } from 'src/app/services/users.service';
 import _ from 'lodash';
@@ -25,7 +25,8 @@ export class TrainerProfileComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router,
-    private tokenService: TokenService) {
+    private tokenService: TokenService,
+    private route: ActivatedRoute) {
       
      }
 
@@ -57,11 +58,14 @@ export class TrainerProfileComponent implements OnInit {
 
   GetUsers() {
     this.showSpinner = true;
-    this.userService.GetTrainerOne(this.loggedInUser._id).subscribe(data => {
+    this.route.params.subscribe(params=>{
+      console.log(params.id)
+    this.userService.GetTrainerOne(params.id).subscribe(data => {
       this.user = data.user;
       this.trainer = data.tranier;
       this.showSpinner = false;
     });
+  });
   }
 
   updatetrainer() {

@@ -89,6 +89,9 @@ export class UsersService {
 	FinishGym(id): Observable<any> {
 		return this.http.post(`${BASEURL}/finishgym`,{id});
 	}
+	FinishTrainer(id): Observable<any> {
+		return this.http.post(`${BASEURL}/finishtrainer`,{id});
+	}
 	FollowUser(userFollowed): Observable<any> {
 		return this.http.post(`${BASEURL}/follow-user`, {
 			userFollowed

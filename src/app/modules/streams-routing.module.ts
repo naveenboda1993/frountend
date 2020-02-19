@@ -35,6 +35,7 @@ import { EditTrainertimingsComponent } from '../components/roles/trainer/edit-tr
 import { TermsComponent } from '../components/terms/terms.component';
 import { BankDetailsComponent } from '../components/bank-details/bank-details.component';
 import { DocumentsComponent } from '../components/documents/documents.component';
+import { TrainerTermsComponent } from '../components/trainer-terms/trainer-terms.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,11 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: 'train-workinghours/:id',
+		component: TrainerWorkinghoursComponent,
+		canActivate: [AuthGuard]
+	},
+	{
 		path: 'gymprofile',
 		component: GymprofileComponent,
 		canActivate: [AuthGuard]
@@ -90,6 +96,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'documents',
+		component: DocumentsComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'documents/:id',
 		component: DocumentsComponent,
 		canActivate: [AuthGuard]
 	},
@@ -116,6 +127,11 @@ const routes: Routes = [
 	{
 		path: 'terms/:id',
 		component: TermsComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'trainer-terms/:id',
+		component: TrainerTermsComponent,
 		canActivate: [AuthGuard]
 	},
 	{

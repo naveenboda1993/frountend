@@ -11,41 +11,43 @@
 			</select>
 		</div>
 		<div class="col s12 m8 l9">
-			<div class="row">
-				<div class="col s6">
-					<div class="file-field input-field">
-						<div class="btn">
-							<span>File</span>
-							<input type="file" ng2FileSelect [uploader]="uploader"
-								(onFileSelected)="OnFileSelected($event)" />
+			<div class="card">
+				<div class="row" style="margin: 20px;">
+					<div class="col s6">
+						<div class="file-field input-field">
+							<div class="btn">
+								<span>File</span>
+								<input type="file" ng2FileSelect [uploader]="uploader"
+									(onFileSelected)="OnFileSelected($event)" />
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text" id="filePath" />
+							</div>
 						</div>
-						<div class="file-path-wrapper">
-							<input class="file-path validate" type="text" id="filePath" />
+					</div>
+
+					<div class="col s6">
+						<div class="file-field input-field">
+							<a class="waves-effect waves-light btn" (click)="Upload()"><i
+									class="material-icons left">image</i>Upload image</a>
 						</div>
 					</div>
 				</div>
+				<div class="row" style="margin: 25px;">
+					<div class="col s12 m6 l4" *ngFor="let image of selectGym?.images">
+						<div class="item-img-wrap imgDiv">
+							<img class="imgCircle"
+								src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
+							<button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button>
+						</div>
+					</div>
+					<div class="col s12">
+						<button class="btn waves-effects" style="margin: 25px;" id="signupbtn" *ngIf="!isCreation"
+							(click)="nextgym()">Next</button>
 
-				<div class="col s6">
-					<div class="file-field input-field">
-						<a class="waves-effect waves-light btn" (click)="Upload()"><i
-								class="material-icons left">image</i>Upload image</a>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col s12 m6 l4" *ngFor="let image of selectGym?.images">
-					<div class="item-img-wrap imgDiv">
-						<img class="imgCircle"
-							src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
-						<button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button>
-					</div>
-				</div>
-				<div class="col s12">
-					<button class="btn waves-effects" id="signupbtn" *ngIf="!isCreation"
-						(click)="nextgym()">Next</button>
-
-				</div>
-			</div>
+			</div> 
 		</div>
 	</div>
 </div>

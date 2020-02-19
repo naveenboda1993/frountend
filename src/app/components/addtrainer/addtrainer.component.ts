@@ -82,8 +82,6 @@ export class AddtrainerComponent implements OnInit {
     // this.router.navigate(['train-workinghours/5e340fefaf88ca4340f10663' ]);
     console.log({ result: this.addtrainerForm.value, timings: this.timings });
     if (this.addtrainerForm.valid) {
-
-
       this.showSpinner = true;
       this.authService.trainer(this.addtrainerForm.value).subscribe(
         data => {

@@ -200,6 +200,37 @@
                                             is required</span>
                                     </div>
                                 </div>
+                                 
+                                <br>
+                                <h6 style="margin-left:30px;">Bank Details </h6>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="accountnumber" type="text" formControlName="accountnumber" />
+                                        <label for="accountnumber">Account Number</label>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="bankname" type="text" formControlName="bankname" />
+                                        <label for="bankname"> Bank Name</label>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="ifsccode" type="text" formControlName="ifsccode" />
+                                        <label for="ifsccode">IFSC Code</label>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row col s12">
+                                    <div class="input-field col s12">
+                                        <input id="holdername" type="text" formControlName="holdername" />
+                                        <label for="holdername">Account Holder Name</label>
+                                       
+                                    </div>
+                                </div>
                                 <button class="btn waves-effects" id="signupbtn" [disabled]="!addpeopleForm.valid">ADD
                                     Gym</button>
                                 <!-- <button class="btn waves-effects" id="signupbtn">ADD

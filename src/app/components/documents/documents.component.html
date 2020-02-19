@@ -5,13 +5,61 @@
             <app-side></app-side>
         </div>
         <div class="card">
-            <div class="col s12 m11 l8" style="margin-top: 70px;" *ngIf="isCreation">
-                <select class="browser-default custom-select" [(ngModel)]="selectedValue"
-                    (change)='onOptionsSelected(selectedValue)'>
-                    <option *ngFor="let name of names" value="{{document._id}}">{{name.docName}}</option>
+            <div class="col s12 m11 l8" style="margin-top: 70px;">
+                <select class="browser-default custom-select">
+                    <!-- <option *ngFor="let name of names" value="{{document._id}}">{{name.docName}}</option> -->
+                    <option value="Upload Aadhar Card">Upload Aadhar Card</option>
+                    <option value="Upload PAN Card">Upload PAN Card</option>
+                    <option value="Upload Education Certification">Upload Education Certification</option>
+                    <option value="Upload Driving licence">Upload Driving licence</option>
+                    <option value="Upload Certification tranier">Upload Certification tranier</option>
                 </select>
             </div>
             <div class="col s12 m8 l9">
+                <div class="card">
+                    <div class="row" style="margin: 15px;">
+                        <div class="col s6">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file" ng2FileSelect [uploader]="uploader"
+                                        (onFileSelected)="OnFileSelected($event)" />
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" id="filePath" style="    color: #ff0000;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s6">
+                            <div class="file-field input-field">
+                                <a class="waves-effect waves-light btn" (click)="Upload()"><i
+                                        class="material-icons left">image</i>Upload Documnet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                    <div class="col s6">
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>File</span>
+                                <input type="file" ng2FileSelect [uploader]="uploader"
+                                    (onFileSelected)="OnFileSelected($event)" />
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" id="filePath" style="    color: #ff0000;
+                                background: #f1c6d036;" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s6">
+                        <div class="file-field input-field">
+                            <a class="waves-effect waves-light btn" (click)="Upload()"><i
+                                    class="material-icons left">image</i>Upload Driving licence</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col s6">
                         <div class="file-field input-field">
@@ -30,21 +78,22 @@
                     <div class="col s6">
                         <div class="file-field input-field">
                             <a class="waves-effect waves-light btn" (click)="Upload()"><i
-                                    class="material-icons left">image</i>Upload image</a>
+                                    class="material-icons left">image</i>Upload Certification Document</a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m6 l4" *ngFor="let image of selectGym?.images">
-                        <div class="item-img-wrap imgDiv">
-                            <img class="imgCircle"
-                                src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
-                            <button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button>
+                </div> -->
+                    <div class="row">
+                        <div class="col s12 m6 l4" *ngFor="let image of selectGym?.images">
+                            <div class="item-img-wrap imgDiv">
+                                <img class="imgCircle"
+                                    src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
+                                <button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col s12">
-                        <button class="btn waves-effects" id="signupbtn" *ngIf="!isCreation"
-                            (click)="nexttrainer()">Next</button>
+                        <div class="col s12">
+                            <button class="btn waves-effects" id="signupbtn" style="margin: 15px;"  *ngIf="!isCreation"
+                                (click)="nexttrainer()">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>

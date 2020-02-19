@@ -45,10 +45,9 @@ export class DocumentsComponent implements OnInit {
   //workinghours
   GetFileNames() {
     this.showSpinner = true;
-    this.usersService.GetNames().subscribe(data => {
+    this.usersService.GetAllTrainers().subscribe(data => {
       console.log(data);
       this.name = data.result;
-
       this.route.params.subscribe(params => {
         console.log(params.id);
         if (params.id == undefined) {
@@ -129,7 +128,7 @@ export class DocumentsComponent implements OnInit {
   }
 
   nexttrainer() {
-    this.router.navigate(['terms/' + this.selectName._id]);
+    this.router.navigate(['trainer-terms/' + this.selectName._id]);
   }
 
 }

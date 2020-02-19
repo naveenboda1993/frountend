@@ -38,6 +38,7 @@ export class GymownerEditComponent implements OnInit {
     this.email = ' your email'
     this.updateGymOwnerForm = this.fb.group({
       username: ['', Validators.required],
+      ownername: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
       phonenumber: ['', Validators.required],
