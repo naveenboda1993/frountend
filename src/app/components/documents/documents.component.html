@@ -83,13 +83,13 @@
                     </div>
                 </div> -->
                     <div class="row">
-                        <div class="col s12 m6 l4" *ngFor="let image of selectGym?.images">
+                        <div class="col s12 m6 l4" *ngFor="let document of selectTrainer?.documents">
                             <div class="item-img-wrap imgDiv">
                                 <img class="imgCircle"
-                                    src="http://res.cloudinary.com/chatapplication/image/upload/v{{ image.imgVersion }}/{{ image.imgId }}" />
-                                <button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button>
+                                    src="http://res.cloudinary.com/chatapplication/image/upload/v{{ documents.docName }}/{{ Documents.docId }}" />
+                                <!-- <button class="btn imgBtn" (click)="SetProfileImage(image)">{{image.status}}</button> -->
                             </div>
-                        </div>
+                        </div>  
                         <div class="col s12">
                             <button class="btn waves-effects" id="signupbtn" style="margin: 15px;"  *ngIf="!isCreation"
                                 (click)="nexttrainer()">Next</button>
