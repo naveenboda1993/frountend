@@ -238,7 +238,7 @@
 			</ul>
 		</li>
 		<li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-			*ngIf="isAdmin || isSuperadmin || isTrainer">
+			*ngIf="isAdmin || isSuperadmin">
 			<a [routerLink]="['/trainer']">
 				<div>
 					Trainers<a href="#!" class="secondary-content"><i class="material-icons">people</i></a>

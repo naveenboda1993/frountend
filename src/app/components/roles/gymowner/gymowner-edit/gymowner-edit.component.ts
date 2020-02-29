@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -19,42 +19,50 @@ export class GymownerEditComponent implements OnInit {
   loggedInUser: any;
   user: any;
   gymowner: any;
+  gym: any;
+  ownername: any;
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router,
-    private tokenService: TokenService) {
-      
-     }
+    private tokenService: TokenService,
+    private route: ActivatedRoute) {
+
+  }
 
   ngOnInit() {
-    this.user = { username: ''};
+    this.user = { username: '' };
     this.loggedInUser = this.tokenService.GetPayload();
     this.init();
   }
   init() {
     this.username = ''
+    this.ownername=''
     this.email = ' your email'
-    this.updateGymOwnerForm = this.fb.group({
-      username: ['', Validators.required],
-      ownername: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
-      password: ['', Validators.required],
-      phonenumber: ['', Validators.required],
-      age: ['', Validators.required],
-      address: ['', Validators.required],
-      language: ['', Validators.required],
-    });
+    // this.updateGymOwnerForm = this.fb.group({
+    // username: ['', Validators.required],
+    // ownername: ['', Validators.required],
+    // email: ['', [Validators.email, Validators.required]],
+    // password: ['', Validators.required],
+    // phonenumber: ['', Validators.required],
+    // age: ['', Validators.required],
+    // address: ['', Validators.required],
+    // language: ['', Validators.required],
+    // });
     this.GetUsers();
   }
 
   GetUsers() {
-    this.showSpinner = true;
-    this.userService.GetGymownerOne(this.loggedInUser._id).subscribe(data => {
-      this.user = data.user;
-      this.gymowner = data.gymowner;
-      this.showSpinner = false;
+    this.route.params.subscribe(params => {
+      console.log(params.id)
+      this.showSpinner = true;
+      this.userService.GetGymownerOne(params.id).subscribe(data => {
+        this.user = data.user;
+        // this.gym= data.gym;
+        this.gymowner = data.gymowner;
+        this.showSpinner = false;
+      });
     });
   }
 
@@ -64,7 +72,7 @@ export class GymownerEditComponent implements OnInit {
       data => {
         // this.tokenService.SetToken(data.token);
         this.updateGymOwnerForm.reset();
-        setTimeout(() => {          
+        setTimeout(() => {
           this.router.navigate(['gymowner']);
         }, 2000);
 

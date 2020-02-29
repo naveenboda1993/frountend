@@ -22,7 +22,6 @@
                                 <div class="input-field col s12">
                                     <label for="email">Email</label><br>
                                     <input id="email" type="email" [(ngModel)]="user.email" />
-
                                 </div>
                             </div>
                             <div class="row col s12">
@@ -35,6 +34,55 @@
                                 <div class="input-field col s12">
                                     <label for="phone_number">PhoneNumber</label><br>
                                     <input id="Phone_number" type="text" [(ngModel)]="user.phonenumber" />
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="flatno">H NO/Flatno</label>
+                                    <br>
+                                    <input id="flatno" type="text" [(ngModel)]="user.flatno" />
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="street">Street/Road No</label>
+                                    <br>
+                                    <input id="street" type="text" [(ngModel)]="user.street" />
+                                </div>
+                            </div>
+                            <div class="row col s4">
+                                <div class="input-field col s12">
+                                    <label for="area">area</label>
+                                    <br>
+                                    <input id="area" type="text" [(ngModel)]="user.area" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="locality">Locality</label>
+                                    <br>
+                                    <input id="locality" type="text" [(ngModel)]="user.locality" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="city">City</label>
+                                    <br>
+                                    <input id="city" type="text" [(ngModel)]="user.city" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="pincode">Pincode</label>
+                                    <br>
+                                    <input id="pincode" type="text" [(ngModel)]="user.pincode" />
+                                </div>
+                            </div>
+                            <div class="row col s6">
+                                <div class="input-field col s12">
+                                    <label for="state">State</label>
+                                    <br>
+                                    <input id="state" type="text" [(ngModel)]="user.state" />
                                 </div>
                             </div>
                             <div class="row col s12">
@@ -67,7 +115,8 @@
                                     <input id="holdername" type="text" [(ngModel)]="user.address" />
                                 </div>
                             </div>
-                            <button class="btn waves-effects" style="margin-left: 30px;" id="signupbtn" (click)="updategymowner()"> Save Changes
+                            <button class="btn waves-effects" style="margin-left: 30px;" id="signupbtn"
+                                (click)="updategymowner()"> Save Changes
                             </button>
                             <!-- <div class="progress" *ngIf="showSpinner">
                                     <div class="indeterminate"></div>
